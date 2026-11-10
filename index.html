@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -146,6 +146,10 @@ details p{color:var(--muted);padding-bottom:18px;font-size:.95rem}
 footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area-inset-bottom));color:var(--muted);font-size:.9rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
 footer nav{display:flex;gap:22px;flex-wrap:wrap}
+.dlcount{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid var(--line2);border-radius:99px;background:var(--surface);color:var(--text)}
+.dlcount[hidden]{display:none}
+.dlcount svg{color:var(--lime)}
+.dlcount b{color:var(--lime);font-weight:700}
 footer a:hover{color:var(--lime)}
 
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
@@ -374,6 +378,7 @@ footer a:hover{color:var(--lime)}
       <a href="https://t.me/Sina_mp_VPNbot" target="_blank" rel="noopener">Telegram</a>
       <a href="https://github.com/sinamp00/Carbon/releases" target="_blank" rel="noopener">Releases</a>
     </nav>
+    <span class="dlcount" id="dlCount" hidden><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg><b class="ltr" id="dlNum">0</b> <span class="fa">دانلود</span><span class="en">downloads</span></span>
     <span>© Carbon <span class="ltr">2026</span></span>
   </div>
 </footer>
@@ -400,6 +405,12 @@ footer a:hover{color:var(--lime)}
     if(v){['verPill'].forEach(function(id){var n=document.getElementById(id);if(n)n.textContent='v'+v});
       ['verText','verText2'].forEach(function(id){var n=document.getElementById(id);if(n)n.textContent=v})}
     if(apk)document.querySelectorAll('a.dlLink').forEach(function(a){if(a.href.indexOf('/releases/latest')>-1&&!a.classList.contains('nav-dl')||a.id==='apkBtn')a.href=apk.browser_download_url});
+  }).catch(function(){});
+  fetch('https://api.github.com/repos/sinamp00/Carbon/releases?per_page=100').then(function(r){return r.ok?r.json():null}).then(function(list){
+    if(!list)return;
+    var n=0;list.forEach(function(rel){(rel.assets||[]).forEach(function(a){if(/\.apk$/i.test(a.name))n+=a.download_count||0})});
+    document.getElementById('dlNum').textContent=n.toLocaleString('en-US');
+    document.getElementById('dlCount').hidden=false;
   }).catch(function(){});
 })();
 </script>
