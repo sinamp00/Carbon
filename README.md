@@ -57,4 +57,28 @@
 - 🌐 **وب‌سایت**: [sinamp00.github.io/Carbon](https://sinamp00.github.io/Carbon/)
 - 📦 **مخزن گیت‌هاب**: [github.com/sinamp00/Carbon](https://github.com/sinamp00/Carbon)
 
+---
+
+## 📊 نرخ دانلود و آمار زنده (Live Download Analytics)
+
+میزان استقبال کاربران و نرخ دریافت بسته‌های نصبی کربن به صورت لحظه‌ای و زنده از طریق API رسمی گیت‌هاب پایش و مصورسازی می‌شود:
+
+</div>
+
+<div align="center">
+
+[![Total Downloads](https://img.shields.io/github/downloads/sinamp00/Carbon/total?style=for-the-badge&logo=github&color=D8FF6B&logoColor=0B0D13&label=TOTAL%20DOWNLOADS)](https://github.com/sinamp00/Carbon/releases)
+[![Latest Version](https://img.shields.io/github/downloads/sinamp00/Carbon/latest/total?style=for-the-badge&logo=android&color=7DD3FC&logoColor=0B0D13&label=LATEST%20v1.0.0)](https://github.com/sinamp00/Carbon/releases/latest)
+[![Architecture](https://img.shields.io/badge/ARCH-ARM64--V8A-A7F3D0?style=for-the-badge&logo=arm&logoColor=0B0D13)](https://github.com/sinamp00/Carbon/releases/latest)
+
+<br/>
+
+<a href="https://github.com/sinamp00/Carbon/releases">
+  <img src="assets/downloads.svg" alt="نمودار نرخ دانلود زنده کربن (Carbon VPN Live Download Analytics)" width="100%" style="max-width: 820px;" />
+</a>
+
+<br/>
+
+<sub>⚡ داده‌ها و نرخ دانلود به صورت پیوسته و زنده از طریق GitHub Releases API پایش و ثبت می‌شوند.</sub>
+
 </div>
