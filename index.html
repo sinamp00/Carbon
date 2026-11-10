@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carbon VPN — نسل جدید ارتباط آزاد و امن</title>
+  <meta name="description" content="کلاینت ضد فیلترینگ هوشمند کربن (Carbon VPN) با 10 پروتکل اختصاصی مسک، لنترن، گول، آرگو و سرورلس برای اندروید." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0c10;
+      --surface: #12161f;
+      --surface-2: #191f2c;
+      --lime: #d8ff6b;
+      --on-lime: #101605;
+      --blue: #7dd3fc;
+      --lavender: #c4b5fd;
+      --text: #f3f5f8;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at 50% -10%, rgba(216, 255, 107, 0.14), transparent 55%),
+                  radial-gradient(circle at 85% 25%, rgba(125, 211, 252, 0.10), transparent 45%),
+                  var(--bg);
+      color: var(--text);
+      font-family: 'Inter', 'Vazirmatn', system-ui, sans-serif;
+      line-height: 1.65;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .brand img {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(216, 255, 107, 0.18);
+    }
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+    .version-pill {
+      background: rgba(216, 255, 107, 0.14);
+      color: var(--lime);
+      border: 1px solid rgba(216, 255, 107, 0.32);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      direction: ltr;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 24px;
+      border-radius: 18px;
+      font-weight: 700;
+      font-size: 0.96rem;
+      text-decoration: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: var(--lime);
+      color: var(--on-lime);
+      box-shadow: 0 12px 32px rgba(216, 255, 107, 0.24);
+    }
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .hero {
+      padding: 76px 0 56px;
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      color: var(--lime);
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    h1 span {
+      background: linear-gradient(135deg, #d8ff6b 0%, #7dd3fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 36px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 48px 0;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 24px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--lime);
+      direction: ltr;
+    }
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 4px;
+    }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .section-sub {
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .protocols-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+    .proto-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .proto-card:hover {
+      border-color: rgba(216, 255, 107, 0.38);
+      transform: translateY(-3px);
+    }
+    .flag-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: var(--surface-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.55rem;
+      flex-shrink: 0;
+    }
+    .proto-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+    .proto-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .proto-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 8px;
+      background: rgba(125, 211, 252, 0.14);
+      color: var(--blue);
+      direction: ltr;
+    }
+    .proto-desc {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 72px;
+    }
+    .feature-box {
+      background: linear-gradient(180deg, var(--surface) 0%, rgba(18, 22, 31, 0.6) 100%);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+    }
+    .feature-box h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--lime);
+    }
+    .feature-box p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--lime);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="#" class="brand">
+        <img src="assets/logo.svg" alt="Carbon Logo" />
+        <span class="brand-title">Carbon VPN</span>
+        <span class="version-pill">v1.0.0</span>
+      </a>
+      <div class="nav-links">
+        <a href="https://github.com/sinamp00/Carbon" target="_blank" class="btn btn-secondary">GitHub</a>
+        <a href="https://t.me/Sina_mp_VPNbot" target="_blank" class="btn btn-primary">تلگرام</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">⚡ نسخهٔ رسمی 1.0.0 برای اندروید منتشر شد</div>
+      <h1>عبور هوشمند از فیلترینگ با <span>کربن (Carbon)</span></h1>
+      <p>
+        مجهز به 10 موتور ضد فیلتر اختصاصی بر پایهٔ مسک HTTP/2، لنترن آلمان، گول وارپ، آرگو فالکن و تانل‌های سرورلس، همراه با قفل سخت‌افزاری ECDSA و به‌روزرسانی خودکار درون‌برنامه‌ای.
+      </p>
+      <div class="hero-actions">
+        <a href="https://github.com/sinamp00/Carbon/releases/latest/download/carbon-1.0.0-arm64-v8a-release.apk" class="btn btn-primary">
+          📥 دانلود مستقیم APK (نسخه 1.0.0)
+        </a>
+        <a href="https://t.me/Sina_mp_VPNbot" target="_blank" class="btn btn-secondary">
+          🔑 دریافت کلید اشتراک در تلگرام
+        </a>
+        <a href="https://github.com/sinamp00/Carbon/releases/latest" target="_blank" class="btn btn-secondary">
+          📦 صفحهٔ انتشار در GitHub
+        </a>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">10</div>
+          <div class="stat-label">پروتکل اختصاصی ضد فیلتر (DPI Bypass)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">ECDSA P-256</div>
+          <div class="stat-label">قفل سخت‌افزاری ضد کرک و ضد دستکاری</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">120 Hz</div>
+          <div class="stat-label">رابط کاربری فوق‌روان Material 3 Expressive</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">Auto OTA</div>
+          <div class="stat-label">به‌روزرسانی خودکار مستقیم از GitHub</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">🌐 10 پروتکل نسل جدید کربن</h2>
+      <p class="section-sub">طراحی‌شده برای پایداری حداکثری روی تمامی اپراتورهای همراه و اینترنت‌های خانگی</p>
+
+      <div class="protocols-grid">
+        <div class="proto-card">
+          <div class="flag-box">🇳🇱</div>
+          <div>
+            <div class="proto-head">
+              <span class="proto-name">مسک توربو · MASQUE Turbo</span>
+              <span class="proto-badge">MASQUE H2</span>
+            </div>
+            <p class="proto-desc">موتور اصلی مسک با تکه‌تکه‌سازی هدر TLS و اسکنر توربو</p>
+          </div>
+        </div>
+
+        <div class="proto-card">
+          <div class="flag-box">🇫🇮</div>
+          <div>
+            <div class="proto-head">
+              <span class="proto-name">مسک پایتون · MASQUE Python</span>
+              <span class="proto-badge">PYTHON</span>
+            </div>
+            <p class="proto-desc">شبیه‌سازی اثرانگشت پایتون برای عبور از فیلترینگ هوشمند اپراتورها</p>
+          </div>
+        </div>
+
+        <div class="proto-card">
+          <div class="flag-box">🇨🇭</div>
+          <div>
+            <div class="proto-head">
+              <span class="proto-name">تونل دولایه · Dual Tunnel</span>
+              <span class="proto-badge">DUAL HOP</span>
+            </div>
+            <p class="proto-desc">دو لایه تونل تو در توی کلودفلر برای پایداری و امنیت دوچندان</p>
+          </div>
+        </div>
+
+        <div class="proto-card">
+          <div class="flag-box">🇺🇸</div>
+          <div>
+            <div class="proto-head">
+              <span class="proto-name">گول وارپ · Gool WARP</span>
+              <span class="proto-badge">GOOL</span>
+            </div>
+            <p class="proto-desc">کپسوله‌سازی وایرگارد داخل مسک؛ عالی برای اینستاگرام و یوتیوب</p>
+          </div>
+        </div>
+
+        <div class="proto-card">
+          <div class="flag-box">🇩🇪</div>
+          <div>
+            <div class="proto-head">
+              <span class="proto-name">لنترن آلمان · Lantern Edge</span>
+              <span class="proto-badge">LANTERN</span>
+            </div>
+            <p class="proto-desc">موتور رادیانس لنترن با اتصال مستقیم به سرورهای فرانکفورت</p>
+          </div>
+        </div>
+
+        <div class="proto-card">
+          <div class="flag-box">🇫🇷</div>
+          <div>
+            <div class="proto-head">
+              <span class="proto-name">آرگو فالکن · Argo Falcon</span>
+              <span class="proto-badge">ARGO</span>
+            </div>
+            <p class="proto-desc">سیستم پل‌های عمومی آرگو و فالکن با سوییچ هوشمند پشتیبان</p>
+          </div>
+        </div>
+
+        <div class="proto-card">
+          <div class="flag-box">🇸🇪</div>
+          <div>
+            <div class="proto-head">
+              <span class="proto-name">سرورلس گوگل · Serverless TLS</span>
+              <span class="proto-badge">TLS LEAD</span>
+            </div>
+            <p class="proto-desc">اتصال مستقیم بدون سرور با خرد کردن بسته‌های TLS و دی‌ان‌اس گوگل</p>
+          </div>
+        </div>
+
+        <div class="proto-card">
+          <div class="flag-box">🇬🇧</div>
+          <div>
+            <div class="proto-head">
+              <span class="proto-name">شکاف دامنه · SNI Split</span>
+              <span class="proto-badge">SNI SPLIT</span>
+            </div>
+            <p class="proto-desc">عبور مستقیم از فیلترینگ با تکنیک برش نام دامنه و دی‌ان‌اس ادگارد</p>
+          </div>
+        </div>
+
+        <div class="proto-card">
+          <div class="flag-box">🇦🇹</div>
+          <div>
+            <div class="proto-head">
+              <span class="proto-name">مسک کوییک · MASQUE QUIC</span>
+              <span class="proto-badge">QUIC H3</span>
+            </div>
+            <p class="proto-desc">تونل نسل سوم کلودفلر بر پایهٔ کوییک؛ مناسب اینترنت خانگی و فیبر نوری</p>
+          </div>
+        </div>
+
+        <div class="proto-card">
+          <div class="flag-box">🇨🇦</div>
+          <div>
+            <div class="proto-head">
+              <span class="proto-name">وایرگارد نویز · WireGuard Noise</span>
+              <span class="proto-badge">WARP WG</span>
+            </div>
+            <p class="proto-desc">پروتکل وایرگارد با تزریق پکت‌های نویز ضد فیلتر و اسکنر عمیق</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-grid">
+      <div class="feature-box">
+        <h3>🛡️ امنیت و قفل سخت‌افزاری ضد کرک</h3>
+        <p>تمامی کلیدهای اشتراک با امضای دیجیتال ECDSA NIST P-256 به شناسهٔ یکتای دستگاه (HWID) متصل می‌شوند و هستهٔ VPN در برابر هرگونه ابزار هوک، کرک و دستکاری زمان محافظت شده است.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🚀 سرعت بالا بدون افت در اینستاگرام و یوتیوب</h3>
+        <p>تنظیم خودکار MTU روی 1280 بایت و بهینه‌سازی تانل بومی برای جلوگیری از قفل شدن استریم‌های ویدیویی، ریلز اینستاگرام و تماس‌های تصویری.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🔄 آپدیت خودکار درون‌برنامه‌ای</h3>
+        <p>با انتشار هر نسخهٔ جدید در مخزن رسمی گیت‌هاب کربن، برنامه به‌صورت خودکار آپدیت را شناسایی کرده و با یک لمس دانلود و نصب می‌کند.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Carbon VPN · v1.0.0 — تمامی حقوق محفوظ است.</p>
+      <p style="margin-top: 10px;">
+        <a href="https://github.com/sinamp00/Carbon" target="_blank">GitHub</a> ·
+        <a href="https://t.me/Sina_mp_VPNbot" target="_blank">Telegram</a> ·
+        <a href="https://github.com/sinamp00/Carbon/releases/latest" target="_blank">Releases</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
