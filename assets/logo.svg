@@ -1,16 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Carbon">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#14181F"/>
-      <stop offset="100%" stop-color="#0B0D12"/>
+    <linearGradient id="plate" x1="512" y1="0" x2="512" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#212121"/>
+      <stop offset="1" stop-color="#0B0B0B"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#E4FF7A"/>
-      <stop offset="100%" stop-color="#9BE15D"/>
+    <linearGradient id="sheen" x1="870" y1="0" x2="348" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2A2A2A"/>
+      <stop offset="1" stop-color="#111111"/>
     </linearGradient>
+    <clipPath id="clip"><rect width="1024" height="1024" rx="230"/></clipPath>
   </defs>
-  <rect width="256" height="256" rx="64" fill="url(#bg)"/>
-  <rect x="8" y="8" width="240" height="240" rx="56" fill="none" stroke="#E4FF7A" stroke-opacity="0.18" stroke-width="3"/>
-  <path d="M156 64H112C85.5 64 64 85.5 64 112V144C64 170.5 85.5 192 112 192H156" fill="none" stroke="url(#accent)" stroke-width="26" stroke-linecap="round"/>
-  <circle cx="164" cy="128" r="18" fill="url(#accent)"/>
+  <g clip-path="url(#clip)">
+    <rect width="1024" height="1024" fill="url(#plate)"/>
+    <path d="M870 0H1024V1024H348Z" fill="url(#sheen)"/>
+  </g>
+  <path fill="#fff" d="M400.93 274.96H636.21L708.02 362.25H400.93V660H708.02L636.21 749.04H315.98V362.25Z"/>
 </svg>

@@ -1,465 +1,407 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carbon VPN — نسل جدید ارتباط آزاد و امن</title>
-  <meta name="description" content="کلاینت ضد فیلترینگ هوشمند کربن (Carbon VPN) با 10 پروتکل اختصاصی مسک، لنترن، گول، آرگو و سرورلس برای اندروید." />
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0a0c10;
-      --surface: #12161f;
-      --surface-2: #191f2c;
-      --lime: #d8ff6b;
-      --on-lime: #101605;
-      --blue: #7dd3fc;
-      --lavender: #c4b5fd;
-      --text: #f3f5f8;
-      --muted: #94a3b8;
-      --border: rgba(255, 255, 255, 0.08);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: radial-gradient(circle at 50% -10%, rgba(216, 255, 107, 0.14), transparent 55%),
-                  radial-gradient(circle at 85% 25%, rgba(125, 211, 252, 0.10), transparent 45%),
-                  var(--bg);
-      color: var(--text);
-      font-family: 'Inter', 'Vazirmatn', system-ui, sans-serif;
-      line-height: 1.65;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      color: var(--text);
-    }
-    .brand img {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(216, 255, 107, 0.18);
-    }
-    .brand-title {
-      font-weight: 800;
-      font-size: 1.35rem;
-      letter-spacing: -0.02em;
-    }
-    .version-pill {
-      background: rgba(216, 255, 107, 0.14);
-      color: var(--lime);
-      border: 1px solid rgba(216, 255, 107, 0.32);
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      direction: ltr;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 24px;
-      border-radius: 18px;
-      font-weight: 700;
-      font-size: 0.96rem;
-      text-decoration: none;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-      cursor: pointer;
-      border: none;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary {
-      background: var(--lime);
-      color: var(--on-lime);
-      box-shadow: 0 12px 32px rgba(216, 255, 107, 0.24);
-    }
-    .btn-secondary {
-      background: var(--surface-2);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .hero {
-      padding: 76px 0 56px;
-      text-align: center;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 8px 18px;
-      border-radius: 999px;
-      font-size: 0.88rem;
-      color: var(--lime);
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      font-weight: 800;
-      line-height: 1.18;
-      margin-bottom: 20px;
-      letter-spacing: -0.02em;
-    }
-    h1 span {
-      background: linear-gradient(135deg, #d8ff6b 0%, #7dd3fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero p {
-      max-width: 680px;
-      margin: 0 auto 36px;
-      color: var(--muted);
-      font-size: 1.12rem;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin: 48px 0;
-    }
-    .stat-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 26px;
-      padding: 24px;
-      text-align: center;
-    }
-    .stat-num {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--lime);
-      direction: ltr;
-    }
-    .stat-label {
-      color: var(--muted);
-      font-size: 0.92rem;
-      margin-top: 4px;
-    }
-    .section-title {
-      font-size: 1.75rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    .section-sub {
-      color: var(--muted);
-      text-align: center;
-      margin-bottom: 36px;
-    }
-    .protocols-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 16px;
-      margin-bottom: 64px;
-    }
-    .proto-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 20px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-    .proto-card:hover {
-      border-color: rgba(216, 255, 107, 0.38);
-      transform: translateY(-3px);
-    }
-    .flag-box {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      background: var(--surface-2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.55rem;
-      flex-shrink: 0;
-    }
-    .proto-head {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 6px;
-    }
-    .proto-name {
-      font-weight: 700;
-      font-size: 1.05rem;
-    }
-    .proto-badge {
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 2px 9px;
-      border-radius: 8px;
-      background: rgba(125, 211, 252, 0.14);
-      color: var(--blue);
-      direction: ltr;
-    }
-    .proto-desc {
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin-bottom: 72px;
-    }
-    .feature-box {
-      background: linear-gradient(180deg, var(--surface) 0%, rgba(18, 22, 31, 0.6) 100%);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 28px;
-    }
-    .feature-box h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: var(--lime);
-    }
-    .feature-box p {
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 36px 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: var(--lime);
-      text-decoration: none;
-      margin: 0 10px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carbon — فیلترشکن هوشمند اندروید | Anti-DPI VPN for Android</title>
+<meta name="description" content="Carbon؛ کلاینت ضد فیلترینگ برای اندروید با ۱۰ پروتکل اختصاصی، قفل سخت‌افزاری ECDSA و به‌روزرسانی خودکار. | Anti-DPI VPN client for Android with 10 protocols.">
+<meta name="theme-color" content="#0a0c10">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Carbon VPN">
+<meta property="og:description" content="Anti-DPI VPN for Android · 10 protocols · hardware-bound license · in-app updates">
+<meta property="og:image" content="https://sinamp00.github.io/Carbon/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090c; --bg2:#0d0f14; --surface:#12151c; --surface2:#181c25; --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+  --text:#f4f6f9; --muted:#8f99ab; --lime:#d8ff6b; --lime-ink:#0f1604; --blue:#7dd3fc; --radius:28px;
+  --font:'Geist','Vazirmatn',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.7;overflow-x:hidden;min-height:100vh;
+  background-image:radial-gradient(900px 500px at 80% -10%,rgba(216,255,107,.10),transparent 60%),radial-gradient(700px 500px at 0% 20%,rgba(125,211,252,.07),transparent 60%)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+html[lang=fa] .en{display:none!important}
+html[lang=en] .fa{display:none!important}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);background:rgba(8,9,12,.72);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.15rem;letter-spacing:-.01em}
+.brand img{width:38px;height:38px;border-radius:11px;box-shadow:0 0 0 1px var(--line2)}
+.ver{font-size:.72rem;font-weight:600;color:var(--lime);border:1px solid rgba(216,255,107,.3);background:rgba(216,255,107,.08);padding:2px 9px;border-radius:99px}
+.links{display:flex;gap:26px;color:var(--muted);font-size:.95rem;font-weight:500}
+.links a:hover{color:var(--text)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.lang{border:1px solid var(--line2);background:var(--surface);color:var(--text);font:inherit;font-weight:600;font-size:.85rem;padding:8px 14px;border-radius:99px;cursor:pointer;min-height:40px}
+.lang:hover{background:var(--surface2)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:99px;font-weight:700;font-size:1rem;cursor:pointer;border:1px solid transparent;transition:transform .2s,box-shadow .2s,background .2s;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--lime);color:var(--lime-ink);box-shadow:0 10px 36px -8px rgba(216,255,107,.45)}
+.btn-ghost{background:var(--surface);border-color:var(--line2);color:var(--text)}
+.btn-ghost:hover{background:var(--surface2)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:72px 0 56px}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border:1px solid var(--line2);border-radius:99px;background:var(--surface);color:var(--muted);font-size:.86rem;margin-bottom:24px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(216,255,107,.6);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(216,255,107,0)}100%{box-shadow:0 0 0 0 rgba(216,255,107,0)}}
+h1{font-size:clamp(2.3rem,6.2vw,4.4rem);line-height:1.12;font-weight:800;letter-spacing:-.03em;margin-bottom:22px;text-wrap:balance}
+h1 em{font-style:normal;background:linear-gradient(120deg,var(--lime),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:clamp(1rem,2.4vw,1.2rem);max-width:560px;margin-bottom:34px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;color:var(--muted);font-size:.88rem}
+.meta span{display:inline-flex;align-items:center;gap:8px}
+.meta svg{width:16px;height:16px;color:var(--lime)}
+
+/* phone */
+.stage{position:relative;display:flex;justify-content:center}
+.stage::before{content:"";position:absolute;inset:8% 6%;background:radial-gradient(closest-side,rgba(216,255,107,.22),transparent 70%);filter:blur(30px);z-index:0}
+.phone{position:relative;z-index:1;width:min(300px,78vw);aspect-ratio:9/19;background:#000;border-radius:44px;padding:9px;border:1px solid var(--line2);box-shadow:0 40px 80px -20px rgba(0,0,0,.8),inset 0 0 0 2px #1b1e26;transform:rotate(-2deg);animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:rotate(-2deg) translateY(-10px)}}
+.screen{height:100%;border-radius:36px;background:linear-gradient(180deg,#14171f,#0a0b0f);padding:18px 16px;display:flex;flex-direction:column;gap:14px;overflow:hidden;direction:ltr;text-align:left}
+.sb{display:flex;justify-content:space-between;font-size:.62rem;color:#9aa3b2;font-weight:600}
+.app-top{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem}
+.app-top img{width:24px;height:24px;border-radius:7px}
+.orb-wrap{flex:1;display:grid;place-items:center;position:relative;min-height:0}
+.orb{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#e9ffa6,#c4f04a 55%,#9bd42a);box-shadow:0 0 0 10px rgba(216,255,107,.1),0 0 0 22px rgba(216,255,107,.05),0 20px 50px -8px rgba(216,255,107,.5);position:relative}
+.orb::after{content:"";position:absolute;inset:-14px;border-radius:50%;border:1.5px solid rgba(216,255,107,.35);animation:ring 2.6s ease-out infinite}
+@keyframes ring{from{transform:scale(.9);opacity:1}to{transform:scale(1.35);opacity:0}}
+.orb svg{width:46px;height:46px;color:var(--lime-ink)}
+.status{text-align:center;font-size:.72rem;color:var(--lime);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:-4px}
+.srv{display:flex;align-items:center;gap:10px;background:#1b2030;border-radius:18px;padding:10px 12px}
+.srv img{width:30px;height:22px;border-radius:5px;object-fit:cover;flex:none}
+.srv b{display:block;font-size:.78rem;line-height:1.25}
+.srv small{color:#8f99ab;font-size:.64rem}
+.srv .ms{margin-inline-start:auto;font-size:.66rem;font-weight:700;color:var(--lime);background:rgba(216,255,107,.12);padding:3px 8px;border-radius:8px}
+.spd{display:grid;grid-template-columns:1.1fr .9fr;gap:8px}
+.spd div{border-radius:18px;padding:10px 12px;font-size:.6rem;color:#aab3c2}
+.spd div:first-child{background:#1c3347}.spd div:last-child{background:#2a2646}
+.spd strong{display:block;font-size:1.25rem;color:#fff;letter-spacing:-.03em;line-height:1.2}
+
+/* sections */
+section{padding:72px 0}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 44px}
+.eyebrow{color:var(--lime);font-weight:700;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(1.7rem,4.4vw,2.7rem);font-weight:800;letter-spacing:-.025em;line-height:1.2;margin-bottom:14px;text-wrap:balance}
+.sec-head p{color:var(--muted);font-size:1.05rem}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 20px;text-align:center}
+.stat b{display:block;font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:800;color:var(--lime);letter-spacing:-.03em;line-height:1.2}
+.stat span{color:var(--muted);font-size:.9rem}
+
+.protos{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.proto{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:20px;transition:border-color .25s,transform .25s,background .25s}
+.proto:hover{border-color:rgba(216,255,107,.4);transform:translateY(-4px);background:var(--surface2)}
+.flag{width:48px;height:36px;border-radius:8px;object-fit:cover;flex:none;box-shadow:0 0 0 1px var(--line2);margin-top:2px}
+.proto h3{font-size:1.04rem;font-weight:700;line-height:1.4}
+.proto h3 small{display:block;color:var(--muted);font-weight:500;font-size:.8rem;direction:ltr;text-align:start}
+.badge{display:inline-block;margin:8px 0 6px;font-size:.68rem;font-weight:700;letter-spacing:.06em;color:var(--blue);background:rgba(125,211,252,.1);padding:2px 10px;border-radius:99px;direction:ltr}
+.proto p{color:var(--muted);font-size:.88rem;line-height:1.65}
+
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.card{background:linear-gradient(180deg,var(--surface),var(--bg2));border:1px solid var(--line);border-radius:var(--radius);padding:30px;position:relative;overflow:hidden}
+.card.w3{grid-column:span 3}.card.w2{grid-column:span 2}.card.w4{grid-column:span 4}
+.card .ic{width:46px;height:46px;border-radius:15px;background:rgba(216,255,107,.1);color:var(--lime);display:grid;place-items:center;margin-bottom:18px}
+.card .ic svg{width:24px;height:24px}
+.card h3{font-size:1.2rem;margin-bottom:8px;font-weight:700}
+.card p{color:var(--muted);font-size:.95rem}
+.code{margin-top:18px;direction:ltr;text-align:left;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;background:#0a0c10;border:1px solid var(--line);border-radius:16px;padding:14px 16px;color:#b7c0cf;overflow-x:auto;white-space:nowrap}
+.code .k{color:var(--lime)}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px;counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--lime);color:var(--lime-ink);font-weight:800;margin-bottom:18px}
+.step h3{margin-bottom:8px;font-size:1.1rem}
+.step p{color:var(--muted);font-size:.93rem}
+
+.dl{background:radial-gradient(600px 300px at 50% 0,rgba(216,255,107,.14),transparent 70%),var(--surface);border:1px solid var(--line2);border-radius:36px;padding:clamp(32px,6vw,64px);text-align:center}
+.dl img{width:84px;height:84px;border-radius:24px;margin:0 auto 22px;box-shadow:0 20px 50px -10px rgba(0,0,0,.7),0 0 0 1px var(--line2)}
+.dl p{color:var(--muted);max-width:520px;margin:0 auto 28px}
+.dl .cta{justify-content:center}
+.note{margin-top:20px;font-size:.82rem;color:var(--muted)}
+
+.faq{max-width:780px;margin:0 auto;display:grid;gap:10px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:4px 22px}
+summary{cursor:pointer;list-style:none;font-weight:600;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;color:var(--lime);transition:transform .25s;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);padding-bottom:18px;font-size:.95rem}
+
+footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area-inset-bottom));color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+footer nav{display:flex;gap:22px;flex-wrap:wrap}
+footer a:hover{color:var(--lime)}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:12px}
+
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;gap:40px;padding:44px 0 36px;text-align:center}
+  .lead{margin-inline:auto}.cta,.meta{justify-content:center}
+  .stage{order:2}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .card.w3,.card.w2,.card.w4{grid-column:span 2}
+  .steps{grid-template-columns:1fr}
+  .links{display:none}
+  section{padding:52px 0}
+}
+@media(max-width:560px){
+  .wrap{width:calc(100% - 32px)}
+  .nav .wrap{height:60px}
+  .btn{width:100%}
+  .cta{flex-direction:column}
+  .nav-actions .btn{width:auto;min-height:40px;padding:0 16px;font-size:.88rem}
+  .protos{grid-template-columns:1fr}
+  .card{padding:24px}
+  .dl{border-radius:28px}
+  footer .wrap{flex-direction:column;text-align:center}
+  .stat{padding:20px 12px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <a href="#" class="brand">
-        <img src="assets/logo.svg" alt="Carbon Logo" />
-        <span class="brand-title">Carbon VPN</span>
-        <span class="version-pill">v1.0.0</span>
-      </a>
-      <div class="nav-links">
-        <a href="https://github.com/sinamp00/Carbon" target="_blank" class="btn btn-secondary">GitHub</a>
-        <a href="https://t.me/Sina_mp_VPNbot" target="_blank" class="btn btn-primary">تلگرام</a>
-      </div>
-    </header>
 
-    <section class="hero">
-      <div class="eyebrow">⚡ نسخهٔ رسمی 1.0.0 برای اندروید منتشر شد</div>
-      <h1>عبور هوشمند از فیلترینگ با <span>کربن (Carbon)</span></h1>
-      <p>
-        مجهز به 10 موتور ضد فیلتر اختصاصی بر پایهٔ مسک HTTP/2، لنترن آلمان، گول وارپ، آرگو فالکن و تانل‌های سرورلس، همراه با قفل سخت‌افزاری ECDSA و به‌روزرسانی خودکار درون‌برنامه‌ای.
-      </p>
-      <div class="hero-actions">
-        <a href="https://github.com/sinamp00/Carbon/releases/latest/download/carbon-1.0.0-arm64-v8a-release.apk" class="btn btn-primary">
-          📥 دانلود مستقیم APK (نسخه 1.0.0)
-        </a>
-        <a href="https://t.me/Sina_mp_VPNbot" target="_blank" class="btn btn-secondary">
-          🔑 دریافت کلید اشتراک در تلگرام
-        </a>
-        <a href="https://github.com/sinamp00/Carbon/releases/latest" target="_blank" class="btn btn-secondary">
-          📦 صفحهٔ انتشار در GitHub
-        </a>
-      </div>
-
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-num">10</div>
-          <div class="stat-label">پروتکل اختصاصی ضد فیلتر (DPI Bypass)</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">ECDSA P-256</div>
-          <div class="stat-label">قفل سخت‌افزاری ضد کرک و ضد دستکاری</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">120 Hz</div>
-          <div class="stat-label">رابط کاربری فوق‌روان Material 3 Expressive</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">Auto OTA</div>
-          <div class="stat-label">به‌روزرسانی خودکار مستقیم از GitHub</div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">🌐 10 پروتکل نسل جدید کربن</h2>
-      <p class="section-sub">طراحی‌شده برای پایداری حداکثری روی تمامی اپراتورهای همراه و اینترنت‌های خانگی</p>
-
-      <div class="protocols-grid">
-        <div class="proto-card">
-          <div class="flag-box">🇳🇱</div>
-          <div>
-            <div class="proto-head">
-              <span class="proto-name">مسک توربو · MASQUE Turbo</span>
-              <span class="proto-badge">MASQUE H2</span>
-            </div>
-            <p class="proto-desc">موتور اصلی مسک با تکه‌تکه‌سازی هدر TLS و اسکنر توربو</p>
-          </div>
-        </div>
-
-        <div class="proto-card">
-          <div class="flag-box">🇫🇮</div>
-          <div>
-            <div class="proto-head">
-              <span class="proto-name">مسک پایتون · MASQUE Python</span>
-              <span class="proto-badge">PYTHON</span>
-            </div>
-            <p class="proto-desc">شبیه‌سازی اثرانگشت پایتون برای عبور از فیلترینگ هوشمند اپراتورها</p>
-          </div>
-        </div>
-
-        <div class="proto-card">
-          <div class="flag-box">🇨🇭</div>
-          <div>
-            <div class="proto-head">
-              <span class="proto-name">تونل دولایه · Dual Tunnel</span>
-              <span class="proto-badge">DUAL HOP</span>
-            </div>
-            <p class="proto-desc">دو لایه تونل تو در توی کلودفلر برای پایداری و امنیت دوچندان</p>
-          </div>
-        </div>
-
-        <div class="proto-card">
-          <div class="flag-box">🇺🇸</div>
-          <div>
-            <div class="proto-head">
-              <span class="proto-name">گول وارپ · Gool WARP</span>
-              <span class="proto-badge">GOOL</span>
-            </div>
-            <p class="proto-desc">کپسوله‌سازی وایرگارد داخل مسک؛ عالی برای اینستاگرام و یوتیوب</p>
-          </div>
-        </div>
-
-        <div class="proto-card">
-          <div class="flag-box">🇩🇪</div>
-          <div>
-            <div class="proto-head">
-              <span class="proto-name">لنترن آلمان · Lantern Edge</span>
-              <span class="proto-badge">LANTERN</span>
-            </div>
-            <p class="proto-desc">موتور رادیانس لنترن با اتصال مستقیم به سرورهای فرانکفورت</p>
-          </div>
-        </div>
-
-        <div class="proto-card">
-          <div class="flag-box">🇫🇷</div>
-          <div>
-            <div class="proto-head">
-              <span class="proto-name">آرگو فالکن · Argo Falcon</span>
-              <span class="proto-badge">ARGO</span>
-            </div>
-            <p class="proto-desc">سیستم پل‌های عمومی آرگو و فالکن با سوییچ هوشمند پشتیبان</p>
-          </div>
-        </div>
-
-        <div class="proto-card">
-          <div class="flag-box">🇸🇪</div>
-          <div>
-            <div class="proto-head">
-              <span class="proto-name">سرورلس گوگل · Serverless TLS</span>
-              <span class="proto-badge">TLS LEAD</span>
-            </div>
-            <p class="proto-desc">اتصال مستقیم بدون سرور با خرد کردن بسته‌های TLS و دی‌ان‌اس گوگل</p>
-          </div>
-        </div>
-
-        <div class="proto-card">
-          <div class="flag-box">🇬🇧</div>
-          <div>
-            <div class="proto-head">
-              <span class="proto-name">شکاف دامنه · SNI Split</span>
-              <span class="proto-badge">SNI SPLIT</span>
-            </div>
-            <p class="proto-desc">عبور مستقیم از فیلترینگ با تکنیک برش نام دامنه و دی‌ان‌اس ادگارد</p>
-          </div>
-        </div>
-
-        <div class="proto-card">
-          <div class="flag-box">🇦🇹</div>
-          <div>
-            <div class="proto-head">
-              <span class="proto-name">مسک کوییک · MASQUE QUIC</span>
-              <span class="proto-badge">QUIC H3</span>
-            </div>
-            <p class="proto-desc">تونل نسل سوم کلودفلر بر پایهٔ کوییک؛ مناسب اینترنت خانگی و فیبر نوری</p>
-          </div>
-        </div>
-
-        <div class="proto-card">
-          <div class="flag-box">🇨🇦</div>
-          <div>
-            <div class="proto-head">
-              <span class="proto-name">وایرگارد نویز · WireGuard Noise</span>
-              <span class="proto-badge">WARP WG</span>
-            </div>
-            <p class="proto-desc">پروتکل وایرگارد با تزریق پکت‌های نویز ضد فیلتر و اسکنر عمیق</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="features-grid">
-      <div class="feature-box">
-        <h3>🛡️ امنیت و قفل سخت‌افزاری ضد کرک</h3>
-        <p>تمامی کلیدهای اشتراک با امضای دیجیتال ECDSA NIST P-256 به شناسهٔ یکتای دستگاه (HWID) متصل می‌شوند و هستهٔ VPN در برابر هرگونه ابزار هوک، کرک و دستکاری زمان محافظت شده است.</p>
-      </div>
-      <div class="feature-box">
-        <h3>🚀 سرعت بالا بدون افت در اینستاگرام و یوتیوب</h3>
-        <p>تنظیم خودکار MTU روی 1280 بایت و بهینه‌سازی تانل بومی برای جلوگیری از قفل شدن استریم‌های ویدیویی، ریلز اینستاگرام و تماس‌های تصویری.</p>
-      </div>
-      <div class="feature-box">
-        <h3>🔄 آپدیت خودکار درون‌برنامه‌ای</h3>
-        <p>با انتشار هر نسخهٔ جدید در مخزن رسمی گیت‌هاب کربن، برنامه به‌صورت خودکار آپدیت را شناسایی کرده و با یک لمس دانلود و نصب می‌کند.</p>
-      </div>
-    </section>
-
-    <footer>
-      <p>Carbon VPN · v1.0.0 — تمامی حقوق محفوظ است.</p>
-      <p style="margin-top: 10px;">
-        <a href="https://github.com/sinamp00/Carbon" target="_blank">GitHub</a> ·
-        <a href="https://t.me/Sina_mp_VPNbot" target="_blank">Telegram</a> ·
-        <a href="https://github.com/sinamp00/Carbon/releases/latest" target="_blank">Releases</a>
-      </p>
-    </footer>
+<header class="nav">
+  <div class="wrap">
+    <a href="#" class="brand" aria-label="Carbon"><img src="assets/logo.svg" alt="" width="38" height="38"><span>Carbon</span><span class="ver ltr" id="verPill">v1.0.0</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="#protocols"><span class="fa">پروتکل‌ها</span><span class="en">Protocols</span></a>
+      <a href="#features"><span class="fa">امکانات</span><span class="en">Features</span></a>
+      <a href="#start"><span class="fa">شروع</span><span class="en">Get started</span></a>
+      <a href="#faq"><span class="fa">سؤالات</span><span class="en">FAQ</span></a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang" id="langBtn" type="button" aria-label="Language"><span class="fa">EN</span><span class="en">فارسی</span></button>
+      <a class="btn btn-primary dlLink" href="https://github.com/sinamp00/Carbon/releases/latest"><span class="fa">دانلود</span><span class="en">Download</span></a>
+    </div>
   </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <div class="pill rv"><i></i><span class="fa">نسخهٔ رسمی ۱.۰ برای اندروید منتشر شد</span><span class="en">Official 1.0 is out for Android</span></div>
+      <h1 class="rv">
+        <span class="fa">عبور هوشمند از فیلترینگ، با <em>کربن</em></span>
+        <span class="en">Smart DPI bypass, built as <em>Carbon</em></span>
+      </h1>
+      <p class="lead rv">
+        <span class="fa">ده پروتکل ضد فیلتر، قفل سخت‌افزاری ضد کرک و رابط روان ۱۲۰ هرتزی؛ همه در یک اپ سبک و بدون تبلیغ.</span>
+        <span class="en">Ten anti-censorship protocols, a hardware-bound anti-crack license and a silky 120&nbsp;Hz interface, in one light, ad-free app.</span>
+      </p>
+      <div class="cta rv">
+        <a class="btn btn-primary dlLink" href="https://github.com/sinamp00/Carbon/releases/latest/download/carbon-1.0.0-arm64-v8a-release.apk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
+          <span class="fa">دانلود APK</span><span class="en">Download APK</span>
+        </a>
+        <a class="btn btn-ghost" href="https://t.me/Sina_mp_VPNbot" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L3 10.5l6 2.5 2.5 6L21 3zM9 13l5-4"/></svg>
+          <span class="fa">دریافت اشتراک</span><span class="en">Get a license</span>
+        </a>
+      </div>
+      <div class="meta rv">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span class="fa">اندروید ۸ و بالاتر</span><span class="en">Android 8.0+</span></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span class="fa">بدون تبلیغ</span><span class="en">No ads</span></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span class="fa">آپدیت خودکار</span><span class="en">Auto updates</span></span>
+      </div>
+    </div>
+
+    <div class="stage rv" aria-hidden="true">
+      <div class="phone">
+        <div class="screen">
+          <div class="sb"><span>9:41</span><span>5G ▮▮▮</span></div>
+          <div class="app-top"><img src="assets/logo.svg" alt="">Carbon</div>
+          <div class="orb-wrap">
+            <div class="orb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 3v9M6.3 6.8a8 8 0 1011.4 0"/></svg></div>
+          </div>
+          <div class="status">Connected</div>
+          <div class="srv">
+            <img src="https://flagcdn.com/w80/nl.png" alt="">
+            <div><b>MASQUE Turbo</b><small>MASQUE H2</small></div>
+            <span class="ms">48 ms</span>
+          </div>
+          <div class="spd">
+            <div>↓ Download<strong>12.4 <small>MB/s</small></strong></div>
+            <div>↑ Upload<strong>3.1 <small>MB/s</small></strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats rv">
+    <div class="stat"><b class="ltr">10</b><span class="fa">پروتکل ضد فیلتر</span><span class="en">Bypass protocols</span></div>
+    <div class="stat"><b class="ltr">ECDSA</b><span class="fa">لایسنس بسته به دستگاه</span><span class="en">Device-bound license</span></div>
+    <div class="stat"><b class="ltr">120 Hz</b><span class="fa">رابط کاربری روان</span><span class="en">Fluid interface</span></div>
+    <div class="stat"><b class="ltr">OTA</b><span class="fa">آپدیت درون‌برنامه‌ای</span><span class="en">In-app updates</span></div>
+  </div>
+</div>
+
+<section id="protocols">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Protocols</div>
+      <h2><span class="fa">ده پروتکل، یک اپ</span><span class="en">Ten protocols, one app</span></h2>
+      <p><span class="fa">هر پروتکل برای یک نوع محدودیت طراحی شده؛ اگر یکی روی اپراتور شما کند بود، دیگری را امتحان کنید.</span><span class="en">Each one targets a different kind of throttling. If one is slow on your carrier, simply switch to another.</span></p>
+    </div>
+    <div class="protos">
+      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/nl.png" alt="NL" loading="lazy"><div><h3><span class="fa">مسک توربو</span><span class="en">MASQUE Turbo</span></h3><span class="badge">MASQUE H2</span><p><span class="fa">موتور اصلی مسک با تکه‌تکه‌سازی هدر TLS و اسکنر توربو.</span><span class="en">Primary MASQUE HTTP/2 engine with TLS fragmentation and turbo scanner.</span></p></div></article>
+      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/fi.png" alt="FI" loading="lazy"><div><h3><span class="fa">مسک پایتون</span><span class="en">MASQUE Python</span></h3><span class="badge">PYTHON</span><p><span class="fa">شبیه‌سازی اثرانگشت پایتون برای عبور از فیلترینگ هوشمند.</span><span class="en">Python TLS fingerprint shaping to slip past deep packet inspection.</span></p></div></article>
+      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/ch.png" alt="CH" loading="lazy"><div><h3><span class="fa">تونل دولایه</span><span class="en">Dual Tunnel</span></h3><span class="badge">DUAL HOP</span><p><span class="fa">دو لایه تونل تودرتو برای پایداری و امنیت بیشتر.</span><span class="en">Two nested hops for extra stability and privacy.</span></p></div></article>
+      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/us.png" alt="US" loading="lazy"><div><h3><span class="fa">گول وارپ</span><span class="en">Gool WARP</span></h3><span class="badge">GOOL</span><p><span class="fa">وایرگارد داخل مسک؛ مناسب اینستاگرام و یوتیوب.</span><span class="en">WireGuard wrapped in MASQUE. Great for Instagram and YouTube.</span></p></div></article>
+      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/de.png" alt="DE" loading="lazy"><div><h3><span class="fa">لنترن آلمان</span><span class="en">Lantern Edge</span></h3><span class="badge">LANTERN</span><p><span class="fa">موتور رادیانس لنترن با اتصال مستقیم به فرانکفورت.</span><span class="en">Lantern Radiance engine with direct Frankfurt edges.</span></p></div></article>
+      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/fr.png" alt="FR" loading="lazy"><div><h3><span class="fa">آرگو فالکن</span><span class="en">Argo Falcon</span></h3><span class="badge">ARGO</span><p><span class="fa">پل‌های عمومی آرگو و فالکن با سوئیچ هوشمند پشتیبان.</span><span class="en">Public Argo bridges and Falcon handshake with smart fallback.</span></p></div></article>
+      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/se.png" alt="SE" loading="lazy"><div><h3><span class="fa">سرورلس گوگل</span><span class="en">Serverless TLS</span></h3><span class="badge">TLS LEAD</span><p><span class="fa">بدون سرور واسط؛ خرد کردن TLS و دی‌ان‌اس امن گوگل.</span><span class="en">No middle server: TLS fragmentation plus Google secure DNS.</span></p></div></article>
+      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/gb.png" alt="GB" loading="lazy"><div><h3><span class="fa">شکاف دامنه</span><span class="en">SNI Split</span></h3><span class="badge">SNI SPLIT</span><p><span class="fa">برش نام دامنه با دی‌ان‌اس ادگارد برای عبور مستقیم.</span><span class="en">Domain-name splitting with AdGuard encrypted DNS.</span></p></div></article>
+      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/at.png" alt="AT" loading="lazy"><div><h3><span class="fa">مسک کوییک</span><span class="en">MASQUE QUIC</span></h3><span class="badge">QUIC H3</span><p><span class="fa">نسل سوم بر پایهٔ کوییک؛ مناسب اینترنت خانگی و فیبر.</span><span class="en">HTTP/3 over QUIC. Ideal for home broadband and fiber.</span></p></div></article>
+      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/ca.png" alt="CA" loading="lazy"><div><h3><span class="fa">وایرگارد نویز</span><span class="en">WireGuard Noise</span></h3><span class="badge">WARP WG</span><p><span class="fa">وایرگارد با تزریق پکت نویز و اسکنر عمیق.</span><span class="en">WireGuard with noise injection and a deep endpoint scanner.</span></p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Features</div>
+      <h2><span class="fa">ساده برای شما، سخت برای دیگران</span><span class="en">Easy for you, hard to tamper with</span></h2>
+    </div>
+    <div class="bento">
+      <div class="card w4 rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3><span class="fa">لایسنس ضد کرک، بسته به دستگاه</span><span class="en">Anti-crack, device-bound license</span></h3>
+        <p><span class="fa">هر کلید با امضای ECDSA P-256 به شناسهٔ سخت‌افزاری همان گوشی قفل می‌شود. دیباگر، Frida، Xposed و دستکاری ساعت شناسایی و مسدود می‌شوند.</span><span class="en">Every key is signed with ECDSA P-256 and locked to that phone’s hardware ID. Debuggers, Frida, Xposed and clock tampering are detected and blocked.</span></p>
+        <div class="code"><span class="k">CARBON</span>-DEV·XXXX·XXXX-30D-<span class="k">ECDSA</span>…</div>
+      </div>
+      <div class="card w2 rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+        <h3><span class="fa">سرعت و روانی</span><span class="en">Fast &amp; fluid</span></h3>
+        <p><span class="fa">رابط ۱۲۰ هرتزی و سوئیچ بدون لگ بین صفحه‌ها.</span><span class="en">120&nbsp;Hz UI and lag-free page transitions.</span></p>
+      </div>
+      <div class="card w2 rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-3-6.7M21 4v5h-5"/></svg></div>
+        <h3><span class="fa">آپدیت خودکار</span><span class="en">Auto updates</span></h3>
+        <p><span class="fa">نسخهٔ جدید را از همین اپ دانلود و نصب کنید.</span><span class="en">Download and install new versions from inside the app.</span></p>
+      </div>
+      <div class="card w2 rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+        <h3><span class="fa">فارسی و انگلیسی</span><span class="en">Persian &amp; English</span></h3>
+        <p><span class="fa">رابط کامل دوزبانه با پرچم هر پروتکل.</span><span class="en">Fully bilingual UI with a flag on every protocol.</span></p>
+      </div>
+      <div class="card w2 rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+        <h3><span class="fa">سبک و شیک</span><span class="en">Light &amp; sleek</span></h3>
+        <p><span class="fa">پوسته‌های رنگی و طراحی Material 3.</span><span class="en">Colour themes and Material 3 design.</span></p>
+      </div>
+      <div class="card w2 rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+        <h3><span class="fa">بدون تنظیمات پیچیده</span><span class="en">Zero setup</span></h3>
+        <p><span class="fa">لایسنس را فعال کنید و یک ضربه بزنید.</span><span class="en">Activate your license and tap once.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="start">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Get started</div>
+      <h2><span class="fa">در سه قدم وصل شوید</span><span class="en">Connected in three steps</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3><span class="fa">نصب کنید</span><span class="en">Install</span></h3><p><span class="fa">فایل APK را دانلود و نصب کنید (نصب از منبع ناشناس را مجاز کنید).</span><span class="en">Download the APK and install it (allow installs from this source).</span></p></div>
+      <div class="step rv"><h3><span class="fa">اشتراک بگیرید</span><span class="en">Get a key</span></h3><p><span class="fa">در تنظیمات ← حساب کاربری، شناسهٔ دستگاه را کپی و در ربات تلگرام بفرستید.</span><span class="en">In Settings → Account copy your device ID and send it to the Telegram bot.</span></p></div>
+      <div class="step rv"><h3><span class="fa">وصل شوید</span><span class="en">Connect</span></h3><p><span class="fa">کلید را وارد کنید، یک پروتکل انتخاب کنید و دکمهٔ اتصال را بزنید.</span><span class="en">Enter the key, pick a protocol and hit the power button.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="dl rv">
+      <img src="assets/logo.svg" alt="Carbon" width="84" height="84">
+      <h2><span class="fa">کربن را همین حالا بگیرید</span><span class="en">Get Carbon now</span></h2>
+      <p><span class="fa">نسخهٔ <span class="ltr" id="verText">1.0.0</span> برای اندروید (ARM64). نسخه‌های بعدی خودکار داخل اپ به شما اعلام می‌شود.</span><span class="en">Version <span class="ltr" id="verText2">1.0.0</span> for Android (ARM64). Future releases are announced inside the app.</span></p>
+      <div class="cta">
+        <a class="btn btn-primary dlLink" id="apkBtn" href="https://github.com/sinamp00/Carbon/releases/latest/download/carbon-1.0.0-arm64-v8a-release.apk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
+          <span class="fa">دانلود مستقیم APK</span><span class="en">Direct APK download</span>
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/sinamp00/Carbon" target="_blank" rel="noopener"><span>GitHub</span></a>
+      </div>
+      <div class="note"><span class="fa">دانلود از گیت‌هاب رسمی پروژه انجام می‌شود.</span><span class="en">Downloads are served from the project’s official GitHub.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">FAQ</div><h2><span class="fa">سؤالات متداول</span><span class="en">Frequently asked</span></h2></div>
+    <div class="faq">
+      <details class="rv"><summary><span class="fa">کدام پروتکل را انتخاب کنم؟</span><span class="en">Which protocol should I pick?</span></summary><p><span class="fa">با «مسک توربو» شروع کنید. اگر روی اپراتور شما کند بود، «گول وارپ» یا «لنترن آلمان» را امتحان کنید.</span><span class="en">Start with MASQUE Turbo. If it is slow on your carrier, try Gool WARP or Lantern Edge.</span></p></details>
+      <details class="rv"><summary><span class="fa">کلید اشتراک چطور فعال می‌شود؟</span><span class="en">How do I activate a key?</span></summary><p><span class="fa">از تنظیمات ← حساب کاربری، شناسهٔ دستگاه (DEV-XXXX-XXXX) را به ربات تلگرام بدهید و کلید دریافتی را همان‌جا وارد کنید. هر کلید فقط روی همان دستگاه کار می‌کند.</span><span class="en">From Settings → Account give your device ID (DEV-XXXX-XXXX) to the Telegram bot and paste the key you receive. Each key works only on that device.</span></p></details>
+      <details class="rv"><summary><span class="fa">آپدیت‌ها چطور می‌آیند؟</span><span class="en">How do updates work?</span></summary><p><span class="fa">اپ نسخه‌های جدید گیت‌هاب را بررسی می‌کند و از بخش تنظیمات ← به‌روزرسانی می‌توانید دانلود و نصب کنید.</span><span class="en">The app checks GitHub releases; download and install from Settings → Updates.</span></p></details>
+      <details class="rv"><summary><span class="fa">اندروید چند لازم است؟</span><span class="en">Which Android versions are supported?</span></summary><p><span class="fa">اندروید ۸٫۰ (API 26) و بالاتر.</span><span class="en">Android 8.0 (API 26) and above.</span></p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><img src="assets/logo.svg" alt="" width="34" height="34"><span>Carbon</span></div>
+    <nav>
+      <a href="https://github.com/sinamp00/Carbon" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://t.me/Sina_mp_VPNbot" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://github.com/sinamp00/Carbon/releases" target="_blank" rel="noopener">Releases</a>
+    </nav>
+    <span>© Carbon <span class="ltr">2026</span></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  var saved=null;try{saved=localStorage.getItem('carbon-lang')}catch(e){}
+  function setLang(l){html.lang=l;html.dir=l==='fa'?'rtl':'ltr';try{localStorage.setItem('carbon-lang',l)}catch(e){}}
+  if(saved==='en'||saved==='fa')setLang(saved);
+  else if(!/^fa/i.test(navigator.language||''))setLang('en');
+  document.getElementById('langBtn').addEventListener('click',function(){setLang(html.lang==='fa'?'en':'fa')});
+
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el,i){el.style.transitionDelay=(i%4)*60+'ms';io.observe(el)});
+  }else els.forEach(function(el){el.classList.add('in')});
+
+  fetch('https://api.github.com/repos/sinamp00/Carbon/releases/latest').then(function(r){return r.ok?r.json():null}).then(function(rel){
+    if(!rel)return;
+    var v=(rel.tag_name||'').replace(/^v/i,'');
+    var apk=(rel.assets||[]).filter(function(a){return /arm64/i.test(a.name)&&/\.apk$/i.test(a.name)})[0]||(rel.assets||[]).filter(function(a){return /\.apk$/i.test(a.name)})[0];
+    if(v){['verPill'].forEach(function(id){var n=document.getElementById(id);if(n)n.textContent='v'+v});
+      ['verText','verText2'].forEach(function(id){var n=document.getElementById(id);if(n)n.textContent=v})}
+    if(apk)document.querySelectorAll('a.dlLink').forEach(function(a){if(a.href.indexOf('/releases/latest')>-1&&!a.classList.contains('nav-dl')||a.id==='apkBtn')a.href=apk.browser_download_url});
+  }).catch(function(){});
+})();
+</script>
 </body>
 </html>
