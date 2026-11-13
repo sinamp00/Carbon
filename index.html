@@ -1,437 +1,695 @@
 ﻿<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Carbon — فیلترشکن هوشمند اندروید | Anti-DPI VPN for Android</title>
-<meta name="description" content="Carbon؛ کلاینت ضد فیلترینگ برای اندروید با 10 پروتکل اختصاصی، قفل سخت‌افزاری ECDSA و به‌روزرسانی خودکار. | Anti-DPI VPN client for Android with 10 protocols.">
-<meta name="theme-color" content="#0a0c10">
-<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Carbon VPN">
-<meta property="og:description" content="Anti-DPI VPN for Android · 10 protocols · hardware-bound license · in-app updates">
-<meta property="og:image" content="https://sinamp00.github.io/Carbon/assets/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#08090c; --bg2:#0d0f14; --surface:#12151c; --surface2:#181c25; --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
-  --text:#f4f6f9; --muted:#8f99ab; --lime:#d8ff6b; --lime-ink:#0f1604; --blue:#7dd3fc; --radius:28px;
-  --font:'Geist','Vazirmatn',system-ui,-apple-system,'Segoe UI',sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.7;overflow-x:hidden;min-height:100vh;
-  background-image:radial-gradient(900px 500px at 80% -10%,rgba(216,255,107,.10),transparent 60%),radial-gradient(700px 500px at 0% 20%,rgba(125,211,252,.07),transparent 60%)}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-html[lang=fa] .en{display:none!important}
-html[lang=en] .fa{display:none!important}
-.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
-.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#09080d" />
+  <title data-i18n="meta.title">Carbon VPN · کلاینت ضدسانسور و هسته ترکیبی اندروید</title>
+  <meta
+    name="description"
+    data-i18n-content="meta.description"
+    content="کلاینت اندروید کربن با 10 موتور ضدسانسور بومی، هسته ترکیبی sing-box و Xray، مسیریابی دقیق، پروفایل رمزنگاری‌شده .lumen و لایسنس سخت‌افزاری آفلاین."
+  />
 
-/* nav */
-.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);background:rgba(8,9,12,.72);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
-.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.15rem;letter-spacing:-.01em}
-.brand img{width:38px;height:38px;border-radius:11px;box-shadow:0 0 0 1px var(--line2)}
-.ver{font-size:.72rem;font-weight:600;color:var(--lime);border:1px solid rgba(216,255,107,.3);background:rgba(216,255,107,.08);padding:2px 9px;border-radius:99px}
-.links{display:flex;gap:26px;color:var(--muted);font-size:.95rem;font-weight:500}
-.links a:hover{color:var(--text)}
-.nav-actions{display:flex;align-items:center;gap:10px}
-.lang{border:1px solid var(--line2);background:var(--surface);color:var(--text);font:inherit;font-weight:600;font-size:.85rem;padding:8px 14px;border-radius:99px;cursor:pointer;min-height:40px}
-.lang:hover{background:var(--surface2)}
+  <link rel="canonical" href="https://sinamp00.github.io/Carbon/" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="apple-touch-icon" href="assets/icon-512.png" />
 
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:99px;font-weight:700;font-size:1rem;cursor:pointer;border:1px solid transparent;transition:transform .2s,box-shadow .2s,background .2s;font-family:inherit}
-.btn:hover{transform:translateY(-2px)}
-.btn:active{transform:scale(.98)}
-.btn-primary{background:var(--lime);color:var(--lime-ink);box-shadow:0 10px 36px -8px rgba(216,255,107,.45)}
-.btn-ghost{background:var(--surface);border-color:var(--line2);color:var(--text)}
-.btn-ghost:hover{background:var(--surface2)}
-.btn svg{width:20px;height:20px;flex:none}
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sinamp00.github.io/Carbon/" />
+  <meta property="og:title" content="Carbon VPN · کلاینت ضدسانسور و هسته ترکیبی اندروید" />
+  <meta
+    property="og:description"
+    content="10 موتور ضدسانسور بومی، هسته ترکیبی sing-box و Xray، تفکیک اپلیکیشن و لایسنس آفلاین ECDSA P-256 در رابط Material 3 Expressive."
+  />
+  <meta property="og:image" content="https://sinamp00.github.io/Carbon/assets/og-image.png" />
 
-/* hero */
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:72px 0 56px}
-.pill{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border:1px solid var(--line2);border-radius:99px;background:var(--surface);color:var(--muted);font-size:.86rem;margin-bottom:24px}
-.pill i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(216,255,107,.6);animation:ping 2s infinite}
-@keyframes ping{70%{box-shadow:0 0 0 10px rgba(216,255,107,0)}100%{box-shadow:0 0 0 0 rgba(216,255,107,0)}}
-h1{font-size:clamp(2.3rem,6.2vw,4.4rem);line-height:1.12;font-weight:800;letter-spacing:-.03em;margin-bottom:22px;text-wrap:balance}
-h1 em{font-style:normal;background:linear-gradient(120deg,var(--lime),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{color:var(--muted);font-size:clamp(1rem,2.4vw,1.2rem);max-width:560px;margin-bottom:34px}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;color:var(--muted);font-size:.88rem}
-.meta span{display:inline-flex;align-items:center;gap:8px}
-.meta svg{width:16px;height:16px;color:var(--lime)}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Carbon VPN" />
+  <meta name="twitter:description" content="Native Android anti-DPI & hybrid core suite with Material 3 Expressive UI and offline ECDSA licensing." />
+  <meta name="twitter:image" content="https://sinamp00.github.io/Carbon/assets/og-image.png" />
 
-/* phone */
-.stage{position:relative;display:flex;justify-content:center}
-.stage::before{content:"";position:absolute;inset:8% 6%;background:radial-gradient(closest-side,rgba(216,255,107,.22),transparent 70%);filter:blur(30px);z-index:0}
-.phone{position:relative;z-index:1;width:min(300px,78vw);aspect-ratio:9/19;background:#000;border-radius:44px;padding:9px;border:1px solid var(--line2);box-shadow:0 40px 80px -20px rgba(0,0,0,.8),inset 0 0 0 2px #1b1e26;transform:rotate(-2deg);animation:float 7s ease-in-out infinite}
-@keyframes float{50%{transform:rotate(-2deg) translateY(-10px)}}
-.screen{height:100%;border-radius:36px;background:linear-gradient(180deg,#14171f,#0a0b0f);padding:18px 16px;display:flex;flex-direction:column;gap:14px;overflow:hidden;direction:ltr;text-align:left}
-.sb{display:flex;justify-content:space-between;font-size:.62rem;color:#9aa3b2;font-weight:600}
-.app-top{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem}
-.app-top img{width:24px;height:24px;border-radius:7px}
-.orb-wrap{flex:1;display:grid;place-items:center;position:relative;min-height:0}
-.orb{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#e9ffa6,#c4f04a 55%,#9bd42a);box-shadow:0 0 0 10px rgba(216,255,107,.1),0 0 0 22px rgba(216,255,107,.05),0 20px 50px -8px rgba(216,255,107,.5);position:relative}
-.orb::after{content:"";position:absolute;inset:-14px;border-radius:50%;border:1.5px solid rgba(216,255,107,.35);animation:ring 2.6s ease-out infinite}
-@keyframes ring{from{transform:scale(.9);opacity:1}to{transform:scale(1.35);opacity:0}}
-.orb svg{width:46px;height:46px;color:var(--lime-ink)}
-.status{text-align:center;font-size:.72rem;color:var(--lime);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:-4px}
-.srv{display:flex;align-items:center;gap:10px;background:#1b2030;border-radius:18px;padding:10px 12px}
-.srv img{width:30px;height:22px;border-radius:5px;object-fit:cover;flex:none}
-.srv b{display:block;font-size:.78rem;line-height:1.25}
-.srv small{color:#8f99ab;font-size:.64rem}
-.srv .ms{margin-inline-start:auto;font-size:.66rem;font-weight:700;color:var(--lime);background:rgba(216,255,107,.12);padding:3px 8px;border-radius:8px}
-.spd{display:grid;grid-template-columns:1.1fr .9fr;gap:8px}
-.spd div{border-radius:18px;padding:10px 12px;font-size:.6rem;color:#aab3c2}
-.spd div:first-child{background:#1c3347}.spd div:last-child{background:#2a2646}
-.spd strong{display:block;font-size:1.25rem;color:#fff;letter-spacing:-.03em;line-height:1.2}
-
-/* sections */
-section{padding:72px 0}
-.sec-head{text-align:center;max-width:680px;margin:0 auto 44px}
-.eyebrow{color:var(--lime);font-weight:700;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
-h2{font-size:clamp(1.7rem,4.4vw,2.7rem);font-weight:800;letter-spacing:-.025em;line-height:1.2;margin-bottom:14px;text-wrap:balance}
-.sec-head p{color:var(--muted);font-size:1.05rem}
-
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 20px;text-align:center}
-.stat b{display:block;font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:800;color:var(--lime);letter-spacing:-.03em;line-height:1.2}
-.stat span{color:var(--muted);font-size:.9rem}
-
-.protos{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
-.proto{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:20px;transition:border-color .25s,transform .25s,background .25s}
-.proto:hover{border-color:rgba(216,255,107,.4);transform:translateY(-4px);background:var(--surface2)}
-.flag{width:48px;height:36px;border-radius:8px;object-fit:cover;flex:none;box-shadow:0 0 0 1px var(--line2);margin-top:2px}
-.proto h3{font-size:1.04rem;font-weight:700;line-height:1.4}
-.proto h3 small{display:block;color:var(--muted);font-weight:500;font-size:.8rem;direction:ltr;text-align:start}
-.badge{display:inline-block;margin:8px 0 6px;font-size:.68rem;font-weight:700;letter-spacing:.06em;color:var(--blue);background:rgba(125,211,252,.1);padding:2px 10px;border-radius:99px;direction:ltr}
-.proto p{color:var(--muted);font-size:.88rem;line-height:1.65}
-
-.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-.card{background:linear-gradient(180deg,var(--surface),var(--bg2));border:1px solid var(--line);border-radius:var(--radius);padding:30px;position:relative;overflow:hidden}
-.card.w3{grid-column:span 3}.card.w2{grid-column:span 2}.card.w4{grid-column:span 4}
-.card .ic{width:46px;height:46px;border-radius:15px;background:rgba(216,255,107,.1);color:var(--lime);display:grid;place-items:center;margin-bottom:18px}
-.card .ic svg{width:24px;height:24px}
-.card h3{font-size:1.2rem;margin-bottom:8px;font-weight:700}
-.card p{color:var(--muted);font-size:.95rem}
-.code{margin-top:18px;direction:ltr;text-align:left;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;background:#0a0c10;border:1px solid var(--line);border-radius:16px;padding:14px 16px;color:#b7c0cf;overflow-x:auto;white-space:nowrap}
-.code .k{color:var(--lime)}
-
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
-.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px;counter-increment:s}
-.step::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--lime);color:var(--lime-ink);font-weight:800;margin-bottom:18px}
-.step h3{margin-bottom:8px;font-size:1.1rem}
-.step p{color:var(--muted);font-size:.93rem}
-
-.dl{background:radial-gradient(600px 300px at 50% 0,rgba(216,255,107,.14),transparent 70%),var(--surface);border:1px solid var(--line2);border-radius:36px;padding:clamp(32px,6vw,64px);text-align:center}
-.dl img{width:84px;height:84px;border-radius:24px;margin:0 auto 22px;box-shadow:0 20px 50px -10px rgba(0,0,0,.7),0 0 0 1px var(--line2)}
-.dl p{color:var(--muted);max-width:520px;margin:0 auto 28px}
-.dl .cta{justify-content:center}
-.note{margin-top:20px;font-size:.82rem;color:var(--muted)}
-
-.faq{max-width:780px;margin:0 auto;display:grid;gap:10px}
-.chart-box{max-width:820px;margin:28px auto 0;border-radius:22px;overflow:hidden;border:1px solid var(--line2);background:var(--surface);box-shadow:0 20px 50px -10px rgba(0,0,0,.6);transition:transform .3s ease,box-shadow .3s ease}
-.chart-box:hover{transform:translateY(-3px);box-shadow:0 26px 60px -10px rgba(0,0,0,.8)}
-.chart-box img{width:100%;height:auto;display:block}
-details{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:4px 22px}
-summary{cursor:pointer;list-style:none;font-weight:600;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-size:1.5rem;color:var(--lime);transition:transform .25s;flex:none}
-details[open] summary::after{transform:rotate(45deg)}
-details p{color:var(--muted);padding-bottom:18px;font-size:.95rem}
-
-footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area-inset-bottom));color:var(--muted);font-size:.9rem}
-footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
-footer nav{display:flex;gap:22px;flex-wrap:wrap}
-.dlcount{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid var(--line2);border-radius:99px;background:var(--surface);color:var(--text)}
-.dlcount[hidden]{display:none}
-.dlcount svg{color:var(--lime)}
-.dlcount b{color:var(--lime);font-weight:700}
-footer a:hover{color:var(--lime)}
-
-.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
-:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:12px}
-
-@media(max-width:960px){
-  .hero{grid-template-columns:1fr;gap:40px;padding:44px 0 36px;text-align:center}
-  .lead{margin-inline:auto}.cta,.meta{justify-content:center}
-  .stage{order:2}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .bento{grid-template-columns:repeat(2,1fr)}
-  .card.w3,.card.w2,.card.w4{grid-column:span 2}
-  .steps{grid-template-columns:1fr}
-  .links{display:none}
-  section{padding:52px 0}
-}
-@media(max-width:560px){
-  .wrap{width:calc(100% - 32px)}
-  .nav .wrap{height:60px}
-  .btn{width:100%}
-  .cta{flex-direction:column}
-  .nav-actions .btn{width:auto;min-height:40px;padding:0 16px;font-size:.88rem}
-  .protos{grid-template-columns:1fr}
-  .card{padding:24px}
-  .dl{border-radius:28px}
-  footer .wrap{flex-direction:column;text-align:center}
-  .stat{padding:20px 12px}
-}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content" data-i18n="nav.skip">پرش به محتوای اصلی</a>
+  <div class="ambient-aura" aria-hidden="true"></div>
 
-<header class="nav">
-  <div class="wrap">
-    <a href="#" class="brand" aria-label="Carbon"><img src="assets/logo.svg" alt="" width="38" height="38"><span>Carbon</span><span class="ver ltr" id="verPill">v1.0.0</span></a>
-    <nav class="links" aria-label="Main">
-      <a href="#protocols"><span class="fa">پروتکل‌ها</span><span class="en">Protocols</span></a>
-      <a href="#features"><span class="fa">امکانات</span><span class="en">Features</span></a>
-      <a href="#start"><span class="fa">شروع</span><span class="en">Get started</span></a>
-      <a href="#analytics"><span class="fa">آمار</span><span class="en">Stats</span></a>
-      <a href="#faq"><span class="fa">سؤالات</span><span class="en">FAQ</span></a>
+  <!-- ======================================================================
+       HEADER (Mirrors Carbon Theme Engine + Brand Lockup)
+       ====================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-lockup" href="#top" aria-label="Carbon Home">
+        <span class="brand-clover" aria-hidden="true">
+          <span class="brand-clover-bg"></span>
+          <svg viewBox="296 255 432 514" fill="currentColor">
+            <path d="M400.93 274.96H636.21L708.02 362.25H400.93V660H708.02L636.21 749.04H315.98V362.25Z" />
+          </svg>
+        </span>
+        <span class="brand-wordmark">Carbon</span>
+        <span class="brand-ver mono" id="header-version-badge">v1.0.0</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a class="nav-link" href="#engines" data-i18n="nav.engines">موتورها</a>
+        <a class="nav-link" href="#stack" data-i18n="nav.stack">مسیریابی و هسته</a>
+        <a class="nav-link" href="#security" data-i18n="nav.security">امنیت و لایسنس</a>
+        <a class="nav-link" href="#download" data-i18n="nav.download">دانلود APK</a>
+      </nav>
+
+      <div class="header-controls">
+        <!-- Carbon Accent Swatches (AccentColorSetting.kt) -->
+        <div class="accent-dots" role="group" aria-label="Accent color">
+          <button type="button" class="accent-dot" data-set-accent="#6937D4" style="background:#6937D4" aria-pressed="true" aria-label="Violet"></button>
+          <button type="button" class="accent-dot" data-set-accent="#3174BF" style="background:#3174BF" aria-pressed="false" aria-label="Blue"></button>
+          <button type="button" class="accent-dot" data-set-accent="#237D70" style="background:#237D70" aria-pressed="false" aria-label="Teal"></button>
+          <button type="button" class="accent-dot" data-set-accent="#22C55E" style="background:#22C55E" aria-pressed="false" aria-label="Green"></button>
+          <button type="button" class="accent-dot" data-set-accent="#F97316" style="background:#F97316" aria-pressed="false" aria-label="Orange"></button>
+          <button type="button" class="accent-dot" data-set-accent="#DB2777" style="background:#DB2777" aria-pressed="false" aria-label="Pink"></button>
+        </div>
+
+        <div class="lang-switch" role="group" aria-label="Language switch">
+          <button type="button" class="lang-btn" data-set-lang="fa" aria-pressed="true">فا</button>
+          <button type="button" class="lang-btn" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <a class="header-cta" href="#download" data-i18n="nav.getApk">دریافت APK</a>
+
+        <button
+          type="button"
+          class="menu-toggle"
+          id="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-drawer"
+          aria-label="Toggle Menu"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <nav class="mobile-drawer-nav" aria-label="Mobile Navigation">
+      <a href="#engines" data-drawer-link data-i18n="nav.engines">موتورها</a>
+      <a href="#stack" data-drawer-link data-i18n="nav.stack">مسیریابی و هسته</a>
+      <a href="#security" data-drawer-link data-i18n="nav.security">امنیت و لایسنس</a>
+      <a href="#download" data-drawer-link data-i18n="nav.download">دانلود APK</a>
+      <a href="https://t.me/Sina_mp_VPNbot" target="_blank" rel="noopener noreferrer" data-drawer-link data-i18n="nav.bot">ربات لایسنس تلگرام</a>
     </nav>
-    <div class="nav-actions">
-      <button class="lang" id="langBtn" type="button" aria-label="Language"><span class="fa">EN</span><span class="en">فارسی</span></button>
-      <a class="btn btn-primary dlLink" href="https://github.com/sinamp00/Carbon/releases/latest"><span class="fa">دانلود</span><span class="en">Download</span></a>
-    </div>
   </div>
-</header>
 
-<main>
-<div class="wrap">
-  <div class="hero">
-    <div>
-      <div class="pill rv"><i></i><span class="fa">نسخهٔ رسمی 1.0 برای اندروید منتشر شد</span><span class="en">Official 1.0 is out for Android</span></div>
-      <h1 class="rv">
-        <span class="fa">عبور هوشمند از فیلترینگ، با <em>کربن</em></span>
-        <span class="en">Smart DPI bypass, built as <em>Carbon</em></span>
-      </h1>
-      <p class="lead rv">
-        <span class="fa">ده پروتکل ضد فیلتر، قفل سخت‌افزاری ضد کرک و رابط روان 120 هرتزی؛ همه در یک اپ سبک و بدون تبلیغ.</span>
-        <span class="en">Ten anti-censorship protocols, a hardware-bound anti-crack license and a silky 120&nbsp;Hz interface, in one light, ad-free app.</span>
-      </p>
-      <div class="cta rv">
-        <a class="btn btn-primary dlLink" href="https://github.com/sinamp00/Carbon/releases/latest/download/carbon-1.0.0-arm64-v8a-release.apk">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
-          <span class="fa">دانلود APK</span><span class="en">Download APK</span>
-        </a>
-        <a class="btn btn-ghost" href="https://t.me/Sina_mp_VPNbot" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L3 10.5l6 2.5 2.5 6L21 3zM9 13l5-4"/></svg>
-          <span class="fa">دریافت اشتراک</span><span class="en">Get a license</span>
-        </a>
-      </div>
-      <div class="meta rv">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span class="fa">اندروید 8 و بالاتر</span><span class="en">Android 8.0+</span></span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span class="fa">بدون تبلیغ</span><span class="en">No ads</span></span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span class="fa">آپدیت خودکار</span><span class="en">Auto updates</span></span>
-      </div>
-    </div>
+  <!-- ======================================================================
+       MAIN CONTENT
+       ====================================================================== -->
+  <main id="main-content">
+    <!-- BAND 1: EDITORIAL STATEMENT + LIVE INTERACTIVE CARBON APP PHONE -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-pill mono">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>ANDROID 8.0+ · ARM64-V8A ·</span>
+            <span id="hero-release-tag">V1.0.0</span>
+            <span>·</span>
+            <span id="hero-downloads-pill">...</span>
+          </div>
 
-    <div class="stage rv" aria-hidden="true">
-      <div class="phone">
-        <div class="screen">
-          <div class="sb"><span>9:41</span><span>5G ▮▮▮</span></div>
-          <div class="app-top"><img src="assets/logo.svg" alt="">Carbon</div>
-          <div class="orb-wrap">
-            <div class="orb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 3v9M6.3 6.8a8 8 0 1011.4 0"/></svg></div>
+          <h1 class="hero-title" data-i18n="hero.title">
+            هم‌نوا با رابط کاربری واقعی کربن
+          </h1>
+
+          <p class="hero-subtitle" data-i18n-html="hero.subtitle">
+            کلاینت اندروید با <bdi class="ltr">10</bdi> موتور ضدسانسور بومی، هسته ترکیبی <bdi class="ltr">sing-box</bdi> و <bdi class="ltr">Xray</bdi>، مسیریابی دقیق و لایسنس سخت‌افزاری آفلاین در طراحی زنده <bdi class="ltr">Material 3 Expressive</bdi>. همین‌جا تم را عوض کنید و با شبیه‌ساز اپلیکیشن وصل شوید.
+          </p>
+
+          <div class="hero-cta-row">
+            <a class="btn btn-lime" href="#download">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3v12" />
+                <path d="m7 11 5 5 5-5" />
+                <path d="M5 21h14" />
+              </svg>
+              <span data-i18n="hero.ctaDownload">دانلود نسخه رسمی APK</span>
+            </a>
+            <a class="btn btn-tonal" href="https://t.me/Sina_mp_VPNbot" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="hero.ctaKey">دریافت کلید از @Sina_mp_VPNbot</span>
+            </a>
           </div>
-          <div class="status">Connected</div>
-          <div class="srv">
-            <img src="https://flagcdn.com/w80/nl.png" alt="">
-            <div><b>MASQUE Turbo</b><small>MASQUE H2</small></div>
-            <span class="ms">48 ms</span>
+
+          <!-- Interactive Theme Preset & Accent Switcher matching Theme.kt + AccentColorSetting.kt -->
+          <div class="theme-studio-bar">
+            <span class="studio-label" data-i18n="hero.themeLabel">پالت زنده برنامه:</span>
+            <div class="preset-pills" role="group" aria-label="Carbon Theme Presets">
+              <button type="button" class="preset-pill" data-set-theme="dark" aria-pressed="true">Carbon Dark</button>
+              <button type="button" class="preset-pill" data-set-theme="dracula" aria-pressed="false">Dracula</button>
+              <button type="button" class="preset-pill" data-set-theme="catppuccin" aria-pressed="false">Catppuccin</button>
+              <button type="button" class="preset-pill" data-set-theme="nord" aria-pressed="false">Nord</button>
+            </div>
+            <div class="accent-dots" style="display:inline-flex;" role="group" aria-label="Studio accent color">
+              <button type="button" class="accent-dot" data-set-accent="#6937D4" style="background:#6937D4" aria-pressed="true" aria-label="Violet"></button>
+              <button type="button" class="accent-dot" data-set-accent="#3174BF" style="background:#3174BF" aria-pressed="false" aria-label="Blue"></button>
+              <button type="button" class="accent-dot" data-set-accent="#237D70" style="background:#237D70" aria-pressed="false" aria-label="Teal"></button>
+              <button type="button" class="accent-dot" data-set-accent="#22C55E" style="background:#22C55E" aria-pressed="false" aria-label="Green"></button>
+              <button type="button" class="accent-dot" data-set-accent="#F97316" style="background:#F97316" aria-pressed="false" aria-label="Orange"></button>
+              <button type="button" class="accent-dot" data-set-accent="#DB2777" style="background:#DB2777" aria-pressed="false" aria-label="Pink"></button>
+            </div>
           </div>
-          <div class="spd">
-            <div>↓ Download<strong>12.4 <small>MB/s</small></strong></div>
-            <div>↑ Upload<strong>3.1 <small>MB/s</small></strong></div>
+        </div>
+
+        <!-- LIVE INTERACTIVE CARBON APP REPLICA (DashboardScreen.kt 1:1) -->
+        <div class="app-frame-wrap">
+          <div class="carbon-phone" id="carbon-phone" data-layout="stage">
+            <!-- BrandTopBar -->
+            <div class="app-topbar">
+              <span class="app-brand-title">Carbon</span>
+              <div class="app-topbar-actions">
+                <button type="button" class="app-style-btn" id="toggle-dash-layout" data-i18n="phone.layoutBtn">چیدمان: Stage</button>
+                <button type="button" class="app-clover-add" id="phone-quick-add" aria-label="Switch screen">
+                  <svg class="clover-shape" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+                    <path d="M50 4C64 4 74 13 74 26C87 26 96 36 96 50C96 64 87 74 74 74C74 87 64 96 50 96C36 96 26 87 26 74C13 74 4 64 4 50C4 36 13 26 26 26C26 13 36 4 50 4Z" />
+                  </svg>
+                  <svg class="plus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- TAB 1: DASHBOARD -->
+            <div class="app-tab-view is-active" id="phone-view-dashboard">
+              <!-- ConnectionStage Layout (Default) -->
+              <div class="conn-stage-card" id="conn-stage-card" data-state="off">
+                <svg class="conn-stage-flower" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+                  <path d="M50 2C58 2 63 10 66 16C73 12 82 14 86 22C90 29 86 38 82 43C90 45 98 51 98 58C98 66 90 71 82 73C86 79 88 88 81 93C74 98 66 93 61 88C58 95 51 100 44 98C37 96 34 88 33 81C26 85 17 86 12 79C7 72 11 63 16 58C9 55 2 49 3 41C4 33 12 30 19 29C15 22 15 13 22 8C29 3 37 8 42 13C45 7 47 2 50 2Z" />
+                </svg>
+
+                <div class="conn-stage-top">
+                  <span class="mono" data-i18n="phone.connLabel">CONNECTION</span>
+                  <span class="conn-status-indicator" aria-hidden="true"></span>
+                </div>
+
+                <div class="conn-stage-middle">
+                  <div>
+                    <div class="conn-status-text" id="phone-status-text" data-i18n="phone.statusOff">خاموش</div>
+                    <div class="conn-sub-node" id="phone-active-subtitle">MASQUE Turbo · H2</div>
+                  </div>
+
+                  <button type="button" class="sun-power-btn" id="phone-power-btn-stage" aria-label="Toggle Carbon Connection">
+                    <svg class="sun-motif-bg" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+                      <path d="M50 3C57 3 61 11 66 12C71 13 78 9 83 14C88 19 85 26 88 32C91 37 98 42 97 49C96 56 90 61 89 67C88 73 91 80 86 85C81 90 73 87 67 89C61 91 57 98 50 98C43 98 38 91 32 89C26 87 19 90 14 85C9 80 12 73 11 67C10 61 4 56 3 49C2 42 9 37 12 32C15 26 12 19 17 14C22 9 29 13 34 12C39 11 43 3 50 3Z" />
+                    </svg>
+                    <svg class="sun-power-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                      <path d="M12 2v10" />
+                      <path d="M18.4 6.6a9 9 0 1 1-12.77.04" />
+                    </svg>
+                  </button>
+                </div>
+
+                <button type="button" class="conn-stage-cta" id="phone-main-cta" data-i18n="phone.btnConnect">اتصال</button>
+              </div>
+
+              <!-- OrbitConnectionCard Layout (Centered) -->
+              <div class="orbit-hero-card" id="orbit-hero-card" data-state="off">
+                <button type="button" class="sun-power-btn" id="phone-power-btn-orbit" aria-label="Toggle Orbit Connection">
+                  <svg class="sun-motif-bg" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+                    <path d="M50 3C57 3 61 11 66 12C71 13 78 9 83 14C88 19 85 26 88 32C91 37 98 42 97 49C96 56 90 61 89 67C88 73 91 80 86 85C81 90 73 87 67 89C61 91 57 98 50 98C43 98 38 91 32 89C26 87 19 90 14 85C9 80 12 73 11 67C10 61 4 56 3 49C2 42 9 37 12 32C15 26 12 19 17 14C22 9 29 13 34 12C39 11 43 3 50 3Z" />
+                  </svg>
+                  <svg class="sun-power-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 2v10" />
+                    <path d="M18.4 6.6a9 9 0 1 1-12.77.04" />
+                  </svg>
+                </button>
+                <div>
+                  <div class="mono" style="font-size:0.72rem;opacity:0.72;" data-i18n="phone.connLabel">CONNECTION</div>
+                  <div class="conn-status-text" id="orbit-status-text" style="font-size:1.3rem;" data-i18n="phone.orbitReady">ضربه برای اتصال</div>
+                  <div class="conn-sub-node" id="orbit-node-label">MASQUE Turbo</div>
+                </div>
+              </div>
+
+              <!-- Server Section Header -->
+              <div class="app-section-row">
+                <strong data-i18n="phone.yourServer">سرور شما</strong>
+                <button type="button" id="phone-open-servers" data-i18n="phone.allServers">همه سرورها</button>
+              </div>
+
+              <!-- Selected Server Row Card -->
+              <button type="button" class="app-server-card" id="phone-selected-server">
+                <span class="app-server-squircle" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                  </svg>
+                </span>
+                <span class="app-server-meta">
+                  <span class="app-server-name" id="phone-srv-name" style="display:block;">مسک توربو</span>
+                  <span class="app-server-proto mono" id="phone-srv-proto" style="display:block;">MASQUE H2 · TURBO</span>
+                </span>
+                <span class="app-ping-pill" id="phone-srv-ping">--</span>
+              </button>
+
+              <!-- DashboardSpeedCards (Blue Download + Lavender Upload) -->
+              <div class="app-speed-grid">
+                <div class="speed-card dl">
+                  <div class="speed-head">
+                    <span class="speed-arrow-box" aria-hidden="true">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(45deg);">
+                        <path d="M12 5v14M5 12l7 7 7-7" />
+                      </svg>
+                    </span>
+                    <span data-i18n="phone.dl">دانلود</span>
+                  </div>
+                  <div class="speed-num-row">
+                    <span class="speed-val" id="phone-dl-val">0</span>
+                    <span class="speed-unit" id="phone-dl-unit">B/s</span>
+                  </div>
+                </div>
+
+                <div class="speed-card ul">
+                  <div class="speed-head">
+                    <span class="speed-arrow-box" aria-hidden="true">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(45deg);">
+                        <path d="M12 19V5M5 12l7-7 7 7" />
+                      </svg>
+                    </span>
+                    <span data-i18n="phone.ul">آپلود</span>
+                  </div>
+                  <div class="speed-num-row">
+                    <span class="speed-val" id="phone-ul-val">0</span>
+                    <span class="speed-unit" id="phone-ul-unit">B/s</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 2: SERVERS LIST INSIDE PHONE -->
+            <div class="app-tab-view" id="phone-view-servers">
+              <div class="app-section-row">
+                <strong data-i18n="phone.pickEngine">انتخاب موتور یا پروتکل</strong>
+                <span class="mono" style="font-size:0.74rem;color:var(--muted);">10 BUILT-IN</span>
+              </div>
+              <div class="mini-list" id="phone-mini-servers"></div>
+            </div>
+
+            <!-- TAB 3: CORE & CUSTOM PROTOCOLS INSIDE PHONE -->
+            <div class="app-tab-view" id="phone-view-core">
+              <div class="app-section-row">
+                <strong data-i18n="phone.coreSelect">انتخابگر هسته</strong>
+                <span class="mono" style="font-size:0.72rem;color:var(--primary);" id="phone-core-badge">HYBRID</span>
+              </div>
+              <div class="mini-core-pills" role="group" aria-label="Core Engine Selector">
+                <button type="button" class="mini-core-btn" data-set-core="HYBRID" aria-pressed="true">HYBRID</button>
+                <button type="button" class="mini-core-btn" data-set-core="sing-box" aria-pressed="false">sing-box</button>
+                <button type="button" class="mini-core-btn" data-set-core="Xray" aria-pressed="false">Xray</button>
+              </div>
+              <div class="spec-row" style="margin-top:4px;">
+                <span class="spec-k" data-i18n="phone.coreActiveDescLabel">وضعیت هسته</span>
+                <span class="spec-v" id="phone-core-desc" style="font-size:0.84rem;font-weight:500;">سوییچ خودکار بین sing-box و Xray برای بالاترین پایداری</span>
+              </div>
+              <div class="chip-cloud" style="padding-top:4px;">
+                <span class="proto-chip accent">VLESS Reality</span>
+                <span class="proto-chip">Hysteria2</span>
+                <span class="proto-chip">TUIC v5</span>
+                <span class="proto-chip">Trojan</span>
+                <span class="proto-chip">VMess</span>
+                <span class="proto-chip">Shadowsocks</span>
+                <span class="proto-chip">AmneziaWG</span>
+                <span class="proto-chip">OpenVPN</span>
+              </div>
+            </div>
+
+            <!-- Bottom Dock Tabs -->
+            <nav class="phone-bottom-dock" aria-label="Phone Screen Tabs">
+              <button type="button" class="phone-nav-btn" data-phone-tab="dashboard" aria-selected="true" data-i18n="phone.tabDash">داشبورد</button>
+              <button type="button" class="phone-nav-btn" data-phone-tab="servers" aria-selected="false" data-i18n="phone.tabServers">موتورها</button>
+              <button type="button" class="phone-nav-btn" data-phone-tab="core" aria-selected="false" data-i18n="phone.tabCore">هسته</button>
+            </nav>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="stats rv">
-    <div class="stat"><b class="ltr">10</b><span class="fa">پروتکل ضد فیلتر</span><span class="en">Bypass protocols</span></div>
-    <div class="stat"><b class="ltr">ECDSA</b><span class="fa">لایسنس بسته به دستگاه</span><span class="en">Device-bound license</span></div>
-    <div class="stat"><b class="ltr">120 Hz</b><span class="fa">رابط کاربری روان</span><span class="en">Fluid interface</span></div>
-    <div class="stat"><b class="ltr">OTA</b><span class="fa">آپدیت درون‌برنامه‌ای</span><span class="en">In-app updates</span></div>
-  </div>
-</div>
+    <!-- BAND 2: 10 CARBON ANTI-DPI ENGINES + LIVE BENCHMARK SWEEP -->
+    <section class="section" id="engines">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow mono">01 · BUILT-IN TRANSPORTS</span>
+          <h2 class="section-title" data-i18n-html="engines.title">
+            <bdi class="ltr">10</bdi> موتور ضدسانسور اختصاصی کربن
+          </h2>
+          <p class="section-lead" data-i18n="engines.lead">
+            موتورهای داخلی کربن سرور کشوری نمایشی نیستند؛ هر کدام یک معماری عبور مستقل برای شرایط مختلف فیلترینگ پیاده می‌کنند. با کلیک روی هر مورد مشخصاتش را ببینید یا مستقیم روی شبیه‌ساز داشبورد تست کنید.
+          </p>
+        </div>
 
-<section id="protocols">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">Protocols</div>
-      <h2><span class="fa">ده پروتکل، یک اپ</span><span class="en">Ten protocols, one app</span></h2>
-      <p><span class="fa">هر پروتکل برای یک نوع محدودیت طراحی شده؛ اگر یکی روی اپراتور شما کند بود، دیگری را امتحان کنید.</span><span class="en">Each one targets a different kind of throttling. If one is slow on your carrier, simply switch to another.</span></p>
-    </div>
-    <div class="protos">
-      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/nl.png" alt="NL" loading="lazy"><div><h3><span class="fa">مسک توربو</span><span class="en">MASQUE Turbo</span></h3><span class="badge">MASQUE H2</span><p><span class="fa">موتور اصلی مسک با تکه‌تکه‌سازی هدر TLS و اسکنر توربو.</span><span class="en">Primary MASQUE HTTP/2 engine with TLS fragmentation and turbo scanner.</span></p></div></article>
-      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/fi.png" alt="FI" loading="lazy"><div><h3><span class="fa">مسک پایتون</span><span class="en">MASQUE Python</span></h3><span class="badge">PYTHON</span><p><span class="fa">شبیه‌سازی اثرانگشت پایتون برای عبور از فیلترینگ هوشمند.</span><span class="en">Python TLS fingerprint shaping to slip past deep packet inspection.</span></p></div></article>
-      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/ch.png" alt="CH" loading="lazy"><div><h3><span class="fa">تونل دولایه</span><span class="en">Dual Tunnel</span></h3><span class="badge">DUAL HOP</span><p><span class="fa">دو لایه تونل تودرتو برای پایداری و امنیت بیشتر.</span><span class="en">Two nested hops for extra stability and privacy.</span></p></div></article>
-      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/us.png" alt="US" loading="lazy"><div><h3><span class="fa">گول وارپ</span><span class="en">Gool WARP</span></h3><span class="badge">GOOL</span><p><span class="fa">وایرگارد داخل مسک؛ مناسب اینستاگرام و یوتیوب.</span><span class="en">WireGuard wrapped in MASQUE. Great for Instagram and YouTube.</span></p></div></article>
-      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/de.png" alt="DE" loading="lazy"><div><h3><span class="fa">لنترن آلمان</span><span class="en">Lantern Edge</span></h3><span class="badge">LANTERN</span><p><span class="fa">موتور رادیانس لنترن با اتصال مستقیم به فرانکفورت.</span><span class="en">Lantern Radiance engine with direct Frankfurt edges.</span></p></div></article>
-      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/fr.png" alt="FR" loading="lazy"><div><h3><span class="fa">آرگو فالکن</span><span class="en">Argo Falcon</span></h3><span class="badge">ARGO</span><p><span class="fa">پل‌های عمومی آرگو و فالکن با سوئیچ هوشمند پشتیبان.</span><span class="en">Public Argo bridges and Falcon handshake with smart fallback.</span></p></div></article>
-      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/se.png" alt="SE" loading="lazy"><div><h3><span class="fa">سرورلس گوگل</span><span class="en">Serverless TLS</span></h3><span class="badge">TLS LEAD</span><p><span class="fa">بدون سرور واسط؛ خرد کردن TLS و دی‌ان‌اس امن گوگل.</span><span class="en">No middle server: TLS fragmentation plus Google secure DNS.</span></p></div></article>
-      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/gb.png" alt="GB" loading="lazy"><div><h3><span class="fa">شکاف دامنه</span><span class="en">SNI Split</span></h3><span class="badge">SNI SPLIT</span><p><span class="fa">برش نام دامنه با دی‌ان‌اس ادگارد برای عبور مستقیم.</span><span class="en">Domain-name splitting with AdGuard encrypted DNS.</span></p></div></article>
-      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/at.png" alt="AT" loading="lazy"><div><h3><span class="fa">مسک کوییک</span><span class="en">MASQUE QUIC</span></h3><span class="badge">QUIC H3</span><p><span class="fa">نسل سوم بر پایهٔ کوییک؛ مناسب اینترنت خانگی و فیبر.</span><span class="en">HTTP/3 over QUIC. Ideal for home broadband and fiber.</span></p></div></article>
-      <article class="proto rv"><img class="flag" src="https://flagcdn.com/w80/ca.png" alt="CA" loading="lazy"><div><h3><span class="fa">وایرگارد نویز</span><span class="en">WireGuard Noise</span></h3><span class="badge">WARP WG</span><p><span class="fa">وایرگارد با تزریق پکت نویز و اسکنر عمیق.</span><span class="en">WireGuard with noise injection and a deep endpoint scanner.</span></p></div></article>
-    </div>
-  </div>
-</section>
+        <div class="engines-toolbar">
+          <div class="filter-pills" role="group" aria-label="Filter bypass engines">
+            <button type="button" class="filter-pill" data-engine-filter="all" aria-pressed="true" data-i18n="engines.filterAll">همه (10)</button>
+            <button type="button" class="filter-pill" data-engine-filter="masque" aria-pressed="false" data-i18n="engines.filterMasque">MASQUE و H2/H3</button>
+            <button type="button" class="filter-pill" data-engine-filter="serverless" aria-pressed="false" data-i18n="engines.filterServerless">بدون سرور و پل‌ها</button>
+            <button type="button" class="filter-pill" data-engine-filter="wg" aria-pressed="false" data-i18n="engines.filterWg">نویز WireGuard</button>
+          </div>
 
-<section id="features">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">Features</div>
-      <h2><span class="fa">ساده برای شما، سخت برای دیگران</span><span class="en">Easy for you, hard to tamper with</span></h2>
-    </div>
-    <div class="bento">
-      <div class="card w4 rv">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3><span class="fa">لایسنس ضد کرک، بسته به دستگاه</span><span class="en">Anti-crack, device-bound license</span></h3>
-        <p><span class="fa">هر کلید با امضای ECDSA P-256 به شناسهٔ سخت‌افزاری همان گوشی قفل می‌شود. دیباگر، Frida، Xposed و دستکاری ساعت شناسایی و مسدود می‌شوند.</span><span class="en">Every key is signed with ECDSA P-256 and locked to that phone’s hardware ID. Debuggers, Frida, Xposed and clock tampering are detected and blocked.</span></p>
-        <div class="code"><span class="k">CARBON</span>-DEV·XXXX·XXXX-30D-<span class="k">ECDSA</span>…</div>
+          <button type="button" class="scan-btn" id="simulate-ping-btn" data-i18n="engines.scanBtn">شبیه‌سازی تست پینگ موتورها</button>
+        </div>
+
+        <div class="engines-layout">
+          <div class="engine-list" id="engine-list" role="listbox" aria-label="Carbon Bypass Engines"></div>
+
+          <article class="engine-inspector" id="engine-inspector" aria-live="polite">
+            <div class="engine-card-top">
+              <span class="engine-badge" id="insp-badge">MASQUE H2</span>
+              <span class="engine-ping" id="insp-ping">-- ms</span>
+            </div>
+            <h3 class="inspector-title" id="insp-name">مسک توربو</h3>
+            <p class="inspector-desc" id="insp-desc"></p>
+            <div class="inspector-specs" id="insp-specs"></div>
+            <button type="button" class="btn btn-lime" id="apply-engine-phone" data-i18n="engines.applyPhone">
+              اتصال با این موتور در شبیه‌ساز
+            </button>
+          </article>
+        </div>
       </div>
-      <div class="card w2 rv">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
-        <h3><span class="fa">سرعت و روانی</span><span class="en">Fast &amp; fluid</span></h3>
-        <p><span class="fa">رابط 120 هرتزی و سوئیچ بدون لگ بین صفحه‌ها.</span><span class="en">120&nbsp;Hz UI and lag-free page transitions.</span></p>
+    </section>
+
+    <!-- BAND 3: EXPRESSIVE ROUTING HUB (RoutingHubScreen 1:1) & HYBRID CORE -->
+    <section class="section" id="stack">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow mono">02 · ROUTING HUB &amp; HYBRID CORE</span>
+          <h2 class="section-title" data-i18n="stack.title">
+            مسیریابی اکسپرسیو و هسته دوگانه <bdi class="ltr">sing-box + Xray</bdi>
+          </h2>
+          <p class="section-lead" data-i18n="stack.lead">
+            بخش مسیریابی کربن دقیقا با همین سه کاشی در اپلیکیشن پیاده‌سازی شده است. روی هر کاشی کلیک کنید تا نمونه قوانین واقعی و پروتکل‌های قابل اجرا را ببینید.
+          </p>
+        </div>
+
+        <div class="routing-showcase">
+          <!-- Left: Exact RoutingHubScreen.kt 3-tile Expressive geometry -->
+          <div class="routing-tiles-stack">
+            <button type="button" class="exp-tile stage" data-route-tile="domain" aria-pressed="true">
+              <svg class="tile-motif" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+                <path d="M50 5A45 45 0 0 1 95 50H50V5ZM50 50H5A45 45 0 0 1 50 5V50ZM50 50V95A45 45 0 0 0 95 50H50Z" />
+              </svg>
+              <span class="tile-num">01</span>
+              <div>
+                <h3 class="tile-title" data-i18n="route.t1Title">مسیریابی دامنه و IP</h3>
+                <div class="tile-sub" data-i18n="route.t1Sub">قوانین مستقیم، مسدود و پراکسی بر پایه دامنه و زیرشبکه</div>
+              </div>
+            </button>
+
+            <div class="exp-tile-pair">
+              <button type="button" class="exp-tile lime" data-route-tile="apps" aria-pressed="false">
+                <svg class="tile-motif" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+                  <polygon points="50,4 94,38 78,92 22,92 6,38" />
+                </svg>
+                <span class="tile-num">02</span>
+                <div>
+                  <h3 class="tile-title" data-i18n="route.t2Title">تفکیک اپلیکیشن‌ها</h3>
+                  <div class="tile-sub" data-i18n="route.t2Sub">Per-App Split Tunneling</div>
+                </div>
+              </button>
+
+              <button type="button" class="exp-tile lavender" data-route-tile="geo" aria-pressed="false">
+                <svg class="tile-motif" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+                  <path d="M50 3C57 3 61 11 66 12C71 13 78 9 83 14C88 19 85 26 88 32C91 37 98 42 97 49C96 56 90 61 89 67C88 73 91 80 86 85C81 90 73 87 67 89C61 91 57 98 50 98C43 98 38 91 32 89C26 87 19 90 14 85C9 80 12 73 11 67C10 61 4 56 3 49C2 42 9 37 12 32C15 26 12 19 17 14C22 9 29 13 34 12C39 11 43 3 50 3Z" />
+                </svg>
+                <span class="tile-num">03</span>
+                <div>
+                  <h3 class="tile-title" data-i18n="route.t3Title">منابع Geo</h3>
+                  <div class="tile-sub mono">sing-box extended</div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Live Interactive Inspector for Routing Tile + Supported Protocols -->
+          <div class="routing-detail-card">
+            <div>
+              <div class="eyebrow mono" id="route-detail-tag">01 · DOMAIN &amp; IP</div>
+              <h3 class="inspector-title" id="route-detail-title">قوانین هوشمند دامنه و آی‌پی</h3>
+              <p class="inspector-desc" id="route-detail-desc" style="margin-top:6px;">
+                ترافیک سایت‌های داخلی، بانک‌ها و دامنه‌های دلخواه را بدون قطع اتصال مستقیم نگه دارید و سایر مسیرها را از تونل عبور دهید.
+              </p>
+            </div>
+
+            <div class="rule-preview-list" id="route-rule-list"></div>
+
+            <div>
+              <div class="spec-k" style="margin-bottom:8px;" data-i18n="stack.protocolsLabel">پروتکل‌ها و قابلیت‌های هسته ترکیبی کربن:</div>
+              <div class="chip-cloud">
+                <span class="proto-chip accent">VLESS / Reality</span>
+                <span class="proto-chip">Hysteria2</span>
+                <span class="proto-chip">TUIC v5</span>
+                <span class="proto-chip">Trojan</span>
+                <span class="proto-chip">VMess</span>
+                <span class="proto-chip">Shadowsocks</span>
+                <span class="proto-chip">WireGuard / AmneziaWG</span>
+                <span class="proto-chip">OpenVPN</span>
+                <span class="proto-chip">MASQUE</span>
+                <span class="proto-chip">QR &amp; Subscription</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card w2 rv">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-3-6.7M21 4v5h-5"/></svg></div>
-        <h3><span class="fa">آپدیت خودکار</span><span class="en">Auto updates</span></h3>
-        <p><span class="fa">نسخهٔ جدید را از همین اپ دانلود و نصب کنید.</span><span class="en">Download and install new versions from inside the app.</span></p>
+    </section>
+
+    <!-- BAND 4: OFFLINE HARDWARE LICENSING & .LUMEN CONTAINERS -->
+    <section class="section" id="security">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow mono">03 · CRYPTOGRAPHIC SECURITY</span>
+          <h2 class="section-title" data-i18n="sec.title">
+            لایسنس آفلاین سخت‌افزاری و فایل‌های رمزنگاری‌شده
+          </h2>
+          <p class="section-lead" data-i18n="sec.lead">
+            فعال‌سازی کربن بدون ارتباط مداوم با سرور لایسنس انجام می‌شود و کانفیگ‌های حساس درون کانتینرهای سخت‌افزاری ذخیره می‌گردند.
+          </p>
+        </div>
+
+        <div class="security-grid">
+          <div class="sec-panel">
+            <h3 data-i18n-html="sec.licTitle">فعال‌سازی <bdi class="ltr">DEV-XXXX-XXXX</bdi></h3>
+            <p data-i18n="sec.licDesc">
+              کلید هر دستگاه با امضای <bdi class="ltr mono">ECDSA NIST P-256</bdi> فقط برای شناسه سخت‌افزاری همان گوشی ساخته و آفلاین بررسی می‌شود.
+            </p>
+            <div class="step-card">
+              <span class="step-num">01</span>
+              <div class="step-body">
+                <strong data-i18n="sec.s1Title">دریافت شناسه یکتای گوشی (HWID)</strong>
+                <span data-i18n-html="sec.s1Desc">شناسه <bdi class="ltr mono">DEV-XXXX-XXXX</bdi> را مستقیم از صفحه فعال‌سازی کربن کپی کنید.</span>
+              </div>
+            </div>
+            <div class="step-card">
+              <span class="step-num">02</span>
+              <div class="step-body">
+                <strong data-i18n="sec.s2Title">صدور کلید امضاشده در تلگرام</strong>
+                <span data-i18n-html="sec.s2Desc">با ارسال شناسه به <bdi class="ltr mono">@Sina_mp_VPNbot</bdi> کلید <bdi class="ltr mono">SINA-...</bdi> را تحویل بگیرید.</span>
+              </div>
+            </div>
+            <div class="step-card">
+              <span class="step-num">03</span>
+              <div class="step-body">
+                <strong data-i18n="sec.s3Title">ذخیره‌سازی دوگانه و ضددستکاری</strong>
+                <span data-i18n="sec.s3Desc">کربن کلید را در دو لایه امن نگه می‌دارد تا با پاک کردن کش یا نصب مجدد حفظ شود و در برابر Hook مقاوم باشد.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sec-panel">
+            <h3 data-i18n-html="sec.vaultTitle">کانتینرهای قفل‌شده <bdi class="ltr">.lumen / .carbon</bdi></h3>
+            <p data-i18n="sec.vaultDesc">
+              اشتراک‌گذاری سرورهای اختصاصی بدون افشای نشانی، پورت، کلید خصوصی یا اطلاعات اتصال در متن خام.
+            </p>
+            <div class="step-card">
+              <span class="step-num">A</span>
+              <div class="step-body">
+                <strong data-i18n="sec.v1Title">کلید سخت‌افزاری Android Keystore</strong>
+                <span data-i18n="sec.v1Desc">رمزنگاری ترکیبی RSA-OAEP + AES-256-GCM برای قفل محتوای کانفیگ روی دستگاه.</span>
+              </div>
+            </div>
+            <div class="step-card">
+              <span class="step-num">B</span>
+              <div class="step-body">
+                <strong data-i18n="sec.v2Title">قفل گیرنده و انقضای زمانی دقیق</strong>
+                <span data-i18n="sec.v2Desc">محدودسازی فایل فقط به یک HWID مشخص و قطع خودکار اشتراک در تاریخ پایان.</span>
+              </div>
+            </div>
+            <div class="step-card">
+              <span class="step-num">C</span>
+              <div class="step-body">
+                <strong data-i18n="sec.v3Title">محافظ ساعت یکنواخت (Monotonic Clock)</strong>
+                <span data-i18n="sec.v3Desc">تشخیص تغییر دستی تاریخ و ساعت گوشی برای جلوگیری از دور زدن مهلت لایسنس.</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card w2 rv">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
-        <h3><span class="fa">فارسی و انگلیسی</span><span class="en">Persian &amp; English</span></h3>
-        <p><span class="fa">رابط کامل دوزبانه با پرچم هر پروتکل.</span><span class="en">Fully bilingual UI with a flag on every protocol.</span></p>
+    </section>
+
+    <!-- BAND 5: OFFICIAL RELEASES, SHA-256 VERIFICATION & TECHNICAL FAQ -->
+    <section class="section" id="download">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow mono">04 · OFFICIAL APK &amp; SHA-256</span>
+          <h2 class="section-title" data-i18n="dl.title">
+            دانلود مستقیم از مخزن رسمی همراه با تایید SHA-256
+          </h2>
+          <p class="section-lead" data-i18n-html="dl.lead">
+            بیلد مناسب گوشی خود را انتخاب کنید. تمامی بسته‌ها مستقیما از <bdi class="ltr">sinamp00/Carbon</bdi> دریافت می‌شوند و برنامه از آپدیت خودکار درون‌برنامه‌ای پشتیبانی می‌کند.
+          </p>
+        </div>
+
+        <div class="release-hub">
+          <div class="release-top">
+            <div>
+              <strong id="release-title-label" data-i18n="dl.releaseHeading">انتشار پایدار Carbon VPN</strong>
+              <div class="mono" style="font-size:0.78rem;color:var(--muted);" id="release-date-label">Tag v1.0.0 · 2026-11-10</div>
+            </div>
+            <div class="release-badges">
+              <span class="rel-badge live" id="badge-live-tag">v1.0.0</span>
+              <span class="rel-badge" id="badge-live-total" data-i18n="dl.totalBadge">دریافت کل: ...</span>
+              <span class="rel-badge mono">Android 8.0+ · ARM64</span>
+            </div>
+          </div>
+
+          <div class="variant-tabs" role="group" aria-label="APK Build Variant">
+            <button type="button" class="variant-btn" data-build-variant="standard" aria-pressed="true">
+              <div class="variant-title-row">
+                <span class="variant-name" data-i18n="dl.stdName">نسخه استاندارد اندروید (ARM64-v8a)</span>
+                <span class="variant-size" id="var-std-size">82.2 MB</span>
+              </div>
+              <div class="variant-sub" data-i18n="dl.stdSub">مناسب سامسونگ، پیکسل، وان‌پلاس، موتورولا و سایر دستگاه‌های 64 بیتی</div>
+            </button>
+
+            <button type="button" class="variant-btn" data-build-variant="xiaomi" aria-pressed="false">
+              <div class="variant-title-row">
+                <span class="variant-name" data-i18n="dl.miName">نسخه اختصاصی شیائومی (HyperOS / MIUI)</span>
+                <span class="variant-size" id="var-mi-size">82.3 MB</span>
+              </div>
+              <div class="variant-sub" data-i18n="dl.miSub">بهینه‌شده برای نصب و پایداری پس‌زمینه روی گوشی‌های شیائومی، ردمی و پوکو</div>
+            </button>
+          </div>
+
+          <div class="artifact-box">
+            <div class="artifact-meta-row">
+              <span class="artifact-filename" id="artifact-filename">carbon-1.0.0-arm64-v8a-release.apk</span>
+              <span class="artifact-dl-count" id="artifact-dl-count">ARM64 · 82.2 MB</span>
+            </div>
+
+            <div class="sha-box">
+              <div>
+                <div class="spec-k mono">SHA-256 CHECKSUM</div>
+                <div class="sha-value mono" id="artifact-sha">080f534fce55178a4338152b0c405114ee10b668373ccccb4c7963f4cd2ed392</div>
+              </div>
+              <button type="button" class="copy-btn" id="copy-sha-btn" data-i18n="dl.copySha">کپی SHA-256</button>
+            </div>
+
+            <div class="artifact-actions">
+              <a
+                class="btn btn-lime"
+                id="artifact-download-link"
+                href="https://github.com/sinamp00/Carbon/releases/download/v1.0.0/carbon-1.0.0-arm64-v8a-release.apk"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3v12" />
+                  <path d="m7 11 5 5 5-5" />
+                  <path d="M5 21h14" />
+                </svg>
+                <span data-i18n="dl.downloadCta">دانلود مستقیم فایل APK</span>
+              </a>
+
+              <a class="btn btn-tonal" href="https://github.com/sinamp00/Carbon/releases" target="_blank" rel="noopener noreferrer" data-i18n="dl.allReleases">
+                صفحه انتشارهای GitHub
+              </a>
+
+              <a class="btn btn-tonal" href="https://t.me/Sina_mp_VPNbot" target="_blank" rel="noopener noreferrer" data-i18n="dl.telegramBot">
+                دریافت کلید فعال‌سازی
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-list" id="faq-list">
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-p-1">
+              <span data-i18n="faq.q1">چرا نسخه شیائومی جدا از نسخه استاندارد منتشر شده است؟</span>
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel" id="faq-p-1" hidden data-i18n="faq.a1">
+              سخت‌گیری‌های نصب پکیج در HyperOS و MIUI گاهی مانع اجرای مداوم سرویس می‌شود. بیلد اختصاصی شیائومی برای سازگاری کامل با این رام‌ها بسته‌بندی شده است.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-p-2">
+              <span data-i18n="faq.q2">کدام موتور بومی را برای اتصال اول امتحان کنم؟</span>
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel" id="faq-p-2" hidden data-i18n="faq.a2">
+              معمولا مسک توربو یا تونل دولایه سریع‌ترین انتخاب هستند. اگر UDP محدود بود، مسک پایتون یا سرورلس گوگل و در شرایط اختلال شدید پل فالکن یا گول توربو را امتحان کنید.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-p-3">
+              <span data-i18n="faq.q3">آیا با پاک کردن کش یا نصب مجدد، لایسنس از بین می‌رود؟</span>
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel" id="faq-p-3" hidden data-i18n="faq.a3">
+              خیر. کلید به‌صورت رمزنگاری‌شده به شناسه سخت‌افزاری همان دستگاه قفل و در دو لایه امن ذخیره می‌ماند، ولی به گوشی دیگری قابل انتقال نیست.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-p-4">
+              <span data-i18n="faq.q4">آیا می‌توانم هم‌زمان از کانفیگ‌های شخصی و اشتراک‌های خودم استفاده کنم؟</span>
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-panel" id="faq-p-4" hidden data-i18n="faq.a4">
+              بله. لینک‌های VLESS و VMess و Trojan و Hysteria2 و TUIC و AmneziaWG یا لینک اشتراک خود را وارد کنید تا با هسته ترکیبی sing-box و Xray اجرا شوند.
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card w2 rv">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
-        <h3><span class="fa">سبک و شیک</span><span class="en">Light &amp; sleek</span></h3>
-        <p><span class="fa">پوسته‌های رنگی و طراحی Material 3.</span><span class="en">Colour themes and Material 3 design.</span></p>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-clover" style="width:30px;height:30px;" aria-hidden="true">
+          <span class="brand-clover-bg" style="border-radius:10px 4px 10px 10px;"></span>
+          <svg viewBox="296 255 432 514" fill="currentColor" style="width:15px;height:15px;">
+            <path d="M400.93 274.96H636.21L708.02 362.25H400.93V660H708.02L636.21 749.04H315.98V362.25Z" />
+          </svg>
+        </span>
+        <span data-i18n="footer.copy">Carbon VPN · پروژه کلاینت شبکه اندروید (sinamp00)</span>
       </div>
-      <div class="card w2 rv">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
-        <h3><span class="fa">بدون تنظیمات پیچیده</span><span class="en">Zero setup</span></h3>
-        <p><span class="fa">لایسنس را فعال کنید و یک ضربه بزنید.</span><span class="en">Activate your license and tap once.</span></p>
+
+      <div class="footer-links">
+        <a href="https://github.com/sinamp00/Carbon" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/sinamp00/Carbon/releases" target="_blank" rel="noopener noreferrer">Releases</a>
+        <a href="https://t.me/Sina_mp_VPNbot" target="_blank" rel="noopener noreferrer">Telegram Bot</a>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section id="start">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">Get started</div>
-      <h2><span class="fa">در سه قدم وصل شوید</span><span class="en">Connected in three steps</span></h2>
-    </div>
-    <div class="steps">
-      <div class="step rv"><h3><span class="fa">نصب کنید</span><span class="en">Install</span></h3><p><span class="fa">فایل APK را دانلود و نصب کنید (نصب از منبع ناشناس را مجاز کنید).</span><span class="en">Download the APK and install it (allow installs from this source).</span></p></div>
-      <div class="step rv"><h3><span class="fa">اشتراک بگیرید</span><span class="en">Get a key</span></h3><p><span class="fa">در تنظیمات ← حساب کاربری، شناسهٔ دستگاه را کپی و در ربات تلگرام بفرستید.</span><span class="en">In Settings → Account copy your device ID and send it to the Telegram bot.</span></p></div>
-      <div class="step rv"><h3><span class="fa">وصل شوید</span><span class="en">Connect</span></h3><p><span class="fa">کلید را وارد کنید، یک پروتکل انتخاب کنید و دکمهٔ اتصال را بزنید.</span><span class="en">Enter the key, pick a protocol and hit the power button.</span></p></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="dl rv">
-      <img src="assets/logo.svg" alt="Carbon" width="84" height="84">
-      <h2><span class="fa">کربن را همین حالا بگیرید</span><span class="en">Get Carbon now</span></h2>
-      <p><span class="fa">نسخهٔ <span class="ltr" id="verText">1.0.0</span> برای اندروید (ARM64). نسخه‌های بعدی خودکار داخل اپ به شما اعلام می‌شود.</span><span class="en">Version <span class="ltr" id="verText2">1.0.0</span> for Android (ARM64). Future releases are announced inside the app.</span></p>
-      <div class="cta">
-        <a class="btn btn-primary dlLink" id="apkBtn" href="https://github.com/sinamp00/Carbon/releases/latest/download/carbon-1.0.0-arm64-v8a-release.apk">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
-          <span class="fa">دانلود مستقیم APK</span><span class="en">Direct APK download</span>
-        </a>
-        <a class="btn btn-ghost" href="https://github.com/sinamp00/Carbon" target="_blank" rel="noopener"><span>GitHub</span></a>
-      </div>
-      <div class="note"><span class="fa">دانلود از گیت‌هاب رسمی پروژه انجام می‌شود.</span><span class="en">Downloads are served from the project’s official GitHub.</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="analytics">
-  <div class="wrap">
-    <div class="sec-head rv" style="text-align:center">
-      <div class="eyebrow"><span class="fa">آمار و نرخ دانلود</span><span class="en">Live Analytics</span></div>
-      <h2><span class="fa">روند دانلود و نرخ رشد لایو</span><span class="en">Live Download Metrics</span></h2>
-      <p><span class="fa">پایش لحظه‌ای تعداد دریافت بسته‌های نصبی کربن از مخزن رسمی گیت‌هاب</span><span class="en">Real-time release telemetry tracked directly from official GitHub releases</span></p>
-    </div>
-    <div class="chart-box rv">
-      <a href="https://github.com/sinamp00/Carbon/releases" target="_blank" rel="noopener" title="مشاهده آمار و دانلود در گیت‌هاب">
-        <img src="assets/downloads.svg" alt="Carbon Download Analytics Chart" width="820" height="300" loading="lazy">
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap">
-    <div class="sec-head rv"><div class="eyebrow">FAQ</div><h2><span class="fa">سؤالات متداول</span><span class="en">Frequently asked</span></h2></div>
-    <div class="faq">
-      <details class="rv"><summary><span class="fa">کدام پروتکل را انتخاب کنم؟</span><span class="en">Which protocol should I pick?</span></summary><p><span class="fa">با «مسک توربو» شروع کنید. اگر روی اپراتور شما کند بود، «گول وارپ» یا «لنترن آلمان» را امتحان کنید.</span><span class="en">Start with MASQUE Turbo. If it is slow on your carrier, try Gool WARP or Lantern Edge.</span></p></details>
-      <details class="rv"><summary><span class="fa">کلید اشتراک چطور فعال می‌شود؟</span><span class="en">How do I activate a key?</span></summary><p><span class="fa">از تنظیمات ← حساب کاربری، شناسهٔ دستگاه (DEV-XXXX-XXXX) را به ربات تلگرام بدهید و کلید دریافتی را همان‌جا وارد کنید. هر کلید فقط روی همان دستگاه کار می‌کند.</span><span class="en">From Settings → Account give your device ID (DEV-XXXX-XXXX) to the Telegram bot and paste the key you receive. Each key works only on that device.</span></p></details>
-      <details class="rv"><summary><span class="fa">آپدیت‌ها چطور می‌آیند؟</span><span class="en">How do updates work?</span></summary><p><span class="fa">اپ نسخه‌های جدید گیت‌هاب را بررسی می‌کند و از بخش تنظیمات ← به‌روزرسانی می‌توانید دانلود و نصب کنید.</span><span class="en">The app checks GitHub releases; download and install from Settings → Updates.</span></p></details>
-      <details class="rv"><summary><span class="fa">اندروید چند لازم است؟</span><span class="en">Which Android versions are supported?</span></summary><p><span class="fa">اندروید 8.0 (API 26) و بالاتر.</span><span class="en">Android 8.0 (API 26) and above.</span></p></details>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="brand"><img src="assets/logo.svg" alt="" width="34" height="34"><span>Carbon</span></div>
-    <nav>
-      <a href="https://github.com/sinamp00/Carbon" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://t.me/Sina_mp_VPNbot" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://github.com/sinamp00/Carbon/releases" target="_blank" rel="noopener">Releases</a>
-    </nav>
-    <span class="dlcount" id="dlCount" hidden><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg><b class="ltr" id="dlNum">0</b> <span class="fa">دانلود</span><span class="en">downloads</span></span>
-    <span>© Carbon <span class="ltr">2026</span></span>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var html=document.documentElement;
-  var saved=null;try{saved=localStorage.getItem('carbon-lang')}catch(e){}
-  function setLang(l){html.lang=l;html.dir=l==='fa'?'rtl':'ltr';try{localStorage.setItem('carbon-lang',l)}catch(e){}}
-  if(saved==='en'||saved==='fa')setLang(saved);
-  else if(!/^fa/i.test(navigator.language||''))setLang('en');
-  document.getElementById('langBtn').addEventListener('click',function(){setLang(html.lang==='fa'?'en':'fa')});
-
-  var els=document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-    els.forEach(function(el,i){el.style.transitionDelay=(i%4)*60+'ms';io.observe(el)});
-  }else els.forEach(function(el){el.classList.add('in')});
-
-  fetch('https://api.github.com/repos/sinamp00/Carbon/releases/latest').then(function(r){return r.ok?r.json():null}).then(function(rel){
-    if(!rel)return;
-    var v=(rel.tag_name||'').replace(/^v/i,'');
-    var apk=(rel.assets||[]).filter(function(a){return /arm64/i.test(a.name)&&/\.apk$/i.test(a.name)})[0]||(rel.assets||[]).filter(function(a){return /\.apk$/i.test(a.name)})[0];
-    if(v){['verPill'].forEach(function(id){var n=document.getElementById(id);if(n)n.textContent='v'+v});
-      ['verText','verText2'].forEach(function(id){var n=document.getElementById(id);if(n)n.textContent=v})}
-    if(apk)document.querySelectorAll('a.dlLink').forEach(function(a){if(a.href.indexOf('/releases/latest')>-1&&!a.classList.contains('nav-dl')||a.id==='apkBtn')a.href=apk.browser_download_url});
-  }).catch(function(){});
-  fetch('https://api.github.com/repos/sinamp00/Carbon/releases?per_page=100').then(function(r){return r.ok?r.json():null}).then(function(list){
-    if(!list)return;
-    var n=0;list.forEach(function(rel){(rel.assets||[]).forEach(function(a){if(/\.apk$/i.test(a.name))n+=a.download_count||0})});
-    document.getElementById('dlNum').textContent=n.toLocaleString('en-US');
-    document.getElementById('dlCount').hidden=false;
-  }).catch(function(){});
-})();
-</script>
+  <script src="app.js" defer></script>
 </body>
 </html>
