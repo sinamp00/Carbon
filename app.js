@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CARBON — Sleek Interactive App Controller & Release Sync
+   CARBON — Interactive Engine Inspector, Routing Hub & Release Sync
    ========================================================================== */
 
 (() => {
@@ -45,41 +45,22 @@
 
       'hero.title': 'کربن؛ کلاینت امن شبکه برای اندروید',
       'hero.subtitle':
-        'ترکیب <bdi class="ltr">10</bdi> موتور ضدسانسور بدون نیاز به سرور، هسته دوگانه <bdi class="ltr">sing-box</bdi> و <bdi class="ltr">Xray</bdi>، مسیریابی دقیق اپلیکیشن‌ها و لایسنس سخت‌افزاری آفلاین در یک رابط سبک و دقیق. همین‌جا پیش‌نمایش اپلیکیشن را امتحان کنید.',
+        'ترکیب <bdi class="ltr">10</bdi> موتور ضدسانسور بدون نیاز به سرور، هسته دوگانه <bdi class="ltr">sing-box</bdi> و <bdi class="ltr">Xray</bdi>، مسیریابی دقیق اپلیکیشن‌ها و لایسنس سخت‌افزاری آفلاین در یک کلاینت سبک و دقیق.',
       'hero.ctaDownload': 'دانلود نسخه رسمی APK',
       'hero.ctaKey': 'دریافت کلید از @Sina_mp_VPNbot',
       'hero.s1': 'موتور ضدسانسور بومی',
       'hero.s2': 'هسته ترکیبی',
       'hero.s3': 'لایسنس سخت‌افزاری',
 
-      'phone.layoutBtn': 'چیدمان: Stage',
-      'phone.layoutOrbit': 'چیدمان: Orbit',
-      'phone.statusOff': 'آماده اتصال',
-      'phone.statusConnecting': 'در حال اتصال...',
-      'phone.statusConnected': 'متصل و ایمن',
-      'phone.btnConnect': 'اتصال',
-      'phone.btnConnecting': 'لغو اتصال',
-      'phone.btnDisconnect': 'قطع اتصال',
-      'phone.dl': 'دانلود',
-      'phone.ul': 'آپلود',
-      'phone.pickEngine': 'انتخاب موتور یا پروتکل',
-      'phone.coreSelect': 'هسته و رنگ تاکیدی',
-      'phone.coreActiveDescLabel': 'وضعیت هسته',
-      'phone.orbColor': 'رنگ تاکیدی اپلیکیشن',
-      'phone.tabDash': 'داشبورد',
-      'phone.tabServers': 'موتورها',
-      'phone.tabCore': 'هسته و تم',
-
       'engines.title': '<bdi class="ltr">10</bdi> موتور ضدسانسور اختصاصی کربن',
       'engines.lead':
-        'هر موتور یک مکانیزم مستقل برای عبور از فیلترینگ اپراتورهای مختلف است. بدون پرچم نمایشی، هر گزینه را انتخاب کنید و مشخصاتش را در شبیه‌ساز بالا امتحان کنید.',
+        'هر موتور یک مکانیزم مستقل برای عبور از فیلترینگ اپراتورهای مختلف است. هر گزینه را انتخاب کنید تا جزئیات فنی و کاربرد دقیق آن را ببینید.',
       'engines.filterAll': 'همه (10)',
       'engines.filterMasque': 'MASQUE و H2/H3',
       'engines.filterServerless': 'بدون سرور و پل‌ها',
       'engines.filterWg': 'نویز WireGuard',
       'engines.scanBtn': 'شبیه‌سازی تست پینگ موتورها',
       'engines.scanningBtn': 'در حال اسکن...',
-      'engines.applyPhone': 'اتصال با این موتور در شبیه‌ساز',
 
       'stack.title': 'مسیریابی هوشمند و هسته دوگانه <bdi class="ltr">sing-box + Xray</bdi>',
       'stack.lead':
@@ -161,41 +142,22 @@
 
       'hero.title': 'Carbon. Engineered for open access.',
       'hero.subtitle':
-        'Uniting <bdi class="ltr">10</bdi> serverless anti-DPI transports, a dual <bdi class="ltr">sing-box</bdi> + <bdi class="ltr">Xray</bdi> core, per-app split tunneling, and offline ECDSA licensing in a quiet, responsive interface. Test the interactive app preview right beside you.',
+        'Uniting <bdi class="ltr">10</bdi> serverless anti-DPI transports, a dual <bdi class="ltr">sing-box</bdi> + <bdi class="ltr">Xray</bdi> core, per-app split tunneling, and offline ECDSA licensing in a quiet, refined Android client.',
       'hero.ctaDownload': 'Download Official APK',
       'hero.ctaKey': 'Request Key via @Sina_mp_VPNbot',
       'hero.s1': 'Built-in Bypass Engines',
       'hero.s2': 'Hybrid Core',
       'hero.s3': 'Hardware Licensing',
 
-      'phone.layoutBtn': 'Layout: Stage',
-      'phone.layoutOrbit': 'Layout: Orbit',
-      'phone.statusOff': 'Ready to connect',
-      'phone.statusConnecting': 'Connecting...',
-      'phone.statusConnected': 'Connected',
-      'phone.btnConnect': 'Connect',
-      'phone.btnConnecting': 'Cancel',
-      'phone.btnDisconnect': 'Disconnect',
-      'phone.dl': 'Download',
-      'phone.ul': 'Upload',
-      'phone.pickEngine': 'Pick Engine or Transport',
-      'phone.coreSelect': 'Core & App Accent',
-      'phone.coreActiveDescLabel': 'Active Core Mode',
-      'phone.orbColor': 'Orb accent tint',
-      'phone.tabDash': 'Dashboard',
-      'phone.tabServers': 'Engines',
-      'phone.tabCore': 'Core & Theme',
-
       'engines.title': '<bdi class="ltr">10</bdi> Carbon native anti-DPI engines',
       'engines.lead':
-        'Each transport implements a distinct circumvention strategy for different carrier conditions. Select any engine below to inspect its internals or run it live inside the app simulator.',
+        'Each transport implements a distinct circumvention strategy for different carrier conditions. Select any engine below to inspect its technical stack and use case.',
       'engines.filterAll': 'All (10)',
       'engines.filterMasque': 'MASQUE & H2/H3',
       'engines.filterServerless': 'Serverless & Bridges',
       'engines.filterWg': 'WireGuard Noise',
       'engines.scanBtn': 'Simulate Engine Latency Scan',
       'engines.scanningBtn': 'Scanning...',
-      'engines.applyPhone': 'Connect with this engine in preview',
 
       'stack.title': 'Precision Routing & Dual <bdi class="ltr">sing-box + Xray</bdi> Core',
       'stack.lead':
@@ -499,31 +461,10 @@
     }
   };
 
-  const CORE_DESCRIPTIONS = {
-    HYBRID: {
-      fa: 'سوییچ خودکار بین sing-box و Xray برای بالاترین پایداری',
-      en: 'Automatically selects sing-box or Xray per protocol'
-    },
-    'sing-box': {
-      fa: 'اجرای تمام کانفیگ‌ها و قوانین Geo روی هسته sing-box extended',
-      en: 'Unified sing-box extended routing and transport execution'
-    },
-    Xray: {
-      fa: 'اجرای مستقیم Reality و VMess روی هسته Xray-core',
-      en: 'Routes Reality, XTLS, and V2Ray protocols via Xray-core'
-    }
-  };
-
   let currentLang = detectInitialLang();
-  let phoneState = 'off';
-  let phoneTab = 'dashboard';
-  let phoneLayout = 'stage';
-  let activeCore = 'HYBRID';
   let activeFilter = 'all';
   let selectedEngineId = ENGINES[0].id;
   let activeRouteTile = 'domain';
-  let simConnectTimer = null;
-  let simSpeedTimer = null;
   const simulatedPings = {};
 
   function detectInitialLang() {
@@ -536,19 +477,6 @@
 
   function formatMb(bytes) {
     return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
-  }
-
-  function formatDashboardSpeed(bytesPerSec) {
-    const v = Math.max(0, bytesPerSec);
-    if (v >= 1024 * 1024) {
-      const m = v / (1024 * 1024);
-      return [m < 10 ? m.toFixed(1) : Math.round(m).toString(), 'MB/s'];
-    }
-    if (v >= 1024) {
-      const k = v / 1024;
-      return [k < 10 ? k.toFixed(1) : Math.round(k).toString(), 'KB/s'];
-    }
-    return [Math.round(v).toString(), 'B/s'];
   }
 
   function applyLanguage(lang) {
@@ -586,8 +514,6 @@
       btn.setAttribute('aria-pressed', btn.getAttribute('data-set-lang') === lang ? 'true' : 'false');
     });
 
-    renderPhone();
-    renderMiniPhoneServerList();
     renderEngineMatrix();
     renderInspector();
     renderRoutingDetail();
@@ -596,154 +522,6 @@
 
   function selectedEngine() {
     return ENGINES.find((e) => e.id === selectedEngineId) || ENGINES[0];
-  }
-
-  function renderPhone() {
-    const dict = I18N[currentLang];
-    const phoneEl = document.getElementById('carbon-phone');
-    const connCard = document.getElementById('phone-conn-card');
-    const engine = selectedEngine();
-    const engName = currentLang === 'fa' ? engine.nameFa : engine.nameEn;
-
-    phoneEl.setAttribute('data-layout', phoneLayout);
-    document.getElementById('toggle-dash-layout').textContent =
-      phoneLayout === 'stage' ? dict['phone.layoutBtn'] : dict['phone.layoutOrbit'];
-
-    connCard.setAttribute('data-state', phoneState);
-
-    let statusText = dict['phone.statusOff'];
-    let ctaText = dict['phone.btnConnect'];
-    let badgeText = 'IDLE';
-    if (phoneState === 'connecting') {
-      statusText = dict['phone.statusConnecting'];
-      ctaText = dict['phone.btnConnecting'];
-      badgeText = 'SYNC';
-    } else if (phoneState === 'connected') {
-      statusText = dict['phone.statusConnected'];
-      ctaText = dict['phone.btnDisconnect'];
-      badgeText = 'LIVE';
-    }
-
-    document.getElementById('phone-state-badge').textContent = badgeText;
-    document.getElementById('phone-status-text').textContent = statusText;
-    document.getElementById('phone-main-cta').textContent = ctaText;
-    document.getElementById('phone-active-subtitle').textContent = `${engine.nameEn} · ${engine.badge}`;
-    document.getElementById('phone-srv-name').textContent = engName;
-    document.getElementById('phone-srv-proto').textContent = engine.badge;
-
-    const pingEl = document.getElementById('phone-srv-ping');
-    if (phoneState === 'connected') {
-      pingEl.textContent = `${simulatedPings[engine.id] || engine.basePing} ms`;
-    } else if (phoneState === 'connecting') {
-      pingEl.textContent = '...';
-    } else {
-      pingEl.textContent = simulatedPings[engine.id] ? `${simulatedPings[engine.id]} ms` : '--';
-    }
-
-    document.getElementById('phone-core-badge').textContent = activeCore;
-    document.getElementById('phone-core-desc').textContent = CORE_DESCRIPTIONS[activeCore][currentLang];
-    document.querySelectorAll('[data-set-core]').forEach((b) => {
-      b.setAttribute('aria-pressed', b.getAttribute('data-set-core') === activeCore ? 'true' : 'false');
-    });
-
-    document.querySelectorAll('[data-phone-tab]').forEach((b) => {
-      b.setAttribute('aria-selected', b.getAttribute('data-phone-tab') === phoneTab ? 'true' : 'false');
-    });
-    ['dashboard', 'servers', 'core'].forEach((t) => {
-      document.getElementById(`phone-view-${t}`).classList.toggle('is-active', t === phoneTab);
-    });
-  }
-
-  function updateSpeedReadouts(dlBytes, ulBytes) {
-    const [dlVal, dlUnit] = formatDashboardSpeed(dlBytes);
-    const [ulVal, ulUnit] = formatDashboardSpeed(ulBytes);
-    document.getElementById('phone-dl-val').textContent = dlVal;
-    document.getElementById('phone-dl-unit').textContent = dlUnit;
-    document.getElementById('phone-ul-val').textContent = ulVal;
-    document.getElementById('phone-ul-unit').textContent = ulUnit;
-  }
-
-  function stopSpeedTicker() {
-    clearInterval(simSpeedTimer);
-    simSpeedTimer = null;
-    updateSpeedReadouts(0, 0);
-  }
-
-  function startSpeedTicker() {
-    clearInterval(simSpeedTimer);
-    const tick = () => {
-      const dl = (1.8 + Math.random() * 6.4) * 1024 * 1024;
-      const ul = (320 + Math.random() * 940) * 1024;
-      updateSpeedReadouts(dl, ul);
-    };
-    tick();
-    simSpeedTimer = setInterval(tick, 950);
-  }
-
-  function togglePhoneConnection(forceConnect = false) {
-    clearTimeout(simConnectTimer);
-    if (!forceConnect && (phoneState === 'connecting' || phoneState === 'connected')) {
-      phoneState = 'off';
-      stopSpeedTicker();
-      renderPhone();
-      return;
-    }
-
-    phoneState = 'connecting';
-    stopSpeedTicker();
-    renderPhone();
-
-    simConnectTimer = setTimeout(() => {
-      phoneState = 'connected';
-      if (!simulatedPings[selectedEngineId]) {
-        simulatedPings[selectedEngineId] = selectedEngine().basePing + Math.floor(Math.random() * 9);
-      }
-      startSpeedTicker();
-      renderPhone();
-      renderEngineMatrix();
-      renderInspector();
-    }, 950);
-  }
-
-  function renderMiniPhoneServerList() {
-    const container = document.getElementById('phone-mini-servers');
-    container.innerHTML = '';
-
-    ENGINES.forEach((engine) => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'mini-node-btn';
-      btn.setAttribute('aria-pressed', engine.id === selectedEngineId ? 'true' : 'false');
-
-      const left = document.createElement('div');
-      const title = document.createElement('div');
-      title.style.fontWeight = '700';
-      title.style.fontSize = '0.86rem';
-      title.textContent = currentLang === 'fa' ? engine.nameFa : engine.nameEn;
-
-      const sub = document.createElement('div');
-      sub.className = 'mono';
-      sub.style.fontSize = '0.68rem';
-      sub.style.color = 'var(--muted)';
-      sub.textContent = engine.badge;
-      left.append(title, sub);
-
-      const ping = document.createElement('span');
-      ping.className = 'engine-ping';
-      ping.textContent = simulatedPings[engine.id] ? `${simulatedPings[engine.id]} ms` : '--';
-
-      btn.append(left, ping);
-      btn.addEventListener('click', () => {
-        selectedEngineId = engine.id;
-        phoneTab = 'dashboard';
-        renderMiniPhoneServerList();
-        renderEngineMatrix();
-        renderInspector();
-        togglePhoneConnection(true);
-      });
-
-      container.appendChild(btn);
-    });
   }
 
   function renderEngineMatrix() {
@@ -791,8 +569,6 @@
         selectedEngineId = engine.id;
         renderEngineMatrix();
         renderInspector();
-        renderMiniPhoneServerList();
-        renderPhone();
       });
 
       listEl.appendChild(btn);
@@ -848,9 +624,7 @@
       setTimeout(() => {
         simulatedPings[e.id] = e.basePing + Math.floor(Math.random() * 14);
         renderEngineMatrix();
-        renderMiniPhoneServerList();
         renderInspector();
-        renderPhone();
 
         if (idx === ENGINES.length - 1) {
           btn.textContent = I18N[currentLang]['engines.scanBtn'];
@@ -1000,49 +774,6 @@
       });
     });
 
-    document.getElementById('toggle-dash-layout').addEventListener('click', () => {
-      phoneLayout = phoneLayout === 'stage' ? 'orbit' : 'stage';
-      renderPhone();
-    });
-
-    document.getElementById('phone-quick-add').addEventListener('click', () => {
-      phoneTab = phoneTab === 'servers' ? 'dashboard' : 'servers';
-      renderPhone();
-    });
-
-    document.getElementById('phone-selected-server').addEventListener('click', () => {
-      phoneTab = 'servers';
-      renderPhone();
-    });
-
-    ['phone-orb-btn', 'phone-main-cta'].forEach((id) => {
-      document.getElementById(id).addEventListener('click', () => togglePhoneConnection(false));
-    });
-
-    document.querySelectorAll('[data-phone-tab]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        phoneTab = btn.getAttribute('data-phone-tab');
-        renderPhone();
-      });
-    });
-
-    document.querySelectorAll('[data-set-core]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        activeCore = btn.getAttribute('data-set-core');
-        renderPhone();
-      });
-    });
-
-    document.querySelectorAll('[data-phone-accent]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const hex = btn.getAttribute('data-phone-accent');
-        document.documentElement.style.setProperty('--phone-accent', hex);
-        document.querySelectorAll('[data-phone-accent]').forEach((b) => {
-          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
-        });
-      });
-    });
-
     document.querySelectorAll('[data-engine-filter]').forEach((pill) => {
       pill.addEventListener('click', () => {
         activeFilter = pill.getAttribute('data-engine-filter');
@@ -1055,13 +786,6 @@
     });
 
     document.getElementById('simulate-ping-btn').addEventListener('click', runSimulatedPingSweep);
-
-    document.getElementById('apply-engine-phone').addEventListener('click', () => {
-      phoneTab = 'dashboard';
-      renderMiniPhoneServerList();
-      togglePhoneConnection(true);
-      document.getElementById('carbon-phone').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
 
     document.querySelectorAll('[data-route-tile]').forEach((tile) => {
       tile.addEventListener('click', () => {

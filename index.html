@@ -98,10 +98,10 @@
   </div>
 
   <main id="main-content">
-    <!-- BAND 1: FLAGSHIP HERO + SLEEK CARBON PHONE REPLICA -->
+    <!-- BAND 1: CLEAN EDITORIAL HERO -->
     <section class="hero" id="top">
-      <div class="container hero-grid">
-        <div>
+      <div class="container">
+        <div class="hero-inner">
           <div class="hero-badge mono">
             <span class="status-dot" aria-hidden="true"></span>
             <span>ANDROID 8.0+ · ARM64-V8A ·</span>
@@ -115,7 +115,7 @@
           </h1>
 
           <p class="hero-subtitle" data-i18n-html="hero.subtitle">
-            ترکیب <bdi class="ltr">10</bdi> موتور ضدسانسور بدون نیاز به سرور، هسته دوگانه <bdi class="ltr">sing-box</bdi> و <bdi class="ltr">Xray</bdi>، مسیریابی دقیق اپلیکیشن‌ها و لایسنس سخت‌افزاری آفلاین در یک رابط سبک و دقیق. همین‌جا پیش‌نمایش اپلیکیشن را امتحان کنید.
+            ترکیب <bdi class="ltr">10</bdi> موتور ضدسانسور بدون نیاز به سرور، هسته دوگانه <bdi class="ltr">sing-box</bdi> و <bdi class="ltr">Xray</bdi>، مسیریابی دقیق اپلیکیشن‌ها و لایسنس سخت‌افزاری آفلاین در یک کلاینت سبک و دقیق.
           </p>
 
           <div class="hero-cta-row">
@@ -138,133 +138,6 @@
             <span><strong class="mono">ECDSA P-256</strong> <span data-i18n="hero.s3">لایسنس سخت‌افزاری</span></span>
           </div>
         </div>
-
-        <!-- Sleek Obsidian Carbon App Preview -->
-        <div class="phone-stage">
-          <div class="carbon-phone" id="carbon-phone" data-layout="stage">
-            <div class="phone-topbar">
-              <span class="phone-brand">Carbon</span>
-              <div class="phone-top-actions">
-                <button type="button" class="phone-chip-btn" id="toggle-dash-layout" data-i18n="phone.layoutBtn">چیدمان: Stage</button>
-                <button type="button" class="phone-chip-btn" id="phone-quick-add" aria-label="All engines">+</button>
-              </div>
-            </div>
-
-            <!-- TAB 1: DASHBOARD -->
-            <div class="phone-view is-active" id="phone-view-dashboard">
-              <div class="phone-conn-card" id="phone-conn-card" data-state="off">
-                <div class="phone-conn-header">
-                  <span class="mono">TUNNEL ENGINE</span>
-                  <span class="state-pill">
-                    <span class="state-pill-dot" aria-hidden="true"></span>
-                    <span id="phone-state-badge">IDLE</span>
-                  </span>
-                </div>
-
-                <div class="phone-conn-main">
-                  <div>
-                    <div class="conn-label" id="phone-status-text" data-i18n="phone.statusOff">آماده اتصال</div>
-                    <div class="conn-engine-sub" id="phone-active-subtitle">MASQUE Turbo · MASQUE H2</div>
-                  </div>
-
-                  <button type="button" class="orb-btn" id="phone-orb-btn" aria-label="Toggle Carbon connection">
-                    <span class="orb-ring" aria-hidden="true"></span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                      <path d="M12 3v9" />
-                      <path d="M18.4 6.6a9 9 0 1 1-12.77.04" />
-                    </svg>
-                  </button>
-                </div>
-
-                <button type="button" class="phone-connect-cta" id="phone-main-cta" data-i18n="phone.btnConnect">اتصال</button>
-              </div>
-
-              <button type="button" class="phone-server-row" id="phone-selected-server">
-                <span class="srv-icon-box" aria-hidden="true">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                  </svg>
-                </span>
-                <span class="srv-meta">
-                  <span class="srv-name" id="phone-srv-name">مسک توربو</span>
-                  <span class="srv-sub mono" id="phone-srv-proto">MASQUE H2</span>
-                </span>
-                <span class="srv-ping" id="phone-srv-ping">--</span>
-              </button>
-
-              <div class="phone-speed-grid">
-                <div class="speed-box">
-                  <div class="speed-head">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-                      <path d="M12 5v14M5 12l7 7 7-7" />
-                    </svg>
-                    <span data-i18n="phone.dl">دانلود</span>
-                  </div>
-                  <div class="speed-num">
-                    <span class="speed-val" id="phone-dl-val">0</span>
-                    <span class="speed-unit" id="phone-dl-unit">B/s</span>
-                  </div>
-                </div>
-
-                <div class="speed-box">
-                  <div class="speed-head">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-                      <path d="M12 19V5M5 12l7-7 7 7" />
-                    </svg>
-                    <span data-i18n="phone.ul">آپلود</span>
-                  </div>
-                  <div class="speed-num">
-                    <span class="speed-val" id="phone-ul-val">0</span>
-                    <span class="speed-unit" id="phone-ul-unit">B/s</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- TAB 2: SERVERS -->
-            <div class="phone-view" id="phone-view-servers">
-              <div class="phone-conn-header">
-                <strong style="color:var(--ink);font-size:0.86rem;" data-i18n="phone.pickEngine">انتخاب موتور یا پروتکل</strong>
-                <span class="mono">10 NATIVE</span>
-              </div>
-              <div class="mini-list" id="phone-mini-servers"></div>
-            </div>
-
-            <!-- TAB 3: CORE & ACCENT -->
-            <div class="phone-view" id="phone-view-core">
-              <div class="phone-conn-header">
-                <strong style="color:var(--ink);font-size:0.86rem;" data-i18n="phone.coreSelect">هسته و رنگ تاکیدی</strong>
-                <span class="mono" style="color:var(--accent-bright);" id="phone-core-badge">HYBRID</span>
-              </div>
-              <div class="mini-core-pills" role="group" aria-label="Core Engine Selector">
-                <button type="button" class="mini-core-btn" data-set-core="HYBRID" aria-pressed="true">HYBRID</button>
-                <button type="button" class="mini-core-btn" data-set-core="sing-box" aria-pressed="false">sing-box</button>
-                <button type="button" class="mini-core-btn" data-set-core="Xray" aria-pressed="false">Xray</button>
-              </div>
-              <div class="spec-row">
-                <span class="spec-k" data-i18n="phone.coreActiveDescLabel">وضعیت هسته</span>
-                <span class="spec-v" id="phone-core-desc" style="font-size:0.8rem;font-weight:500;">سوییچ خودکار بین sing-box و Xray</span>
-              </div>
-              <div class="phone-accent-bar">
-                <span style="font-size:0.78rem;color:var(--muted);" data-i18n="phone.orbColor">رنگ تاکیدی اپلیکیشن</span>
-                <div class="phone-swatches" role="group" aria-label="Phone accent tint">
-                  <button type="button" class="swatch-dot" data-phone-accent="#8b5cf6" style="background:#8b5cf6" aria-pressed="true" aria-label="Violet"></button>
-                  <button type="button" class="swatch-dot" data-phone-accent="#3b82f6" style="background:#3b82f6" aria-pressed="false" aria-label="Blue"></button>
-                  <button type="button" class="swatch-dot" data-phone-accent="#10b981" style="background:#10b981" aria-pressed="false" aria-label="Emerald"></button>
-                  <button type="button" class="swatch-dot" data-phone-accent="#f59e0b" style="background:#f59e0b" aria-pressed="false" aria-label="Amber"></button>
-                  <button type="button" class="swatch-dot" data-phone-accent="#ec4899" style="background:#ec4899" aria-pressed="false" aria-label="Rose"></button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Dock Tabs -->
-            <nav class="phone-dock" aria-label="Phone Screen Tabs">
-              <button type="button" class="phone-tab-btn" data-phone-tab="dashboard" aria-selected="true" data-i18n="phone.tabDash">داشبورد</button>
-              <button type="button" class="phone-tab-btn" data-phone-tab="servers" aria-selected="false" data-i18n="phone.tabServers">موتورها</button>
-              <button type="button" class="phone-tab-btn" data-phone-tab="core" aria-selected="false" data-i18n="phone.tabCore">هسته و تم</button>
-            </nav>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -277,7 +150,7 @@
             <bdi class="ltr">10</bdi> موتور ضدسانسور اختصاصی کربن
           </h2>
           <p class="section-lead" data-i18n="engines.lead">
-            هر موتور یک مکانیزم مستقل برای عبور از فیلترینگ اپراتورهای مختلف است. بدون پرچم نمایشی، هر گزینه را انتخاب کنید و مشخصاتش را در شبیه‌ساز بالا امتحان کنید.
+            هر موتور یک مکانیزم مستقل برای عبور از فیلترینگ اپراتورهای مختلف است. هر گزینه را انتخاب کنید تا جزئیات فنی و کاربرد دقیق آن را ببینید.
           </p>
         </div>
 
@@ -303,9 +176,6 @@
             <h3 class="inspector-title" id="insp-name">مسک توربو</h3>
             <p class="inspector-desc" id="insp-desc"></p>
             <div class="inspector-specs" id="insp-specs"></div>
-            <button type="button" class="btn btn-platinum" id="apply-engine-phone" data-i18n="engines.applyPhone">
-              اتصال با این موتور در شبیه‌ساز
-            </button>
           </article>
         </div>
       </div>
