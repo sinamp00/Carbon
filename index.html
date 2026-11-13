@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#09080d" />
+  <meta name="theme-color" content="#060608" />
   <title data-i18n="meta.title">Carbon VPN · کلاینت ضدسانسور و هسته ترکیبی اندروید</title>
   <meta
     name="description"
@@ -20,13 +20,13 @@
   <meta property="og:title" content="Carbon VPN · کلاینت ضدسانسور و هسته ترکیبی اندروید" />
   <meta
     property="og:description"
-    content="10 موتور ضدسانسور بومی، هسته ترکیبی sing-box و Xray، تفکیک اپلیکیشن و لایسنس آفلاین ECDSA P-256 در رابط Material 3 Expressive."
+    content="10 موتور ضدسانسور بومی، هسته ترکیبی sing-box و Xray، تفکیک اپلیکیشن و لایسنس آفلاین ECDSA P-256."
   />
   <meta property="og:image" content="https://sinamp00.github.io/Carbon/assets/og-image.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Carbon VPN" />
-  <meta name="twitter:description" content="Native Android anti-DPI & hybrid core suite with Material 3 Expressive UI and offline ECDSA licensing." />
+  <meta name="twitter:description" content="Native Android anti-DPI & hybrid core suite with offline ECDSA licensing." />
   <meta name="twitter:image" content="https://sinamp00.github.io/Carbon/assets/og-image.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,14 +41,11 @@
   <a class="skip-link" href="#main-content" data-i18n="nav.skip">پرش به محتوای اصلی</a>
   <div class="ambient-aura" aria-hidden="true"></div>
 
-  <!-- ======================================================================
-       HEADER (Mirrors Carbon Theme Engine + Brand Lockup)
-       ====================================================================== -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand-lockup" href="#top" aria-label="Carbon Home">
-        <span class="brand-clover" aria-hidden="true">
-          <span class="brand-clover-bg"></span>
+        <span class="brand-mark" aria-hidden="true">
           <svg viewBox="296 255 432 514" fill="currentColor">
             <path d="M400.93 274.96H636.21L708.02 362.25H400.93V660H708.02L636.21 749.04H315.98V362.25Z" />
           </svg>
@@ -65,16 +62,6 @@
       </nav>
 
       <div class="header-controls">
-        <!-- Carbon Accent Swatches (AccentColorSetting.kt) -->
-        <div class="accent-dots" role="group" aria-label="Accent color">
-          <button type="button" class="accent-dot" data-set-accent="#6937D4" style="background:#6937D4" aria-pressed="true" aria-label="Violet"></button>
-          <button type="button" class="accent-dot" data-set-accent="#3174BF" style="background:#3174BF" aria-pressed="false" aria-label="Blue"></button>
-          <button type="button" class="accent-dot" data-set-accent="#237D70" style="background:#237D70" aria-pressed="false" aria-label="Teal"></button>
-          <button type="button" class="accent-dot" data-set-accent="#22C55E" style="background:#22C55E" aria-pressed="false" aria-label="Green"></button>
-          <button type="button" class="accent-dot" data-set-accent="#F97316" style="background:#F97316" aria-pressed="false" aria-label="Orange"></button>
-          <button type="button" class="accent-dot" data-set-accent="#DB2777" style="background:#DB2777" aria-pressed="false" aria-label="Pink"></button>
-        </div>
-
         <div class="lang-switch" role="group" aria-label="Language switch">
           <button type="button" class="lang-btn" data-set-lang="fa" aria-pressed="true">فا</button>
           <button type="button" class="lang-btn" data-set-lang="en" aria-pressed="false">EN</button>
@@ -90,7 +77,7 @@
           aria-controls="mobile-drawer"
           aria-label="Toggle Menu"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
             <line x1="4" y1="7" x2="20" y2="7" />
             <line x1="4" y1="12" x2="20" y2="12" />
             <line x1="4" y1="17" x2="20" y2="17" />
@@ -110,15 +97,12 @@
     </nav>
   </div>
 
-  <!-- ======================================================================
-       MAIN CONTENT
-       ====================================================================== -->
   <main id="main-content">
-    <!-- BAND 1: EDITORIAL STATEMENT + LIVE INTERACTIVE CARBON APP PHONE -->
+    <!-- BAND 1: FLAGSHIP HERO + SLEEK CARBON PHONE REPLICA -->
     <section class="hero" id="top">
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="hero-pill mono">
+        <div>
+          <div class="hero-badge mono">
             <span class="status-dot" aria-hidden="true"></span>
             <span>ANDROID 8.0+ · ARM64-V8A ·</span>
             <span id="hero-release-tag">V1.0.0</span>
@@ -127,164 +111,109 @@
           </div>
 
           <h1 class="hero-title" data-i18n="hero.title">
-            هم‌نوا با رابط کاربری واقعی کربن
+            کربن؛ کلاینت امن شبکه برای اندروید
           </h1>
 
           <p class="hero-subtitle" data-i18n-html="hero.subtitle">
-            کلاینت اندروید با <bdi class="ltr">10</bdi> موتور ضدسانسور بومی، هسته ترکیبی <bdi class="ltr">sing-box</bdi> و <bdi class="ltr">Xray</bdi>، مسیریابی دقیق و لایسنس سخت‌افزاری آفلاین در طراحی زنده <bdi class="ltr">Material 3 Expressive</bdi>. همین‌جا تم را عوض کنید و با شبیه‌ساز اپلیکیشن وصل شوید.
+            ترکیب <bdi class="ltr">10</bdi> موتور ضدسانسور بدون نیاز به سرور، هسته دوگانه <bdi class="ltr">sing-box</bdi> و <bdi class="ltr">Xray</bdi>، مسیریابی دقیق اپلیکیشن‌ها و لایسنس سخت‌افزاری آفلاین در یک رابط سبک و دقیق. همین‌جا پیش‌نمایش اپلیکیشن را امتحان کنید.
           </p>
 
           <div class="hero-cta-row">
-            <a class="btn btn-lime" href="#download">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <a class="btn btn-platinum" href="#download">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 3v12" />
                 <path d="m7 11 5 5 5-5" />
                 <path d="M5 21h14" />
               </svg>
               <span data-i18n="hero.ctaDownload">دانلود نسخه رسمی APK</span>
             </a>
-            <a class="btn btn-tonal" href="https://t.me/Sina_mp_VPNbot" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-glass" href="https://t.me/Sina_mp_VPNbot" target="_blank" rel="noopener noreferrer">
               <span data-i18n="hero.ctaKey">دریافت کلید از @Sina_mp_VPNbot</span>
             </a>
           </div>
 
-          <!-- Interactive Theme Preset & Accent Switcher matching Theme.kt + AccentColorSetting.kt -->
-          <div class="theme-studio-bar">
-            <span class="studio-label" data-i18n="hero.themeLabel">پالت زنده برنامه:</span>
-            <div class="preset-pills" role="group" aria-label="Carbon Theme Presets">
-              <button type="button" class="preset-pill" data-set-theme="dark" aria-pressed="true">Carbon Dark</button>
-              <button type="button" class="preset-pill" data-set-theme="dracula" aria-pressed="false">Dracula</button>
-              <button type="button" class="preset-pill" data-set-theme="catppuccin" aria-pressed="false">Catppuccin</button>
-              <button type="button" class="preset-pill" data-set-theme="nord" aria-pressed="false">Nord</button>
-            </div>
-            <div class="accent-dots" style="display:inline-flex;" role="group" aria-label="Studio accent color">
-              <button type="button" class="accent-dot" data-set-accent="#6937D4" style="background:#6937D4" aria-pressed="true" aria-label="Violet"></button>
-              <button type="button" class="accent-dot" data-set-accent="#3174BF" style="background:#3174BF" aria-pressed="false" aria-label="Blue"></button>
-              <button type="button" class="accent-dot" data-set-accent="#237D70" style="background:#237D70" aria-pressed="false" aria-label="Teal"></button>
-              <button type="button" class="accent-dot" data-set-accent="#22C55E" style="background:#22C55E" aria-pressed="false" aria-label="Green"></button>
-              <button type="button" class="accent-dot" data-set-accent="#F97316" style="background:#F97316" aria-pressed="false" aria-label="Orange"></button>
-              <button type="button" class="accent-dot" data-set-accent="#DB2777" style="background:#DB2777" aria-pressed="false" aria-label="Pink"></button>
-            </div>
+          <div class="hero-specs">
+            <span><strong class="mono">10</strong> <span data-i18n="hero.s1">موتور ضدسانسور بومی</span></span>
+            <span><strong class="mono">sing-box + Xray</strong> <span data-i18n="hero.s2">هسته ترکیبی</span></span>
+            <span><strong class="mono">ECDSA P-256</strong> <span data-i18n="hero.s3">لایسنس سخت‌افزاری</span></span>
           </div>
         </div>
 
-        <!-- LIVE INTERACTIVE CARBON APP REPLICA (DashboardScreen.kt 1:1) -->
-        <div class="app-frame-wrap">
+        <!-- Sleek Obsidian Carbon App Preview -->
+        <div class="phone-stage">
           <div class="carbon-phone" id="carbon-phone" data-layout="stage">
-            <!-- BrandTopBar -->
-            <div class="app-topbar">
-              <span class="app-brand-title">Carbon</span>
-              <div class="app-topbar-actions">
-                <button type="button" class="app-style-btn" id="toggle-dash-layout" data-i18n="phone.layoutBtn">چیدمان: Stage</button>
-                <button type="button" class="app-clover-add" id="phone-quick-add" aria-label="Switch screen">
-                  <svg class="clover-shape" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-                    <path d="M50 4C64 4 74 13 74 26C87 26 96 36 96 50C96 64 87 74 74 74C74 87 64 96 50 96C36 96 26 87 26 74C13 74 4 64 4 50C4 36 13 26 26 26C26 13 36 4 50 4Z" />
-                  </svg>
-                  <svg class="plus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true">
-                    <path d="M12 5v14M5 12h14" />
-                  </svg>
-                </button>
+            <div class="phone-topbar">
+              <span class="phone-brand">Carbon</span>
+              <div class="phone-top-actions">
+                <button type="button" class="phone-chip-btn" id="toggle-dash-layout" data-i18n="phone.layoutBtn">چیدمان: Stage</button>
+                <button type="button" class="phone-chip-btn" id="phone-quick-add" aria-label="All engines">+</button>
               </div>
             </div>
 
             <!-- TAB 1: DASHBOARD -->
-            <div class="app-tab-view is-active" id="phone-view-dashboard">
-              <!-- ConnectionStage Layout (Default) -->
-              <div class="conn-stage-card" id="conn-stage-card" data-state="off">
-                <svg class="conn-stage-flower" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-                  <path d="M50 2C58 2 63 10 66 16C73 12 82 14 86 22C90 29 86 38 82 43C90 45 98 51 98 58C98 66 90 71 82 73C86 79 88 88 81 93C74 98 66 93 61 88C58 95 51 100 44 98C37 96 34 88 33 81C26 85 17 86 12 79C7 72 11 63 16 58C9 55 2 49 3 41C4 33 12 30 19 29C15 22 15 13 22 8C29 3 37 8 42 13C45 7 47 2 50 2Z" />
-                </svg>
-
-                <div class="conn-stage-top">
-                  <span class="mono" data-i18n="phone.connLabel">CONNECTION</span>
-                  <span class="conn-status-indicator" aria-hidden="true"></span>
+            <div class="phone-view is-active" id="phone-view-dashboard">
+              <div class="phone-conn-card" id="phone-conn-card" data-state="off">
+                <div class="phone-conn-header">
+                  <span class="mono">TUNNEL ENGINE</span>
+                  <span class="state-pill">
+                    <span class="state-pill-dot" aria-hidden="true"></span>
+                    <span id="phone-state-badge">IDLE</span>
+                  </span>
                 </div>
 
-                <div class="conn-stage-middle">
+                <div class="phone-conn-main">
                   <div>
-                    <div class="conn-status-text" id="phone-status-text" data-i18n="phone.statusOff">خاموش</div>
-                    <div class="conn-sub-node" id="phone-active-subtitle">MASQUE Turbo · H2</div>
+                    <div class="conn-label" id="phone-status-text" data-i18n="phone.statusOff">آماده اتصال</div>
+                    <div class="conn-engine-sub" id="phone-active-subtitle">MASQUE Turbo · MASQUE H2</div>
                   </div>
 
-                  <button type="button" class="sun-power-btn" id="phone-power-btn-stage" aria-label="Toggle Carbon Connection">
-                    <svg class="sun-motif-bg" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-                      <path d="M50 3C57 3 61 11 66 12C71 13 78 9 83 14C88 19 85 26 88 32C91 37 98 42 97 49C96 56 90 61 89 67C88 73 91 80 86 85C81 90 73 87 67 89C61 91 57 98 50 98C43 98 38 91 32 89C26 87 19 90 14 85C9 80 12 73 11 67C10 61 4 56 3 49C2 42 9 37 12 32C15 26 12 19 17 14C22 9 29 13 34 12C39 11 43 3 50 3Z" />
-                    </svg>
-                    <svg class="sun-power-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
-                      <path d="M12 2v10" />
+                  <button type="button" class="orb-btn" id="phone-orb-btn" aria-label="Toggle Carbon connection">
+                    <span class="orb-ring" aria-hidden="true"></span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                      <path d="M12 3v9" />
                       <path d="M18.4 6.6a9 9 0 1 1-12.77.04" />
                     </svg>
                   </button>
                 </div>
 
-                <button type="button" class="conn-stage-cta" id="phone-main-cta" data-i18n="phone.btnConnect">اتصال</button>
+                <button type="button" class="phone-connect-cta" id="phone-main-cta" data-i18n="phone.btnConnect">اتصال</button>
               </div>
 
-              <!-- OrbitConnectionCard Layout (Centered) -->
-              <div class="orbit-hero-card" id="orbit-hero-card" data-state="off">
-                <button type="button" class="sun-power-btn" id="phone-power-btn-orbit" aria-label="Toggle Orbit Connection">
-                  <svg class="sun-motif-bg" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-                    <path d="M50 3C57 3 61 11 66 12C71 13 78 9 83 14C88 19 85 26 88 32C91 37 98 42 97 49C96 56 90 61 89 67C88 73 91 80 86 85C81 90 73 87 67 89C61 91 57 98 50 98C43 98 38 91 32 89C26 87 19 90 14 85C9 80 12 73 11 67C10 61 4 56 3 49C2 42 9 37 12 32C15 26 12 19 17 14C22 9 29 13 34 12C39 11 43 3 50 3Z" />
-                  </svg>
-                  <svg class="sun-power-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
-                    <path d="M12 2v10" />
-                    <path d="M18.4 6.6a9 9 0 1 1-12.77.04" />
-                  </svg>
-                </button>
-                <div>
-                  <div class="mono" style="font-size:0.72rem;opacity:0.72;" data-i18n="phone.connLabel">CONNECTION</div>
-                  <div class="conn-status-text" id="orbit-status-text" style="font-size:1.3rem;" data-i18n="phone.orbitReady">ضربه برای اتصال</div>
-                  <div class="conn-sub-node" id="orbit-node-label">MASQUE Turbo</div>
-                </div>
-              </div>
-
-              <!-- Server Section Header -->
-              <div class="app-section-row">
-                <strong data-i18n="phone.yourServer">سرور شما</strong>
-                <button type="button" id="phone-open-servers" data-i18n="phone.allServers">همه سرورها</button>
-              </div>
-
-              <!-- Selected Server Row Card -->
-              <button type="button" class="app-server-card" id="phone-selected-server">
-                <span class="app-server-squircle" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <button type="button" class="phone-server-row" id="phone-selected-server">
+                <span class="srv-icon-box" aria-hidden="true">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                   </svg>
                 </span>
-                <span class="app-server-meta">
-                  <span class="app-server-name" id="phone-srv-name" style="display:block;">مسک توربو</span>
-                  <span class="app-server-proto mono" id="phone-srv-proto" style="display:block;">MASQUE H2 · TURBO</span>
+                <span class="srv-meta">
+                  <span class="srv-name" id="phone-srv-name">مسک توربو</span>
+                  <span class="srv-sub mono" id="phone-srv-proto">MASQUE H2</span>
                 </span>
-                <span class="app-ping-pill" id="phone-srv-ping">--</span>
+                <span class="srv-ping" id="phone-srv-ping">--</span>
               </button>
 
-              <!-- DashboardSpeedCards (Blue Download + Lavender Upload) -->
-              <div class="app-speed-grid">
-                <div class="speed-card dl">
+              <div class="phone-speed-grid">
+                <div class="speed-box">
                   <div class="speed-head">
-                    <span class="speed-arrow-box" aria-hidden="true">
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(45deg);">
-                        <path d="M12 5v14M5 12l7 7 7-7" />
-                      </svg>
-                    </span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+                      <path d="M12 5v14M5 12l7 7 7-7" />
+                    </svg>
                     <span data-i18n="phone.dl">دانلود</span>
                   </div>
-                  <div class="speed-num-row">
+                  <div class="speed-num">
                     <span class="speed-val" id="phone-dl-val">0</span>
                     <span class="speed-unit" id="phone-dl-unit">B/s</span>
                   </div>
                 </div>
 
-                <div class="speed-card ul">
+                <div class="speed-box">
                   <div class="speed-head">
-                    <span class="speed-arrow-box" aria-hidden="true">
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(45deg);">
-                        <path d="M12 19V5M5 12l7-7 7 7" />
-                      </svg>
-                    </span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+                      <path d="M12 19V5M5 12l7-7 7 7" />
+                    </svg>
                     <span data-i18n="phone.ul">آپلود</span>
                   </div>
-                  <div class="speed-num-row">
+                  <div class="speed-num">
                     <span class="speed-val" id="phone-ul-val">0</span>
                     <span class="speed-unit" id="phone-ul-unit">B/s</span>
                   </div>
@@ -292,68 +221,68 @@
               </div>
             </div>
 
-            <!-- TAB 2: SERVERS LIST INSIDE PHONE -->
-            <div class="app-tab-view" id="phone-view-servers">
-              <div class="app-section-row">
-                <strong data-i18n="phone.pickEngine">انتخاب موتور یا پروتکل</strong>
-                <span class="mono" style="font-size:0.74rem;color:var(--muted);">10 BUILT-IN</span>
+            <!-- TAB 2: SERVERS -->
+            <div class="phone-view" id="phone-view-servers">
+              <div class="phone-conn-header">
+                <strong style="color:var(--ink);font-size:0.86rem;" data-i18n="phone.pickEngine">انتخاب موتور یا پروتکل</strong>
+                <span class="mono">10 NATIVE</span>
               </div>
               <div class="mini-list" id="phone-mini-servers"></div>
             </div>
 
-            <!-- TAB 3: CORE & CUSTOM PROTOCOLS INSIDE PHONE -->
-            <div class="app-tab-view" id="phone-view-core">
-              <div class="app-section-row">
-                <strong data-i18n="phone.coreSelect">انتخابگر هسته</strong>
-                <span class="mono" style="font-size:0.72rem;color:var(--primary);" id="phone-core-badge">HYBRID</span>
+            <!-- TAB 3: CORE & ACCENT -->
+            <div class="phone-view" id="phone-view-core">
+              <div class="phone-conn-header">
+                <strong style="color:var(--ink);font-size:0.86rem;" data-i18n="phone.coreSelect">هسته و رنگ تاکیدی</strong>
+                <span class="mono" style="color:var(--accent-bright);" id="phone-core-badge">HYBRID</span>
               </div>
               <div class="mini-core-pills" role="group" aria-label="Core Engine Selector">
                 <button type="button" class="mini-core-btn" data-set-core="HYBRID" aria-pressed="true">HYBRID</button>
                 <button type="button" class="mini-core-btn" data-set-core="sing-box" aria-pressed="false">sing-box</button>
                 <button type="button" class="mini-core-btn" data-set-core="Xray" aria-pressed="false">Xray</button>
               </div>
-              <div class="spec-row" style="margin-top:4px;">
+              <div class="spec-row">
                 <span class="spec-k" data-i18n="phone.coreActiveDescLabel">وضعیت هسته</span>
-                <span class="spec-v" id="phone-core-desc" style="font-size:0.84rem;font-weight:500;">سوییچ خودکار بین sing-box و Xray برای بالاترین پایداری</span>
+                <span class="spec-v" id="phone-core-desc" style="font-size:0.8rem;font-weight:500;">سوییچ خودکار بین sing-box و Xray</span>
               </div>
-              <div class="chip-cloud" style="padding-top:4px;">
-                <span class="proto-chip accent">VLESS Reality</span>
-                <span class="proto-chip">Hysteria2</span>
-                <span class="proto-chip">TUIC v5</span>
-                <span class="proto-chip">Trojan</span>
-                <span class="proto-chip">VMess</span>
-                <span class="proto-chip">Shadowsocks</span>
-                <span class="proto-chip">AmneziaWG</span>
-                <span class="proto-chip">OpenVPN</span>
+              <div class="phone-accent-bar">
+                <span style="font-size:0.78rem;color:var(--muted);" data-i18n="phone.orbColor">رنگ تاکیدی اپلیکیشن</span>
+                <div class="phone-swatches" role="group" aria-label="Phone accent tint">
+                  <button type="button" class="swatch-dot" data-phone-accent="#8b5cf6" style="background:#8b5cf6" aria-pressed="true" aria-label="Violet"></button>
+                  <button type="button" class="swatch-dot" data-phone-accent="#3b82f6" style="background:#3b82f6" aria-pressed="false" aria-label="Blue"></button>
+                  <button type="button" class="swatch-dot" data-phone-accent="#10b981" style="background:#10b981" aria-pressed="false" aria-label="Emerald"></button>
+                  <button type="button" class="swatch-dot" data-phone-accent="#f59e0b" style="background:#f59e0b" aria-pressed="false" aria-label="Amber"></button>
+                  <button type="button" class="swatch-dot" data-phone-accent="#ec4899" style="background:#ec4899" aria-pressed="false" aria-label="Rose"></button>
+                </div>
               </div>
             </div>
 
-            <!-- Bottom Dock Tabs -->
-            <nav class="phone-bottom-dock" aria-label="Phone Screen Tabs">
-              <button type="button" class="phone-nav-btn" data-phone-tab="dashboard" aria-selected="true" data-i18n="phone.tabDash">داشبورد</button>
-              <button type="button" class="phone-nav-btn" data-phone-tab="servers" aria-selected="false" data-i18n="phone.tabServers">موتورها</button>
-              <button type="button" class="phone-nav-btn" data-phone-tab="core" aria-selected="false" data-i18n="phone.tabCore">هسته</button>
+            <!-- Dock Tabs -->
+            <nav class="phone-dock" aria-label="Phone Screen Tabs">
+              <button type="button" class="phone-tab-btn" data-phone-tab="dashboard" aria-selected="true" data-i18n="phone.tabDash">داشبورد</button>
+              <button type="button" class="phone-tab-btn" data-phone-tab="servers" aria-selected="false" data-i18n="phone.tabServers">موتورها</button>
+              <button type="button" class="phone-tab-btn" data-phone-tab="core" aria-selected="false" data-i18n="phone.tabCore">هسته و تم</button>
             </nav>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BAND 2: 10 CARBON ANTI-DPI ENGINES + LIVE BENCHMARK SWEEP -->
+    <!-- BAND 2: 10 NATIVE TRANSPORTS -->
     <section class="section" id="engines">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow mono">01 · BUILT-IN TRANSPORTS</span>
+          <span class="eyebrow">01 · BUILT-IN TRANSPORTS</span>
           <h2 class="section-title" data-i18n-html="engines.title">
             <bdi class="ltr">10</bdi> موتور ضدسانسور اختصاصی کربن
           </h2>
           <p class="section-lead" data-i18n="engines.lead">
-            موتورهای داخلی کربن سرور کشوری نمایشی نیستند؛ هر کدام یک معماری عبور مستقل برای شرایط مختلف فیلترینگ پیاده می‌کنند. با کلیک روی هر مورد مشخصاتش را ببینید یا مستقیم روی شبیه‌ساز داشبورد تست کنید.
+            هر موتور یک مکانیزم مستقل برای عبور از فیلترینگ اپراتورهای مختلف است. بدون پرچم نمایشی، هر گزینه را انتخاب کنید و مشخصاتش را در شبیه‌ساز بالا امتحان کنید.
           </p>
         </div>
 
         <div class="engines-toolbar">
-          <div class="filter-pills" role="group" aria-label="Filter bypass engines">
+          <div class="filter-pills" role="group" aria-label="Filter engines">
             <button type="button" class="filter-pill" data-engine-filter="all" aria-pressed="true" data-i18n="engines.filterAll">همه (10)</button>
             <button type="button" class="filter-pill" data-engine-filter="masque" aria-pressed="false" data-i18n="engines.filterMasque">MASQUE و H2/H3</button>
             <button type="button" class="filter-pill" data-engine-filter="serverless" aria-pressed="false" data-i18n="engines.filterServerless">بدون سرور و پل‌ها</button>
@@ -374,7 +303,7 @@
             <h3 class="inspector-title" id="insp-name">مسک توربو</h3>
             <p class="inspector-desc" id="insp-desc"></p>
             <div class="inspector-specs" id="insp-specs"></div>
-            <button type="button" class="btn btn-lime" id="apply-engine-phone" data-i18n="engines.applyPhone">
+            <button type="button" class="btn btn-platinum" id="apply-engine-phone" data-i18n="engines.applyPhone">
               اتصال با این موتور در شبیه‌ساز
             </button>
           </article>
@@ -382,62 +311,49 @@
       </div>
     </section>
 
-    <!-- BAND 3: EXPRESSIVE ROUTING HUB (RoutingHubScreen 1:1) & HYBRID CORE -->
+    <!-- BAND 3: ROUTING HUB & HYBRID CORE -->
     <section class="section" id="stack">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow mono">02 · ROUTING HUB &amp; HYBRID CORE</span>
-          <h2 class="section-title" data-i18n="stack.title">
-            مسیریابی اکسپرسیو و هسته دوگانه <bdi class="ltr">sing-box + Xray</bdi>
+          <span class="eyebrow">02 · ROUTING &amp; HYBRID CORE</span>
+          <h2 class="section-title" data-i18n-html="stack.title">
+            مسیریابی هوشمند و هسته دوگانه <bdi class="ltr">sing-box + Xray</bdi>
           </h2>
           <p class="section-lead" data-i18n="stack.lead">
-            بخش مسیریابی کربن دقیقا با همین سه کاشی در اپلیکیشن پیاده‌سازی شده است. روی هر کاشی کلیک کنید تا نمونه قوانین واقعی و پروتکل‌های قابل اجرا را ببینید.
+            بخش مسیریابی کربن کنترل دقیق روی ترافیک دامنه‌ها، تفکیک اپلیکیشن‌ها و پایگاه‌داده Geo را در کنار پشتیبانی کامل از پروتکل‌های مدرن فراهم می‌کند.
           </p>
         </div>
 
         <div class="routing-showcase">
-          <!-- Left: Exact RoutingHubScreen.kt 3-tile Expressive geometry -->
-          <div class="routing-tiles-stack">
-            <button type="button" class="exp-tile stage" data-route-tile="domain" aria-pressed="true">
-              <svg class="tile-motif" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-                <path d="M50 5A45 45 0 0 1 95 50H50V5ZM50 50H5A45 45 0 0 1 50 5V50ZM50 50V95A45 45 0 0 0 95 50H50Z" />
-              </svg>
-              <span class="tile-num">01</span>
+          <div class="route-tabs-col">
+            <button type="button" class="route-tile" data-route-tile="domain" aria-pressed="true">
               <div>
-                <h3 class="tile-title" data-i18n="route.t1Title">مسیریابی دامنه و IP</h3>
-                <div class="tile-sub" data-i18n="route.t1Sub">قوانین مستقیم، مسدود و پراکسی بر پایه دامنه و زیرشبکه</div>
+                <h3 data-i18n="route.t1Title">مسیریابی دامنه و IP</h3>
+                <span data-i18n="route.t1Sub">قوانین مستقیم، مسدود و پراکسی بر پایه دامنه و زیرشبکه</span>
               </div>
+              <span class="route-num">01</span>
             </button>
 
-            <div class="exp-tile-pair">
-              <button type="button" class="exp-tile lime" data-route-tile="apps" aria-pressed="false">
-                <svg class="tile-motif" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-                  <polygon points="50,4 94,38 78,92 22,92 6,38" />
-                </svg>
-                <span class="tile-num">02</span>
-                <div>
-                  <h3 class="tile-title" data-i18n="route.t2Title">تفکیک اپلیکیشن‌ها</h3>
-                  <div class="tile-sub" data-i18n="route.t2Sub">Per-App Split Tunneling</div>
-                </div>
-              </button>
+            <button type="button" class="route-tile" data-route-tile="apps" aria-pressed="false">
+              <div>
+                <h3 data-i18n="route.t2Title">تفکیک اپلیکیشن‌ها</h3>
+                <span data-i18n="route.t2Sub">عبور یا دور زدن تونل برای هر برنامه اندروید به‌صورت مجزا</span>
+              </div>
+              <span class="route-num">02</span>
+            </button>
 
-              <button type="button" class="exp-tile lavender" data-route-tile="geo" aria-pressed="false">
-                <svg class="tile-motif" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-                  <path d="M50 3C57 3 61 11 66 12C71 13 78 9 83 14C88 19 85 26 88 32C91 37 98 42 97 49C96 56 90 61 89 67C88 73 91 80 86 85C81 90 73 87 67 89C61 91 57 98 50 98C43 98 38 91 32 89C26 87 19 90 14 85C9 80 12 73 11 67C10 61 4 56 3 49C2 42 9 37 12 32C15 26 12 19 17 14C22 9 29 13 34 12C39 11 43 3 50 3Z" />
-                </svg>
-                <span class="tile-num">03</span>
-                <div>
-                  <h3 class="tile-title" data-i18n="route.t3Title">منابع Geo</h3>
-                  <div class="tile-sub mono">sing-box extended</div>
-                </div>
-              </button>
-            </div>
+            <button type="button" class="route-tile" data-route-tile="geo" aria-pressed="false">
+              <div>
+                <h3 data-i18n="route.t3Title">منابع Geo توسعه‌یافته</h3>
+                <span class="mono">sing-box extended · GeoIP / GeoSite</span>
+              </div>
+              <span class="route-num">03</span>
+            </button>
           </div>
 
-          <!-- Right: Live Interactive Inspector for Routing Tile + Supported Protocols -->
           <div class="routing-detail-card">
             <div>
-              <div class="eyebrow mono" id="route-detail-tag">01 · DOMAIN &amp; IP</div>
+              <div class="eyebrow" id="route-detail-tag">01 · DOMAIN &amp; IP</div>
               <h3 class="inspector-title" id="route-detail-title">قوانین هوشمند دامنه و آی‌پی</h3>
               <p class="inspector-desc" id="route-detail-desc" style="margin-top:6px;">
                 ترافیک سایت‌های داخلی، بانک‌ها و دامنه‌های دلخواه را بدون قطع اتصال مستقیم نگه دارید و سایر مسیرها را از تونل عبور دهید.
@@ -447,7 +363,7 @@
             <div class="rule-preview-list" id="route-rule-list"></div>
 
             <div>
-              <div class="spec-k" style="margin-bottom:8px;" data-i18n="stack.protocolsLabel">پروتکل‌ها و قابلیت‌های هسته ترکیبی کربن:</div>
+              <div class="spec-k" style="margin-bottom:8px;" data-i18n="stack.protocolsLabel">پروتکل‌های قابل اجرا در هسته ترکیبی کربن:</div>
               <div class="chip-cloud">
                 <span class="proto-chip accent">VLESS / Reality</span>
                 <span class="proto-chip">Hysteria2</span>
@@ -466,24 +382,24 @@
       </div>
     </section>
 
-    <!-- BAND 4: OFFLINE HARDWARE LICENSING & .LUMEN CONTAINERS -->
+    <!-- BAND 4: HARDWARE LICENSING & .LUMEN -->
     <section class="section" id="security">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow mono">03 · CRYPTOGRAPHIC SECURITY</span>
+          <span class="eyebrow">03 · CRYPTOGRAPHIC SECURITY</span>
           <h2 class="section-title" data-i18n="sec.title">
-            لایسنس آفلاین سخت‌افزاری و فایل‌های رمزنگاری‌شده
+            لایسنس آفلاین سخت‌افزاری و کانتینرهای رمزنگاری‌شده
           </h2>
           <p class="section-lead" data-i18n="sec.lead">
-            فعال‌سازی کربن بدون ارتباط مداوم با سرور لایسنس انجام می‌شود و کانفیگ‌های حساس درون کانتینرهای سخت‌افزاری ذخیره می‌گردند.
+            فعال‌سازی کربن بدون وابستگی مداوم به سرور احراز هویت انجام می‌شود و اشتراک‌گذاری سرورهای حساس درون فایل‌های قفل‌شده سخت‌افزاری صورت می‌گیرد.
           </p>
         </div>
 
         <div class="security-grid">
           <div class="sec-panel">
             <h3 data-i18n-html="sec.licTitle">فعال‌سازی <bdi class="ltr">DEV-XXXX-XXXX</bdi></h3>
-            <p data-i18n="sec.licDesc">
-              کلید هر دستگاه با امضای <bdi class="ltr mono">ECDSA NIST P-256</bdi> فقط برای شناسه سخت‌افزاری همان گوشی ساخته و آفلاین بررسی می‌شود.
+            <p data-i18n-html="sec.licDesc">
+              کلید هر دستگاه با امضای <bdi class="ltr mono">ECDSA NIST P-256</bdi> فقط برای شناسه سخت‌افزاری همان گوشی ساخته و به‌صورت آفلاین بررسی می‌شود.
             </p>
             <div class="step-card">
               <span class="step-num">01</span>
@@ -503,13 +419,13 @@
               <span class="step-num">03</span>
               <div class="step-body">
                 <strong data-i18n="sec.s3Title">ذخیره‌سازی دوگانه و ضددستکاری</strong>
-                <span data-i18n="sec.s3Desc">کربن کلید را در دو لایه امن نگه می‌دارد تا با پاک کردن کش یا نصب مجدد حفظ شود و در برابر Hook مقاوم باشد.</span>
+                <span data-i18n="sec.s3Desc">کربن کلید را در دو لایه امن نگه می‌دارد تا با پاک کردن کش حفظ شود و در برابر Hook مقاوم باشد.</span>
               </div>
             </div>
           </div>
 
           <div class="sec-panel">
-            <h3 data-i18n-html="sec.vaultTitle">کانتینرهای قفل‌شده <bdi class="ltr">.lumen / .carbon</bdi></h3>
+            <h3 data-i18n-html="sec.vaultTitle">پروفایل‌های قفل‌شده <bdi class="ltr">.lumen / .carbon</bdi></h3>
             <p data-i18n="sec.vaultDesc">
               اشتراک‌گذاری سرورهای اختصاصی بدون افشای نشانی، پورت، کلید خصوصی یا اطلاعات اتصال در متن خام.
             </p>
@@ -539,11 +455,11 @@
       </div>
     </section>
 
-    <!-- BAND 5: OFFICIAL RELEASES, SHA-256 VERIFICATION & TECHNICAL FAQ -->
+    <!-- BAND 5: RELEASES, SHA-256 & TECHNICAL FAQ -->
     <section class="section" id="download">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow mono">04 · OFFICIAL APK &amp; SHA-256</span>
+          <span class="eyebrow">04 · OFFICIAL APK &amp; SHA-256</span>
           <h2 class="section-title" data-i18n="dl.title">
             دانلود مستقیم از مخزن رسمی همراه با تایید SHA-256
           </h2>
@@ -556,7 +472,7 @@
           <div class="release-top">
             <div>
               <strong id="release-title-label" data-i18n="dl.releaseHeading">انتشار پایدار Carbon VPN</strong>
-              <div class="mono" style="font-size:0.78rem;color:var(--muted);" id="release-date-label">Tag v1.0.0 · 2026-11-10</div>
+              <div class="mono" style="font-size:0.76rem;color:var(--muted);" id="release-date-label">Tag v1.0.0 · 2026-11-10</div>
             </div>
             <div class="release-badges">
               <span class="rel-badge live" id="badge-live-tag">v1.0.0</span>
@@ -599,11 +515,11 @@
 
             <div class="artifact-actions">
               <a
-                class="btn btn-lime"
+                class="btn btn-platinum"
                 id="artifact-download-link"
                 href="https://github.com/sinamp00/Carbon/releases/download/v1.0.0/carbon-1.0.0-arm64-v8a-release.apk"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M12 3v12" />
                   <path d="m7 11 5 5 5-5" />
                   <path d="M5 21h14" />
@@ -611,11 +527,11 @@
                 <span data-i18n="dl.downloadCta">دانلود مستقیم فایل APK</span>
               </a>
 
-              <a class="btn btn-tonal" href="https://github.com/sinamp00/Carbon/releases" target="_blank" rel="noopener noreferrer" data-i18n="dl.allReleases">
+              <a class="btn btn-glass" href="https://github.com/sinamp00/Carbon/releases" target="_blank" rel="noopener noreferrer" data-i18n="dl.allReleases">
                 صفحه انتشارهای GitHub
               </a>
 
-              <a class="btn btn-tonal" href="https://t.me/Sina_mp_VPNbot" target="_blank" rel="noopener noreferrer" data-i18n="dl.telegramBot">
+              <a class="btn btn-glass" href="https://t.me/Sina_mp_VPNbot" target="_blank" rel="noopener noreferrer" data-i18n="dl.telegramBot">
                 دریافت کلید فعال‌سازی
               </a>
             </div>
@@ -667,15 +583,11 @@
     </section>
   </main>
 
-  <!-- ======================================================================
-       FOOTER
-       ====================================================================== -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="brand-clover" style="width:30px;height:30px;" aria-hidden="true">
-          <span class="brand-clover-bg" style="border-radius:10px 4px 10px 10px;"></span>
-          <svg viewBox="296 255 432 514" fill="currentColor" style="width:15px;height:15px;">
+        <span class="brand-mark" style="width:28px;height:28px;border-radius:8px;" aria-hidden="true">
+          <svg viewBox="296 255 432 514" fill="currentColor" style="width:14px;height:14px;">
             <path d="M400.93 274.96H636.21L708.02 362.25H400.93V660H708.02L636.21 749.04H315.98V362.25Z" />
           </svg>
         </span>

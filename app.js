@@ -1,13 +1,10 @@
 /* ==========================================================================
-   CARBON — Interactive App Replica, Theme Engine, Routing Hub & Release Sync
+   CARBON — Sleek Interactive App Controller & Release Sync
    ========================================================================== */
 
 (() => {
   'use strict';
 
-  // --------------------------------------------------------------------------
-  // 1. VERIFIED RELEASE METADATA (Live-hydrated from sinamp00/Carbon)
-  // --------------------------------------------------------------------------
   const RELEASE_STATE = {
     tag: 'v1.0.0',
     publishedDate: '2026-11-10',
@@ -33,60 +30,6 @@
     }
   };
 
-  // --------------------------------------------------------------------------
-  // 2. THEME & ACCENT ENGINE (Mirrors Theme.kt & AccentColorSetting.kt)
-  // --------------------------------------------------------------------------
-  const THEMES = {
-    dark: {
-      bg: '#09080d',
-      surface: '#17121f',
-      container: '#251a32',
-      high: '#432859',
-      ink: '#e5e0f0',
-      muted: '#bcb5cd',
-      outline: '#494551'
-    },
-    dracula: {
-      bg: '#282a36',
-      surface: '#343746',
-      container: '#44475a',
-      high: '#51546b',
-      ink: '#f8f8f2',
-      muted: '#d7d2e8',
-      outline: '#595d75'
-    },
-    catppuccin: {
-      bg: '#11111b',
-      surface: '#1e1e2e',
-      container: '#313244',
-      high: '#45475a',
-      ink: '#cdd6f4',
-      muted: '#a6adc8',
-      outline: '#45475a'
-    },
-    nord: {
-      bg: '#2e3440',
-      surface: '#3b4252',
-      container: '#434c5e',
-      high: '#4c566a',
-      ink: '#eceff4',
-      muted: '#d8dee9',
-      outline: '#5a657d'
-    }
-  };
-
-  const ACCENTS = {
-    '#6937D4': { primary: '#d5b8ff', onPrimary: '#140927', stage: '#3d2057', onStage: '#f3e4ff', lavender: '#321b49', onLavender: '#f1dbff' },
-    '#3174BF': { primary: '#a8d1ff', onPrimary: '#071b33', stage: '#183862', onStage: '#e6f1ff', lavender: '#192a48', onLavender: '#dceaff' },
-    '#237D70': { primary: '#8debd8', onPrimary: '#04241e', stage: '#10443d', onStage: '#e0fcf6', lavender: '#133631', onLavender: '#d6f7f0' },
-    '#22C55E': { primary: '#8bf5b0', onPrimary: '#062612', stage: '#144727', onStage: '#e2fce9', lavender: '#153621', onLavender: '#d8f9e2' },
-    '#F97316': { primary: '#ffbe8a', onPrimary: '#301300', stage: '#542608', onStage: '#fff0e5', lavender: '#3d1e0a', onLavender: '#ffe4cf' },
-    '#DB2777': { primary: '#ffa8cf', onPrimary: '#36061b', stage: '#571535', onStage: '#ffe6f1', lavender: '#401228', onLavender: '#ffdce9' }
-  };
-
-  // --------------------------------------------------------------------------
-  // 3. BILINGUAL DICTIONARY (FA / EN — zero external VPN names)
-  // --------------------------------------------------------------------------
   const I18N = {
     fa: {
       'meta.title': 'Carbon VPN · کلاینت ضدسانسور و هسته ترکیبی اندروید',
@@ -100,37 +43,36 @@
       'nav.getApk': 'دریافت APK',
       'nav.bot': 'ربات لایسنس تلگرام',
 
-      'hero.title': 'هم‌نوا با رابط کاربری واقعی کربن',
+      'hero.title': 'کربن؛ کلاینت امن شبکه برای اندروید',
       'hero.subtitle':
-        'کلاینت اندروید با <bdi class="ltr">10</bdi> موتور ضدسانسور بومی، هسته ترکیبی <bdi class="ltr">sing-box</bdi> و <bdi class="ltr">Xray</bdi>، مسیریابی دقیق و لایسنس سخت‌افزاری آفلاین در طراحی زنده <bdi class="ltr">Material 3 Expressive</bdi>. همین‌جا تم را عوض کنید و با شبیه‌ساز اپلیکیشن وصل شوید.',
+        'ترکیب <bdi class="ltr">10</bdi> موتور ضدسانسور بدون نیاز به سرور، هسته دوگانه <bdi class="ltr">sing-box</bdi> و <bdi class="ltr">Xray</bdi>، مسیریابی دقیق اپلیکیشن‌ها و لایسنس سخت‌افزاری آفلاین در یک رابط سبک و دقیق. همین‌جا پیش‌نمایش اپلیکیشن را امتحان کنید.',
       'hero.ctaDownload': 'دانلود نسخه رسمی APK',
       'hero.ctaKey': 'دریافت کلید از @Sina_mp_VPNbot',
-      'hero.themeLabel': 'پالت زنده برنامه:',
+      'hero.s1': 'موتور ضدسانسور بومی',
+      'hero.s2': 'هسته ترکیبی',
+      'hero.s3': 'لایسنس سخت‌افزاری',
 
       'phone.layoutBtn': 'چیدمان: Stage',
       'phone.layoutOrbit': 'چیدمان: Orbit',
-      'phone.connLabel': 'CONNECTION',
-      'phone.statusOff': 'خاموش',
+      'phone.statusOff': 'آماده اتصال',
       'phone.statusConnecting': 'در حال اتصال...',
       'phone.statusConnected': 'متصل و ایمن',
-      'phone.orbitReady': 'ضربه برای اتصال',
       'phone.btnConnect': 'اتصال',
       'phone.btnConnecting': 'لغو اتصال',
       'phone.btnDisconnect': 'قطع اتصال',
-      'phone.yourServer': 'سرور شما',
-      'phone.allServers': 'همه سرورها',
       'phone.dl': 'دانلود',
       'phone.ul': 'آپلود',
       'phone.pickEngine': 'انتخاب موتور یا پروتکل',
-      'phone.coreSelect': 'انتخابگر هسته',
+      'phone.coreSelect': 'هسته و رنگ تاکیدی',
       'phone.coreActiveDescLabel': 'وضعیت هسته',
+      'phone.orbColor': 'رنگ تاکیدی اپلیکیشن',
       'phone.tabDash': 'داشبورد',
       'phone.tabServers': 'موتورها',
-      'phone.tabCore': 'هسته',
+      'phone.tabCore': 'هسته و تم',
 
       'engines.title': '<bdi class="ltr">10</bdi> موتور ضدسانسور اختصاصی کربن',
       'engines.lead':
-        'موتورهای داخلی کربن سرور کشوری نمایشی نیستند؛ هر کدام یک معماری عبور مستقل برای شرایط مختلف فیلترینگ پیاده می‌کنند. با کلیک روی هر مورد مشخصاتش را ببینید یا مستقیم روی شبیه‌ساز داشبورد تست کنید.',
+        'هر موتور یک مکانیزم مستقل برای عبور از فیلترینگ اپراتورهای مختلف است. بدون پرچم نمایشی، هر گزینه را انتخاب کنید و مشخصاتش را در شبیه‌ساز بالا امتحان کنید.',
       'engines.filterAll': 'همه (10)',
       'engines.filterMasque': 'MASQUE و H2/H3',
       'engines.filterServerless': 'بدون سرور و پل‌ها',
@@ -139,22 +81,22 @@
       'engines.scanningBtn': 'در حال اسکن...',
       'engines.applyPhone': 'اتصال با این موتور در شبیه‌ساز',
 
-      'stack.title': 'مسیریابی اکسپرسیو و هسته دوگانه sing-box و Xray',
+      'stack.title': 'مسیریابی هوشمند و هسته دوگانه <bdi class="ltr">sing-box + Xray</bdi>',
       'stack.lead':
-        'بخش مسیریابی کربن دقیقا با همین سه کاشی در اپلیکیشن پیاده‌سازی شده است. روی هر کاشی کلیک کنید تا نمونه قوانین واقعی و پروتکل‌های قابل اجرا را ببینید.',
+        'بخش مسیریابی کربن کنترل دقیق روی ترافیک دامنه‌ها، تفکیک اپلیکیشن‌ها و پایگاه‌داده Geo را در کنار پشتیبانی کامل از پروتکل‌های مدرن فراهم می‌کند.',
       'route.t1Title': 'مسیریابی دامنه و IP',
       'route.t1Sub': 'قوانین مستقیم، مسدود و پراکسی بر پایه دامنه و زیرشبکه',
       'route.t2Title': 'تفکیک اپلیکیشن‌ها',
-      'route.t2Sub': 'Per-App Split Tunneling',
-      'route.t3Title': 'منابع Geo',
-      'stack.protocolsLabel': 'پروتکل‌ها و قابلیت‌های هسته ترکیبی کربن:',
+      'route.t2Sub': 'عبور یا دور زدن تونل برای هر برنامه اندروید به‌صورت مجزا',
+      'route.t3Title': 'منابع Geo توسعه‌یافته',
+      'stack.protocolsLabel': 'پروتکل‌های قابل اجرا در هسته ترکیبی کربن:',
 
-      'sec.title': 'لایسنس آفلاین سخت‌افزاری و فایل‌های رمزنگاری‌شده',
+      'sec.title': 'لایسنس آفلاین سخت‌افزاری و کانتینرهای رمزنگاری‌شده',
       'sec.lead':
-        'فعال‌سازی کربن بدون ارتباط مداوم با سرور لایسنس انجام می‌شود و کانفیگ‌های حساس درون کانتینرهای سخت‌افزاری ذخیره می‌گردند.',
+        'فعال‌سازی کربن بدون وابستگی مداوم به سرور احراز هویت انجام می‌شود و اشتراک‌گذاری سرورهای حساس درون فایل‌های قفل‌شده سخت‌افزاری صورت می‌گیرد.',
       'sec.licTitle': 'فعال‌سازی <bdi class="ltr">DEV-XXXX-XXXX</bdi>',
       'sec.licDesc':
-        'کلید هر دستگاه با امضای <bdi class="ltr mono">ECDSA NIST P-256</bdi> فقط برای شناسه سخت‌افزاری همان گوشی ساخته و آفلاین بررسی می‌شود.',
+        'کلید هر دستگاه با امضای <bdi class="ltr mono">ECDSA NIST P-256</bdi> فقط برای شناسه سخت‌افزاری همان گوشی ساخته و به‌صورت آفلاین بررسی می‌شود.',
       'sec.s1Title': 'دریافت شناسه یکتای گوشی (HWID)',
       'sec.s1Desc':
         'شناسه <bdi class="ltr mono">DEV-XXXX-XXXX</bdi> را مستقیم از صفحه فعال‌سازی کربن کپی کنید.',
@@ -163,8 +105,8 @@
         'با ارسال شناسه به <bdi class="ltr mono">@Sina_mp_VPNbot</bdi> کلید <bdi class="ltr mono">SINA-...</bdi> را تحویل بگیرید.',
       'sec.s3Title': 'ذخیره‌سازی دوگانه و ضددستکاری',
       'sec.s3Desc':
-        'کربن کلید را در دو لایه امن نگه می‌دارد تا با پاک کردن کش یا نصب مجدد حفظ شود و در برابر Hook مقاوم باشد.',
-      'sec.vaultTitle': 'کانتینرهای قفل‌شده <bdi class="ltr">.lumen / .carbon</bdi>',
+        'کربن کلید را در دو لایه امن نگه می‌دارد تا با پاک کردن کش حفظ شود و در برابر Hook مقاوم باشد.',
+      'sec.vaultTitle': 'پروفایل‌های قفل‌شده <bdi class="ltr">.lumen / .carbon</bdi>',
       'sec.vaultDesc':
         'اشتراک‌گذاری سرورهای اختصاصی بدون افشای نشانی، پورت، کلید خصوصی یا اطلاعات اتصال در متن خام.',
       'sec.v1Title': 'کلید سخت‌افزاری Android Keystore',
@@ -208,7 +150,7 @@
     en: {
       'meta.title': 'Carbon VPN · Native Android Anti-DPI & Hybrid Core Client',
       'meta.description':
-        'Native Android circumvention suite combining 10 built-in anti-DPI engines, a hybrid sing-box + Xray core, expressive routing, encrypted .lumen profiles, and offline ECDSA licensing.',
+        'Native Android circumvention suite combining 10 built-in anti-DPI engines, a hybrid sing-box + Xray core, precision routing, encrypted .lumen profiles, and offline ECDSA licensing.',
       'nav.skip': 'Skip to main content',
       'nav.engines': 'Engines',
       'nav.stack': 'Routing & Core',
@@ -217,37 +159,36 @@
       'nav.getApk': 'Get APK',
       'nav.bot': 'Telegram License Bot',
 
-      'hero.title': 'Mirroring Carbon’s living Android interface.',
+      'hero.title': 'Carbon. Engineered for open access.',
       'hero.subtitle':
-        'Built around <bdi class="ltr">10</bdi> serverless anti-DPI transports, a hybrid <bdi class="ltr">sing-box</bdi> + <bdi class="ltr">Xray</bdi> core, expressive routing, and offline ECDSA licensing. Switch themes live and test-connect the interactive phone preview right beside you.',
+        'Uniting <bdi class="ltr">10</bdi> serverless anti-DPI transports, a dual <bdi class="ltr">sing-box</bdi> + <bdi class="ltr">Xray</bdi> core, per-app split tunneling, and offline ECDSA licensing in a quiet, responsive interface. Test the interactive app preview right beside you.',
       'hero.ctaDownload': 'Download Official APK',
       'hero.ctaKey': 'Request Key via @Sina_mp_VPNbot',
-      'hero.themeLabel': 'Live App Theme:',
+      'hero.s1': 'Built-in Bypass Engines',
+      'hero.s2': 'Hybrid Core',
+      'hero.s3': 'Hardware Licensing',
 
       'phone.layoutBtn': 'Layout: Stage',
       'phone.layoutOrbit': 'Layout: Orbit',
-      'phone.connLabel': 'CONNECTION',
-      'phone.statusOff': 'Disconnected',
+      'phone.statusOff': 'Ready to connect',
       'phone.statusConnecting': 'Connecting...',
       'phone.statusConnected': 'Connected',
-      'phone.orbitReady': 'Tap to Connect',
       'phone.btnConnect': 'Connect',
       'phone.btnConnecting': 'Cancel',
       'phone.btnDisconnect': 'Disconnect',
-      'phone.yourServer': 'Your Server',
-      'phone.allServers': 'All Servers',
       'phone.dl': 'Download',
       'phone.ul': 'Upload',
       'phone.pickEngine': 'Pick Engine or Transport',
-      'phone.coreSelect': 'Core Selector',
+      'phone.coreSelect': 'Core & App Accent',
       'phone.coreActiveDescLabel': 'Active Core Mode',
+      'phone.orbColor': 'Orb accent tint',
       'phone.tabDash': 'Dashboard',
       'phone.tabServers': 'Engines',
-      'phone.tabCore': 'Core',
+      'phone.tabCore': 'Core & Theme',
 
       'engines.title': '<bdi class="ltr">10</bdi> Carbon native anti-DPI engines',
       'engines.lead':
-        'Carbon’s built-in transports are specialized evasion strategies rather than static geo-servers. Select any engine below to inspect its internals or launch it directly inside the live app simulator.',
+        'Each transport implements a distinct circumvention strategy for different carrier conditions. Select any engine below to inspect its internals or run it live inside the app simulator.',
       'engines.filterAll': 'All (10)',
       'engines.filterMasque': 'MASQUE & H2/H3',
       'engines.filterServerless': 'Serverless & Bridges',
@@ -256,22 +197,22 @@
       'engines.scanningBtn': 'Scanning...',
       'engines.applyPhone': 'Connect with this engine in preview',
 
-      'stack.title': 'Expressive Routing Hub & Dual sing-box + Xray Core',
+      'stack.title': 'Precision Routing & Dual <bdi class="ltr">sing-box + Xray</bdi> Core',
       'stack.lead':
-        'Carbon’s Android routing hub uses this exact three-tile expressive layout. Tap any tile to preview live routing policies and supported protocols.',
+        'Carbon gives you fine-grained control over domain rules, per-app split tunneling, and extended Geo datasets alongside modern proxy protocols.',
       'route.t1Title': 'Domain & IP Routing',
       'route.t1Sub': 'Direct, block & proxy rules by domain or CIDR',
-      'route.t2Title': 'Per-App Proxy',
-      'route.t2Sub': 'Per-App Split Tunneling',
-      'route.t3Title': 'Geo Resources',
+      'route.t2Title': 'Per-App Split Tunneling',
+      'route.t2Sub': 'Route or bypass installed Android apps individually',
+      'route.t3Title': 'Extended Geo Resources',
       'stack.protocolsLabel': 'Supported protocols in Carbon’s hybrid core:',
 
       'sec.title': 'Offline Hardware Licensing & Encrypted Containers',
       'sec.lead':
-        'Activation completes completely offline via device-bound signatures, while sensitive team configurations stay sealed inside hardware encryption.',
+        'Activation completes offline via device-bound signatures, while sensitive team configurations stay sealed inside hardware encryption.',
       'sec.licTitle': '<bdi class="ltr">DEV-XXXX-XXXX</bdi> Activation',
       'sec.licDesc':
-        'Keys are signed with <bdi class="ltr mono">ECDSA NIST P-256</bdi> for a single device fingerprint and verified locally with zero activation server dependency.',
+        'Keys are signed with <bdi class="ltr mono">ECDSA NIST P-256</bdi> for a single device fingerprint and verified locally without license servers.',
       'sec.s1Title': 'Copy Hardware ID (HWID)',
       'sec.s1Desc':
         'Copy your device’s unique <bdi class="ltr mono">DEV-XXXX-XXXX</bdi> code straight from the activation screen.',
@@ -281,7 +222,7 @@
       'sec.s3Title': 'Dual-Vault Persistence & Anti-Tamper',
       'sec.s3Desc':
         'Stored across dual secure vaults so cache clears never drop licensing, paired with runtime hook checks.',
-      'sec.vaultTitle': 'Protected <bdi class="ltr">.lumen / .carbon</bdi> Containers',
+      'sec.vaultTitle': 'Protected <bdi class="ltr">.lumen / .carbon</bdi> Profiles',
       'sec.vaultDesc':
         'Share working server configurations without exposing hostnames, UUIDs, ports, or private credentials in plaintext.',
       'sec.v1Title': 'Android Keystore Hardware Lock',
@@ -323,9 +264,6 @@
     }
   };
 
-  // --------------------------------------------------------------------------
-  // 4. 10 BUILT-IN CARBON TRANSPORTS (Zero third-party VPN names!)
-  // --------------------------------------------------------------------------
   const ENGINES = [
     {
       id: 'engine-masque-h2',
@@ -519,9 +457,6 @@
     }
   ];
 
-  // --------------------------------------------------------------------------
-  // 5. ROUTING HUB INTERACTIVE PRESETS (Mirrors RoutingHubScreen.kt)
-  // --------------------------------------------------------------------------
   const ROUTING_TILES = {
     domain: {
       tag: '01 · DOMAIN & IP',
@@ -566,28 +501,23 @@
 
   const CORE_DESCRIPTIONS = {
     HYBRID: {
-      fa: 'سوییچ خودکار بین sing-box و Xray بر اساس نوع پروتکل برای بالاترین پایداری',
-      en: 'Automatically dispatches each protocol to the optimal sing-box or Xray backend'
+      fa: 'سوییچ خودکار بین sing-box و Xray برای بالاترین پایداری',
+      en: 'Automatically selects sing-box or Xray per protocol'
     },
     'sing-box': {
-      fa: 'اجرای تمام کانفیگ‌ها و قوانین Geo روی هسته یکپارچه sing-box extended',
-      en: 'Forces unified sing-box extended routing and transport execution'
+      fa: 'اجرای تمام کانفیگ‌ها و قوانین Geo روی هسته sing-box extended',
+      en: 'Unified sing-box extended routing and transport execution'
     },
     Xray: {
-      fa: 'اجرای پروتکل‌های VLESS / Reality و VMess مستقیم روی هسته Xray-core',
-      en: 'Routes Reality, XTLS, and V2Ray transports directly through Xray-core'
+      fa: 'اجرای مستقیم Reality و VMess روی هسته Xray-core',
+      en: 'Routes Reality, XTLS, and V2Ray protocols via Xray-core'
     }
   };
 
-  // --------------------------------------------------------------------------
-  // 6. STATE & SIMULATOR RUNTIME
-  // --------------------------------------------------------------------------
   let currentLang = detectInitialLang();
-  let currentTheme = localStorage.getItem('carbon_theme') || 'dark';
-  let currentAccent = localStorage.getItem('carbon_accent') || '#6937D4';
-  let phoneState = 'off'; // 'off' | 'connecting' | 'connected'
+  let phoneState = 'off';
   let phoneTab = 'dashboard';
-  let phoneLayout = 'stage'; // 'stage' | 'orbit'
+  let phoneLayout = 'stage';
   let activeCore = 'HYBRID';
   let activeFilter = 'all';
   let selectedEngineId = ENGINES[0].id;
@@ -608,7 +538,6 @@
     return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
   }
 
-  // Exact speed formatter matching DashboardScreen.kt formatDashboardSpeed()
   function formatDashboardSpeed(bytesPerSec) {
     const v = Math.max(0, bytesPerSec);
     if (v >= 1024 * 1024) {
@@ -622,46 +551,6 @@
     return [Math.round(v).toString(), 'B/s'];
   }
 
-  // --------------------------------------------------------------------------
-  // 7. THEME & ACCENT APPLICATION
-  // --------------------------------------------------------------------------
-  function applyThemeAndAccent(themeKey, accentHex) {
-    currentTheme = THEMES[themeKey] ? themeKey : 'dark';
-    currentAccent = ACCENTS[accentHex] ? accentHex : '#6937D4';
-    localStorage.setItem('carbon_theme', currentTheme);
-    localStorage.setItem('carbon_accent', currentAccent);
-
-    const t = THEMES[currentTheme];
-    const a = ACCENTS[currentAccent];
-    const root = document.documentElement.style;
-
-    root.setProperty('--bg', t.bg);
-    root.setProperty('--surface', t.surface);
-    root.setProperty('--surface-container', t.container);
-    root.setProperty('--surface-high', t.high);
-    root.setProperty('--ink', t.ink);
-    root.setProperty('--muted', t.muted);
-    root.setProperty('--outline', t.outline);
-
-    root.setProperty('--accent', currentAccent);
-    root.setProperty('--primary', a.primary);
-    root.setProperty('--on-primary', a.onPrimary);
-    root.setProperty('--stage', a.stage);
-    root.setProperty('--on-stage', a.onStage);
-    root.setProperty('--lavender', a.lavender);
-    root.setProperty('--on-lavender', a.onLavender);
-
-    document.querySelectorAll('[data-set-theme]').forEach((b) => {
-      b.setAttribute('aria-pressed', b.getAttribute('data-set-theme') === currentTheme ? 'true' : 'false');
-    });
-    document.querySelectorAll('[data-set-accent]').forEach((b) => {
-      b.setAttribute('aria-pressed', b.getAttribute('data-set-accent') === currentAccent ? 'true' : 'false');
-    });
-  }
-
-  // --------------------------------------------------------------------------
-  // 8. LANGUAGE & RENDERING
-  // --------------------------------------------------------------------------
   function applyLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('carbon_lang', lang);
@@ -675,7 +564,7 @@
       url.searchParams.set('lang', lang);
       window.history.replaceState({}, '', url.toString());
     } catch {
-      // Ignore if running in sandbox origin
+      // Ignore in opaque origin
     }
 
     const dict = I18N[lang];
@@ -705,9 +594,6 @@
     renderReleaseBox();
   }
 
-  // --------------------------------------------------------------------------
-  // 9. INTERACTIVE CARBON PHONE DASHBOARD ENGINE
-  // --------------------------------------------------------------------------
   function selectedEngine() {
     return ENGINES.find((e) => e.id === selectedEngineId) || ENGINES[0];
   }
@@ -715,8 +601,7 @@
   function renderPhone() {
     const dict = I18N[currentLang];
     const phoneEl = document.getElementById('carbon-phone');
-    const stageCard = document.getElementById('conn-stage-card');
-    const orbitCard = document.getElementById('orbit-hero-card');
+    const connCard = document.getElementById('phone-conn-card');
     const engine = selectedEngine();
     const engName = currentLang === 'fa' ? engine.nameFa : engine.nameEn;
 
@@ -724,49 +609,43 @@
     document.getElementById('toggle-dash-layout').textContent =
       phoneLayout === 'stage' ? dict['phone.layoutBtn'] : dict['phone.layoutOrbit'];
 
-    stageCard.setAttribute('data-state', phoneState);
-    orbitCard.setAttribute('data-state', phoneState);
+    connCard.setAttribute('data-state', phoneState);
 
     let statusText = dict['phone.statusOff'];
-    let orbitStatus = dict['phone.orbitReady'];
     let ctaText = dict['phone.btnConnect'];
+    let badgeText = 'IDLE';
     if (phoneState === 'connecting') {
       statusText = dict['phone.statusConnecting'];
-      orbitStatus = dict['phone.statusConnecting'];
       ctaText = dict['phone.btnConnecting'];
+      badgeText = 'SYNC';
     } else if (phoneState === 'connected') {
       statusText = dict['phone.statusConnected'];
-      orbitStatus = dict['phone.statusConnected'];
       ctaText = dict['phone.btnDisconnect'];
+      badgeText = 'LIVE';
     }
 
+    document.getElementById('phone-state-badge').textContent = badgeText;
     document.getElementById('phone-status-text').textContent = statusText;
-    document.getElementById('orbit-status-text').textContent = orbitStatus;
     document.getElementById('phone-main-cta').textContent = ctaText;
-
     document.getElementById('phone-active-subtitle').textContent = `${engine.nameEn} · ${engine.badge}`;
-    document.getElementById('orbit-node-label').textContent = engName;
     document.getElementById('phone-srv-name').textContent = engName;
     document.getElementById('phone-srv-proto').textContent = engine.badge;
 
     const pingEl = document.getElementById('phone-srv-ping');
     if (phoneState === 'connected') {
-      const p = simulatedPings[engine.id] || engine.basePing;
-      pingEl.textContent = `${p} ms`;
+      pingEl.textContent = `${simulatedPings[engine.id] || engine.basePing} ms`;
     } else if (phoneState === 'connecting') {
       pingEl.textContent = '...';
     } else {
       pingEl.textContent = simulatedPings[engine.id] ? `${simulatedPings[engine.id]} ms` : '--';
     }
 
-    // Core tab labels
     document.getElementById('phone-core-badge').textContent = activeCore;
     document.getElementById('phone-core-desc').textContent = CORE_DESCRIPTIONS[activeCore][currentLang];
     document.querySelectorAll('[data-set-core]').forEach((b) => {
       b.setAttribute('aria-pressed', b.getAttribute('data-set-core') === activeCore ? 'true' : 'false');
     });
 
-    // Bottom tabs
     document.querySelectorAll('[data-phone-tab]').forEach((b) => {
       b.setAttribute('aria-selected', b.getAttribute('data-phone-tab') === phoneTab ? 'true' : 'false');
     });
@@ -823,7 +702,7 @@
       renderPhone();
       renderEngineMatrix();
       renderInspector();
-    }, 1050);
+    }, 950);
   }
 
   function renderMiniPhoneServerList() {
@@ -839,12 +718,12 @@
       const left = document.createElement('div');
       const title = document.createElement('div');
       title.style.fontWeight = '700';
-      title.style.fontSize = '0.88rem';
+      title.style.fontSize = '0.86rem';
       title.textContent = currentLang === 'fa' ? engine.nameFa : engine.nameEn;
 
       const sub = document.createElement('div');
       sub.className = 'mono';
-      sub.style.fontSize = '0.7rem';
+      sub.style.fontSize = '0.68rem';
       sub.style.color = 'var(--muted)';
       sub.textContent = engine.badge;
       left.append(title, sub);
@@ -867,9 +746,6 @@
     });
   }
 
-  // --------------------------------------------------------------------------
-  // 10. 10-ENGINE EXPLORER & SIMULATED LATENCY SWEEP
-  // --------------------------------------------------------------------------
   function renderEngineMatrix() {
     const listEl = document.getElementById('engine-list');
     listEl.innerHTML = '';
@@ -980,13 +856,10 @@
           btn.textContent = I18N[currentLang]['engines.scanBtn'];
           btn.disabled = false;
         }
-      }, 110 * (idx + 1));
+      }, 105 * (idx + 1));
     });
   }
 
-  // --------------------------------------------------------------------------
-  // 11. INTERACTIVE ROUTING HUB
-  // --------------------------------------------------------------------------
   function renderRoutingDetail() {
     const data = ROUTING_TILES[activeRouteTile] || ROUTING_TILES.domain;
     document.querySelectorAll('[data-route-tile]').forEach((tile) => {
@@ -1016,9 +889,6 @@
     });
   }
 
-  // --------------------------------------------------------------------------
-  // 12. RELEASE BOX & LIVE GITHUB SYNC
-  // --------------------------------------------------------------------------
   function renderReleaseBox() {
     const variant = RELEASE_STATE.variants[RELEASE_STATE.selectedVariant];
     const tagUpper = RELEASE_STATE.tag.toUpperCase();
@@ -1100,7 +970,7 @@
       }
       renderReleaseBox();
     } catch {
-      // Offline / API limit: keep verified static v1.0.0 metadata
+      // Offline / API limit
     } finally {
       clearTimeout(timer);
     }
@@ -1122,9 +992,6 @@
     document.body.removeChild(ta);
   }
 
-  // --------------------------------------------------------------------------
-  // 13. EVENT WIRING
-  // --------------------------------------------------------------------------
   function wireInteractions() {
     document.querySelectorAll('[data-set-lang]').forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -1133,19 +1000,6 @@
       });
     });
 
-    document.querySelectorAll('[data-set-theme]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        applyThemeAndAccent(btn.getAttribute('data-set-theme'), currentAccent);
-      });
-    });
-
-    document.querySelectorAll('[data-set-accent]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        applyThemeAndAccent(currentTheme, btn.getAttribute('data-set-accent'));
-      });
-    });
-
-    // Phone layout & interactive controls
     document.getElementById('toggle-dash-layout').addEventListener('click', () => {
       phoneLayout = phoneLayout === 'stage' ? 'orbit' : 'stage';
       renderPhone();
@@ -1156,17 +1010,12 @@
       renderPhone();
     });
 
-    document.getElementById('phone-open-servers').addEventListener('click', () => {
-      phoneTab = 'servers';
-      renderPhone();
-    });
-
     document.getElementById('phone-selected-server').addEventListener('click', () => {
       phoneTab = 'servers';
       renderPhone();
     });
 
-    ['phone-power-btn-stage', 'phone-main-cta', 'phone-power-btn-orbit'].forEach((id) => {
+    ['phone-orb-btn', 'phone-main-cta'].forEach((id) => {
       document.getElementById(id).addEventListener('click', () => togglePhoneConnection(false));
     });
 
@@ -1184,7 +1033,16 @@
       });
     });
 
-    // Engines filters, ping scan & "Apply in phone"
+    document.querySelectorAll('[data-phone-accent]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const hex = btn.getAttribute('data-phone-accent');
+        document.documentElement.style.setProperty('--phone-accent', hex);
+        document.querySelectorAll('[data-phone-accent]').forEach((b) => {
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+        });
+      });
+    });
+
     document.querySelectorAll('[data-engine-filter]').forEach((pill) => {
       pill.addEventListener('click', () => {
         activeFilter = pill.getAttribute('data-engine-filter');
@@ -1205,7 +1063,6 @@
       document.getElementById('carbon-phone').scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
-    // Routing hub tiles
     document.querySelectorAll('[data-route-tile]').forEach((tile) => {
       tile.addEventListener('click', () => {
         activeRouteTile = tile.getAttribute('data-route-tile');
@@ -1213,7 +1070,6 @@
       });
     });
 
-    // Build variant switcher & SHA copy
     document.querySelectorAll('[data-build-variant]').forEach((btn) => {
       btn.addEventListener('click', () => {
         RELEASE_STATE.selectedVariant = btn.getAttribute('data-build-variant');
@@ -1239,7 +1095,6 @@
       }
     });
 
-    // Accessible FAQ
     document.querySelectorAll('.faq-trigger').forEach((trigger) => {
       trigger.addEventListener('click', () => {
         const expanded = trigger.getAttribute('aria-expanded') === 'true';
@@ -1249,7 +1104,6 @@
       });
     });
 
-    // Mobile Drawer
     const menuToggle = document.getElementById('mobile-menu-toggle');
     const drawer = document.getElementById('mobile-drawer');
     const setDrawer = (open) => {
@@ -1272,7 +1126,6 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     wireInteractions();
-    applyThemeAndAccent(currentTheme, currentAccent);
     applyLanguage(currentLang);
     hydrateGithubRelease();
   });
