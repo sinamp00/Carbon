@@ -2,19 +2,19 @@
 
 <img src="assets/logo.svg" width="128" height="128" alt="Carbon Logo" />
 
-# ⚡ Carbon VPN (`v1.0.0`)
+# ⚡ Carbon VPN (`v1.5.0`)
 
-**نسل جدید کلاینت ضد فیلترینگ هوشمند با ۱۰ موتور اختصاصی، رمزنگاری سخت‌افزاری ECDSA و رابط کاربری فوق‌سریع**  
-*Next-Generation Anti-DPI Tunneling Client for Android — Powered by MASQUE HTTP/2, Radiance, Gool & Serverless Engines*
+**کلاینت ضد فیلترینگ هوشمند اندروید با ۱۰ موتور اختصاصی، تونل بومی موزیلا (`Mozilla Guardian`)، رمزنگاری سخت‌افزاری ECDSA و رابط کاربری Material 3 Expressive**  
+*Next-Generation Anti-DPI Tunneling Client for Android — Powered by MASQUE HTTP/2, Mozilla Guardian, Radiance, Gool & Serverless Engines*
 
-[![Release](https://img.shields.io/badge/Release-v1.0.0-D8FF6B?style=for-the-badge&logo=android&logoColor=black)](https://github.com/sinamp00/Carbon/releases/latest)
+[![Release](https://img.shields.io/badge/Release-v1.5.0-D8FF6B?style=for-the-badge&logo=android&logoColor=black)](https://github.com/sinamp00/Carbon/releases/latest)
 [![Website](https://img.shields.io/badge/Website-sinamp00.github.io%2FCarbon-7DD3FC?style=for-the-badge&logo=googlechrome&logoColor=black)](https://sinamp00.github.io/Carbon/)
 [![Telegram](https://img.shields.io/badge/Telegram-@Sina__mp__VPNbot-38BDF8?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Sina_mp_VPNbot)
 [![Platform](https://img.shields.io/badge/Android-8.0%2B%20(API%2026%2B)-A7F3D0?style=for-the-badge)](https://github.com/sinamp00/Carbon/releases/latest)
 
 ---
 
-### 📥 [دانلود مستقیم نسخهٔ ۱.۰.۰ (ARM64) — Direct APK Download](https://github.com/sinamp00/Carbon/releases/latest/download/carbon-1.0.0-arm64-v8a-release.apk)
+### 📥 [دانلود مستقیم نسخهٔ ۱.۵.۰ (ARM64) — Direct APK Download](https://github.com/sinamp00/Carbon/releases/latest/download/carbon-1.5.0-arm64-v8a-release.apk)
 ### 🌐 [مشاهدهٔ وب‌سایت رسمی کربن — Official Landing Page](https://sinamp00.github.io/Carbon/)
 
 </div>
@@ -23,29 +23,33 @@
 
 <div dir="rtl">
 
-## ✨ ویژگی‌های کلیدی کربن (Carbon)
+## ✨ ویژگی‌های کلیدی کربن (Carbon v1.5.0)
 
-- **۱۰ پروتکل اختصاصی عبور از فیلترینگ شدید (DPI Bypass)**: مجهز به اسکنرهای توربو کلودفلر، مسک HTTP/2 و پایتون، تونل دولایه، گول وارپ، لنترن آلمان (Radiance)، آرگو فالکن و موتورهای سرورلس (بدون نیاز به سرور واسط).
-- **سیستم اشتراک و لایسنس سخت‌افزاری ضد کرک (ECDSA NIST P-256)**: قفل اختصاصی روی شناسهٔ سخت‌افزاری دستگاه (`HWID`) با محافظت چندلایه در برابر دیباگر، هوک (Frida/Xposed/LSPosed)، دستکاری ساعت سیستم و شبیه‌سازها.
-- **به‌روزرسانی خودکار درون‌برنامه‌ای (In-App Auto Updater)**: بررسی، دانلود و نصب مستقیم نسخه‌های جدید منتشرشده در گیت‌هاب از داخل بخش تنظیمات برنامه.
-- **رابط کاربری ۱۲۰ هرتز با طراحی Material 3 Expressive**: انیمیشن‌های فوق‌روان،۱۱ پوستهٔ رنگی (Dark, AMOLED, Dracula, Catppuccin, Nord, Tokyo Night و...)، پشتیبانی کامل از فارسی و انگلیسی با ارقام انگلیسی استاندارد.
+- **۱۰ پروتکل اختصاصی عبور از فیلترینگ شدید (DPI Bypass)**: مجهز به اسکنرهای توربو کلودفلر، مسک HTTP/2 و پایتون، تونل دولایه، گول وارپ، لنترن رادیانس، آرگو فالکن و موتورهای سرورلس بدون نیاز به سرور واسط.
+- **ادغام بومی موتور موزیلا (`Mozilla Guardian` + Fastly MASQUE HTTP/2)**: ورود امن با حساب فایرفاکس، دسترسی مستقیم به سرورهای جهانی موزیلا کنار پروفایل‌های داخلی، انتخاب رله‌گر، DoH DNS، `uTLS` و تکه‌تکه‌سازی TLS.
+- **حالت‌های متعدد داشبورد و نوار پیمایش**: شامل چیدمان پیش‌فرض، «نمای کلاسیک (`Classic Crest`)»، «حالت راحت مخصوص سالمندان (`Easy Mode`)» با دکمه‌های درشت و خوانا، به‌همراه ۳ سبک نوار پیمایش (`پویا`، `اندازه کامل`، `ساده`).
+- **سیستم اشتراک و لایسنس سخت‌افزاری (ECDSA NIST P-256)**: قفل اختصاصی روی شناسهٔ سخت‌افزاری دستگاه (`HWID`) همراه با پروفایل‌های رمزنگاری‌شدهٔ `.lumen / .carbon`.
+- **رابط کاربری Material 3 Expressive با Splash Screen پویا**: ۱۲ پوستهٔ رنگی هماهنگ با صفحهٔ آغازین (`Light`، `Dark`، `Dracula`، `Catppuccin`، `Nord` و...)، فونت‌های مجزای `وزیرمتن`، `Inter` و `JetBrains Mono` با ارقام استاندارد لاتین و تور راهنمای تعاملی جدید.
+- **به‌روزرسانی خودکار درون‌برنامه‌ای (In-App OTA Updater)**: شناسایی، دانلود و نصب مستقیم نسخه‌های جدید گیت‌هاب از داخل برنامه.
 
 ---
 
 ## 🌐 جدول ۱۰ پروتکل هستهٔ کربن
 
-| پرچم | نام فارسی | نام انگلیسی | نشان (Badge) | کاربرد و معماری |
+| نشان فنی | نام فارسی | نام انگلیسی | شناسه (Badge) | کاربرد و معماری |
 |:---:|:---|:---|:---:|:---|
-| 🇳🇱 | **مسک توربو** | `MASQUE Turbo` | `MASQUE H2` | موتور اصلی مسک با تکه‌تکه‌سازی هدر TLS و اسکنر توربو |
-| 🇫🇮 | **مسک پایتون** | `MASQUE Python` | `PYTHON` | شبیه‌سازی اثرانگشت پایتون برای عبور از فیلترینگ هوشمند اپراتورها |
-| 🇨🇭 | **تونل دولایه** | `Dual Tunnel` | `DUAL HOP` | دو لایه تونل تو در توی کلودفلر برای پایداری و امنیت دوچندان |
-| 🇺🇸 | **گول وارپ** | `Gool WARP` | `GOOL` | کپسوله‌سازی وایرگارد داخل مسک؛ عالی برای اینستاگرام و یوتیوب |
-| 🇩🇪 | **لنترن آلمان** | `Lantern Edge` | `LANTERN` | موتور رادیانس لنترن با اتصال مستقیم به سرورهای فرانکفورت |
-| 🇫🇷 | **آرگو فالکن** | `Argo Falcon` | `ARGO` | سیستم پل‌های عمومی آرگو و فالکن با سوییچ هوشمند پشتیبان |
-| 🇸🇪 | **سرورلس گوگل** | `Serverless TLS` | `TLS LEAD` | اتصال مستقیم بدون سرور با خرد کردن بسته‌های TLS و دی‌ان‌اس گوگل |
-| 🇬🇧 | **شکاف دامنه** | `SNI Split` | `SNI SPLIT` | عبور مستقیم از فیلترینگ با تکنیک برش نام دامنه و دی‌ان‌اس ادگارد |
-| 🇦🇹 | **مسک کوییک** | `MASQUE QUIC` | `QUIC H3` | تونل نسل سوم کلودفلر بر پایهٔ کوییک؛ مناسب اینترنت خانگی و فیبر نوری |
-| 🇨🇦 | **وایرگارد نویز** | `WireGuard Noise` | `WARP WG` | پروتکل وایرگارد با تزریق پکت‌های نویز ضد فیلتر و اسکنر عمیق |
+| ⚡ | **مسک توربو** | `MASQUE Turbo` | `MASQUE H2` | موتور اصلی مسک با تکه‌تکه‌سازی هدر TLS و اسکنر توربو |
+| 🐍 | **مسک پایتون** | `MASQUE Python` | `PYTHON` | شبیه‌سازی اثرانگشت پایتون برای عبور از فیلترینگ هوشمند اپراتورها |
+| 🛡️ | **تونل دولایه** | `Dual Tunnel` | `DUAL HOP` | دو لایه تونل تو در توی کلودفلر برای پایداری و امنیت دوچندان |
+| 🌐 | **گول وارپ** | `Gool WARP` | `GOOL` | کپسوله‌سازی وایرگارد داخل مسک؛ مناسب اینستاگرام و یوتیوب |
+| 🏮 | **لنترن رادیانس** | `Lantern Radiance` | `LANTERN` | موتور رادیانس لنترن با اتصال مستقیم به سرورهای ضد فیلتر |
+| 🦅 | **آرگو فالکن** | `Argo Falcon` | `ARGO` | سیستم پل‌های عمومی آرگو و فالکن با سوییچ هوشمند پشتیبان |
+| 🔓 | **سرورلس گوگل** | `Serverless TLS` | `TLS LEAD` | اتصال مستقیم بدون سرور با خرد کردن بسته‌های TLS و دی‌ان‌اس گوگل |
+| ✂️ | **شکاف دامنه** | `SNI Split` | `SNI SPLIT` | عبور مستقیم از فیلترینگ با تکنیک برش نام دامنه و دی‌ان‌اس ادگارد |
+| 🚀 | **مسک کوییک** | `MASQUE QUIC` | `QUIC H3` | تونل نسل سوم کلودفلر بر پایهٔ کوییک؛ مناسب اینترنت خانگی و فیبر نوری |
+| 🔒 | **وایرگارد نویز** | `WireGuard Noise` | `WARP WG` | پروتکل وایرگارد با تزریق پکت‌های نویز ضد فیلتر و اسکنر عمیق |
+
+> 🦊 در کنار این ۱۰ موتور، سرورهای **موزیلا (`Mozilla`)** نیز با ورود به حساب Firefox مستقیماً درون فهرست سرورها قابل انتخاب و پینگ‌گیری هستند.
 
 ---
 
@@ -61,14 +65,14 @@
 
 ## 📊 نرخ دانلود و آمار زنده (Live Download Analytics)
 
-میزان استقبال کاربران و نرخ دریافت بسته‌های نصبی کربن به صورت لحظه‌ای و زنده از طریق API رسمی گیت‌هاب پایش و مصورسازی می‌شود:
+میزان استقبال کاربران و نرخ دریافت بسته‌های نصبی کربن به‌صورت زنده از طریق API رسمی گیت‌هاب پایش و ترسیم می‌شود:
 
 </div>
 
 <div align="center">
 
 [![Total Downloads](https://img.shields.io/github/downloads/sinamp00/Carbon/total?style=for-the-badge&logo=github&color=D8FF6B&logoColor=0B0D13&label=TOTAL%20DOWNLOADS)](https://github.com/sinamp00/Carbon/releases)
-[![Latest Version](https://img.shields.io/github/downloads/sinamp00/Carbon/latest/total?style=for-the-badge&logo=android&color=7DD3FC&logoColor=0B0D13&label=LATEST%20v1.0.0)](https://github.com/sinamp00/Carbon/releases/latest)
+[![Latest Version](https://img.shields.io/github/downloads/sinamp00/Carbon/latest/total?style=for-the-badge&logo=android&color=7DD3FC&logoColor=0B0D13&label=LATEST%20v1.5.0)](https://github.com/sinamp00/Carbon/releases/latest)
 [![Architecture](https://img.shields.io/badge/ARCH-ARM64--V8A-A7F3D0?style=for-the-badge&logo=arm&logoColor=0B0D13)](https://github.com/sinamp00/Carbon/releases/latest)
 
 <br/>
@@ -79,6 +83,6 @@
 
 <br/>
 
-<sub>⚡ داده‌ها و نرخ دانلود به صورت پیوسته و زنده از طریق GitHub Releases API پایش و ثبت می‌شوند.</sub>
+<sub>⚡ داده‌ها و نرخ دانلود به‌صورت پیوسته و زنده از طریق GitHub Releases API پایش و ثبت می‌شوند.</sub>
 
 </div>

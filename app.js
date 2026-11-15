@@ -6,25 +6,25 @@
   'use strict';
 
   const RELEASE_STATE = {
-    tag: 'v1.0.0',
-    publishedDate: '2026-11-10',
+    tag: 'v1.5.0',
+    publishedDate: '2026-11-15',
     totalDownloads: null,
     selectedVariant: 'standard',
     variants: {
       standard: {
         id: 'standard',
-        filename: 'carbon-1.0.0-arm64-v8a-release.apk',
-        sizeBytes: 86201128,
-        sha256: '080f534fce55178a4338152b0c405114ee10b668373ccccb4c7963f4cd2ed392',
-        downloadUrl: 'https://github.com/sinamp00/Carbon/releases/download/v1.0.0/carbon-1.0.0-arm64-v8a-release.apk',
+        filename: 'carbon-1.5.0-arm64-v8a-release.apk',
+        sizeBytes: 92479676,
+        sha256: '851e4b5253d048b319144b747c12f6e42d97cc5b62c43b782a9bfb09792526d5',
+        downloadUrl: 'https://github.com/sinamp00/Carbon/releases/download/v1.5.0/carbon-1.5.0-arm64-v8a-release.apk',
         downloads: null
       },
       xiaomi: {
         id: 'xiaomi',
-        filename: 'carbon-1.0.0-xiaomi-arm64.apk',
-        sizeBytes: 86248730,
-        sha256: '94772ee3b7cfd6ca1cdfd89e8cc29f25e4c7293481f5e4e55482363620060d68',
-        downloadUrl: 'https://github.com/sinamp00/Carbon/releases/download/v1.0.0/carbon-1.0.0-xiaomi-arm64.apk',
+        filename: 'carbon-1.5.0-xiaomi-arm64.apk',
+        sizeBytes: 92479676,
+        sha256: '851e4b5253d048b319144b747c12f6e42d97cc5b62c43b782a9bfb09792526d5',
+        downloadUrl: 'https://github.com/sinamp00/Carbon/releases/download/v1.5.0/carbon-1.5.0-xiaomi-arm64.apk',
         downloads: null
       }
     }
@@ -726,16 +726,21 @@
         data.assets.forEach((asset) => {
           const name = String(asset.name || '');
           const count = Number(asset.download_count || 0);
+          const digest = typeof asset.digest === 'string' && asset.digest.startsWith('sha256:')
+            ? asset.digest.slice(7)
+            : null;
           sum += count;
 
           if (name.includes('xiaomi') && name.endsWith('.apk')) {
             RELEASE_STATE.variants.xiaomi.filename = name;
             RELEASE_STATE.variants.xiaomi.sizeBytes = Number(asset.size || RELEASE_STATE.variants.xiaomi.sizeBytes);
+            if (digest) RELEASE_STATE.variants.xiaomi.sha256 = digest;
             RELEASE_STATE.variants.xiaomi.downloadUrl = asset.browser_download_url || RELEASE_STATE.variants.xiaomi.downloadUrl;
             RELEASE_STATE.variants.xiaomi.downloads = count;
           } else if (name.includes('arm64') && name.endsWith('.apk')) {
             RELEASE_STATE.variants.standard.filename = name;
             RELEASE_STATE.variants.standard.sizeBytes = Number(asset.size || RELEASE_STATE.variants.standard.sizeBytes);
+            if (digest) RELEASE_STATE.variants.standard.sha256 = digest;
             RELEASE_STATE.variants.standard.downloadUrl = asset.browser_download_url || RELEASE_STATE.variants.standard.downloadUrl;
             RELEASE_STATE.variants.standard.downloads = count;
           }
