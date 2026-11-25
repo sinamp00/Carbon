@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sinamp00.github.io/Carbon/sitemap.xml

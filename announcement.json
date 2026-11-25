@@ -1,0 +1,12 @@
+{
+  "active": false,
+  "id": "2026-11-25-server-status",
+  "level": "warning",
+  "title_fa": "اطلاعیه وضعیت سرورها",
+  "message_fa": "در حال حاضر یکی از سرورها در حال بروزرسانی است؛ لطفاً از مسک توربو یا سایر سرورها استفاده کنید.",
+  "title_en": "Server Status Notice",
+  "message_en": "One of the servers is currently undergoing maintenance. Please use MASQUE Turbo or another server.",
+  "action_label_fa": "کانال تلگرام",
+  "action_label_en": "Telegram Channel",
+  "action_url": "https://t.me/Carbon_git"
+}

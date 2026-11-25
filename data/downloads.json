@@ -1,8 +1,8 @@
 {
   "repo": "sinamp00/Carbon",
-  "updated": "2026-11-15T00:15:09Z",
-  "total": 34,
-  "latest_release": "v1.5.0",
+  "updated": "2026-11-25T00:39:29Z",
+  "total": 51,
+  "latest_release": "v2.0.0",
   "latest_downloads": 0,
   "history": [
     {
@@ -12,6 +12,10 @@
     {
       "t": "2026-11-15T00:15:09Z",
       "total": 34
+    },
+    {
+      "t": "2026-11-25T00:39:29Z",
+      "total": 51
     }
   ]
 }
