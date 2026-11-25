@@ -759,6 +759,33 @@ main, header, footer {
   color: var(--text-secondary);
 }
 
+.charts-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.chart-card {
+  padding: 0.75rem;
+  border-radius: var(--radius-lg);
+  background: #0d1117;
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s var(--ease-out);
+}
+
+.chart-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 245, 160, 0.4);
+}
+
+.chart-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
 /* Footer */
 .site-footer {
   padding-block: 2.5rem;
@@ -787,7 +814,7 @@ main, header, footer {
 
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
-  .hero-grid, .download-grid {
+  .hero-grid, .download-grid, .charts-grid {
     grid-template-columns: 1fr;
   }
   .screens-strip {

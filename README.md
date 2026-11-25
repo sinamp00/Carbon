@@ -142,6 +142,28 @@ Carbon 2.0 fuses **Aether MASQUE**, **Sing-box**, and **Xray 26.10.31** inside o
 
 <div align="center">
 
+## ⭐ Star & Download History
+
+<a href="https://star-history.com/#sinamp00/Carbon&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=sinamp00/Carbon&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=sinamp00/Carbon&type=Date" />
+    <img alt="Carbon Star History Chart" src="https://api.star-history.com/svg?repos=sinamp00/Carbon&type=Date&theme=dark" width="100%" style="max-width: 800px; border-radius: 14px;" />
+  </picture>
+</a>
+
+<br/><br/>
+
+<a href="https://github.com/sinamp00/Carbon/releases">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/download-history-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="assets/download-history-light.svg" />
+    <img alt="Carbon Download History Chart" src="assets/download-history-dark.svg" width="100%" style="max-width: 800px; border-radius: 14px;" />
+  </picture>
+</a>
+
+<br/><br/>
+
 **Built for an open internet · [Download v2.0.0](https://github.com/sinamp00/Carbon/releases/latest) · [Website](https://sinamp00.github.io/Carbon/) · [Telegram @Carbon_git](https://t.me/Carbon_git)**
 
 </div>
